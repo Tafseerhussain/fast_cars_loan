@@ -184,4 +184,56 @@ input[type=number]:focus,
 	background-size: 100%;
 	background-position: center;
 	padding: 100px 0;
+	.easy-step-row {
+		margin-top: 90px;
+		.easy-step {
+			border-radius: 8px;
+			box-shadow: $theme-shadow;
+			padding: 20px;
+			background-color: #F0F3FF;
+			position: relative;
+			h1 {
+				font-weight: bold;
+				color: $blue-color;
+				font-size: 40px;
+			}
+			.easy-step-img {
+				img {
+					height: 90px;
+				}
+			}
+			.easy-step-text {
+				line-height: 27px;
+				margin-top: 20px;
+			}
+		}
+		.easy-step-center {
+			background-color: $blue-color;
+			h1 {
+				color: #fff;
+			}
+			.easy-step-text {
+				color: #fff;
+				opacity: 0.6;
+			}
+			img.round-arrow {
+				position: absolute;
+				right: -48%;
+				top: -50%;
+				image-rendering: auto;
+			  	image-rendering: crisp-edges;
+			  	image-rendering: pixelated;
+			  	image-rendering: -webkit-optimize-contrast;
+			}
+			img.round-arrow-bottom {
+				position: absolute;
+				bottom: -50%;
+				left: -48%;
+				image-rendering: auto;
+			  	image-rendering: crisp-edges;
+			  	image-rendering: pixelated;
+			  	image-rendering: -webkit-optimize-contrast;
+			}
+		}
+	}
 }
