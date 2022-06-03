@@ -5,6 +5,8 @@
     <x-home-hero/>
     <x-easy-steps/>
     <x-fastcars-products/>
+    <x-why-get-funded/>
+    <x-watch-video/>
 
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">

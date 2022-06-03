@@ -11306,6 +11306,11 @@ p {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   color: #fff !important;
   padding: 8px 50px !important;
+  border: 0;
+}
+
+.btn:hover {
+  background: #52C234;
 }
 
 textarea:focus,
@@ -11497,6 +11502,7 @@ input[type=number]:focus,
       image-rendering: -moz-crisp-edges;
       image-rendering: pixelated;
   image-rendering: -webkit-optimize-contrast;
+  pointer-events: none;
 }
 .easy-steps .easy-step-row .easy-step-center img.round-arrow-bottom {
   position: absolute;
@@ -11508,4 +11514,47 @@ input[type=number]:focus,
       image-rendering: -moz-crisp-edges;
       image-rendering: pixelated;
   image-rendering: -webkit-optimize-contrast;
+  pointer-events: none;
+}
+
+.fastcars-products {
+  padding: 100px 0;
+}
+.fastcars-products .product-left h1, .fastcars-products .product-left .h1 {
+  margin-bottom: 20px;
+}
+.fastcars-products .product-left .list p {
+  color: #000;
+}
+.fastcars-products .product-right img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.why-get-funded {
+  background: url("/img/home/funded-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+.why-get-funded p span {
+  font-weight: 600;
+}
+.why-get-funded .funded-cards {
+  margin-top: 50px;
+}
+.why-get-funded .funded-cards .funded-card {
+  padding: 30px 24px;
+  border-radius: 8px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+.why-get-funded .funded-cards .funded-card h2, .why-get-funded .funded-cards .funded-card .h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin: 15px 0 15px;
+}
+.why-get-funded .funded-cards .funded-card p {
+  line-height: 27px;
 }
