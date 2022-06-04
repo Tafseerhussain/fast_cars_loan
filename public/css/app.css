@@ -11300,12 +11300,18 @@ p {
   font-size: 10px;
 }
 
+.section-title {
+  font-size: 40px;
+  color: #000;
+  font-weight: 500;
+}
+
 .btn {
   background-color: #52C234;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   color: #fff !important;
-  padding: 8px 50px !important;
+  padding: 12px 50px !important;
   border: 0;
 }
 
@@ -11342,11 +11348,9 @@ input[type=number]:focus,
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
-
-.section-title {
-  font-size: 40px;
-  color: #000;
-  font-weight: 500;
+.main-theme-header .account-btn .nav-link {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 .home-hero {
@@ -11557,4 +11561,172 @@ input[type=number]:focus,
 }
 .why-get-funded .funded-cards .funded-card p {
   line-height: 27px;
+}
+
+.watch-video {
+  padding: 100px 0;
+}
+.watch-video .watch-left h1, .watch-video .watch-left .h1 {
+  margin-bottom: 20px;
+}
+.watch-video .watch-left p {
+  padding-right: 100px;
+}
+.watch-video .watch-left a.btn {
+  margin-top: 10px;
+}
+.watch-video .watch-right {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+.watch-video .watch-right .watch-video-border {
+  transform: rotate(0deg);
+  transition: transform 0.7s linear;
+  -webkit-animation: rotate 10s infinite linear;
+          animation: rotate 10s infinite linear;
+}
+.watch-video .watch-right .watch-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.watch-video .watch-right .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+.easy-cash-advantage {
+  padding: 0 0 100px;
+}
+.easy-cash-advantage .easy-cash .easy-cash-right {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.easy-cash-advantage .easy-cash .easy-cash-right h1, .easy-cash-advantage .easy-cash .easy-cash-right .h1 {
+  margin-bottom: 30px;
+}
+.easy-cash-advantage .advantages {
+  margin-top: 50px;
+}
+.easy-cash-advantage .advantages h1, .easy-cash-advantage .advantages .h1 {
+  margin-bottom: 40px;
+}
+.easy-cash-advantage .advantages .advantage-box {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 50px 60px;
+  background: #21367F;
+}
+.easy-cash-advantage .advantages .advantage-box .advantage-list {
+  margin-top: 20px;
+}
+.easy-cash-advantage .advantages .advantage-box .advantage-list p {
+  color: #fff;
+}
+.easy-cash-advantage .advantages .advantage-box .advantage-list p img {
+  filter: brightness(100);
+  margin-right: 10px;
+}
+
+.blog-posts {
+  padding: 100px 0;
+  background: rgba(36, 58, 140, 0.03);
+}
+.blog-posts .blogs-row {
+  margin-top: 50px;
+}
+.blog-posts .blogs-row .blog-post {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.blog-posts .blogs-row .blog-post .blog-img {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+}
+.blog-posts .blogs-row .blog-post .blog-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.blog-posts .blogs-row .blog-post .blog-meta {
+  padding: 20px;
+}
+.blog-posts .blogs-row .blog-post .blog-meta a {
+  color: #52C234;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.blog-posts .blogs-row .blog-post .blog-meta .blog-title {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.fast-cars-portal {
+  padding: 100px 0;
+  position: relative;
+}
+.fast-cars-portal img.left-triangle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  height: 70%;
+}
+.fast-cars-portal img.dots {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.fast-cars-portal .portal-benefits {
+  margin-top: 50px;
+}
+.fast-cars-portal .portal-benefits .benefit-box {
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.2s;
+  position: relative;
+}
+.fast-cars-portal .portal-benefits .benefit-box img {
+  height: 70px;
+  margin-bottom: 20px;
+}
+.fast-cars-portal .portal-benefits .benefit-box h4, .fast-cars-portal .portal-benefits .benefit-box .h4 {
+  font-size: 20px;
+  color: #000;
+}
+.fast-cars-portal .portal-benefits .benefit-box:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.fast-cars-portal .portal-benefits .easy-to-use {
+  background: #F8F0EA;
+}
+.fast-cars-portal .portal-benefits .manage-accounts {
+  background: #DEF5F4;
+}
+.fast-cars-portal .portal-benefits .check-balances {
+  background: #EAE8F1;
+}
+.fast-cars-portal .portal-benefits .make-payment {
+  background: #EBDCE4;
 }
