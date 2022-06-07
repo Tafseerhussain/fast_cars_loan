@@ -35,5 +35,10 @@
                 </div>
             </div>
         </div>
+        <div class="row access-portal">
+            <div class="col-12 text-center">
+                <p>Access the <a href="#"> Customer Portal</a></p>
+            </div>
+        </div>
     </div>
 </div>

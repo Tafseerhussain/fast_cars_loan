@@ -114,7 +114,89 @@
         <main>
             @yield('content')
         </main>
+
+        <footer>
+            <a href="#" class="go-back-to-top">
+                <img src="{{ asset('img/home/arrow-up.svg') }}" alt="up-arrow">
+            </a>
+            <div class="container">
+                <div class="row g-md-5">
+                    <div class="col-md-4">
+                        <div class="footer-col-1">
+                            <a href="/">
+                                <img src="{{ asset('img/logo-white.svg') }}" alt="logo">
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Id harum vero soluta voluptate eaque, debitis atque animi iure aliquam in laudantium accusamus quas deleniti consectetur libero totam. Impedit, sit at.
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><img src="{{ asset('img/footer-icons/facebook.svg') }}" alt="facebook"></a>
+                                <a href="#"><img src="{{ asset('img/footer-icons/pinterest.svg') }}" alt="p-interest"></a>
+                                <a href="#"><img src="{{ asset('img/footer-icons/instagram.svg') }}" alt="instagram"></a>
+                                <a href="#"><img src="{{ asset('img/footer-icons/linkedin.svg') }}" alt="linked-in"></a>
+                                <a href="#"><img src="{{ asset('img/footer-icons/twitter.svg') }}" alt="twitter"></a>
+                            </div>
+                            <div class="email-link">
+                                Email Us:
+                                <a href="#">Contact@fastcarsmoney.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="footer-col-2">
+                            <h3 class="footer-heading">
+                                Company
+                            </h3>
+                            <div class="row">
+                                <div class="col-md">
+                                    <div class="footer-links">
+                                        <a href="#">Home</a>
+                                        <a href="#">About Us</a>
+                                        <a href="#">How It Works</a>
+                                        <a href="#">Locations</a>
+                                        <a href="#">FAQs</a>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="footer-links">
+                                        <a href="#">Apply Now!</a>
+                                        <a href="#">Blog</a>
+                                        <a href="#">Careers</a>
+                                        <a href="#">Contact Customer Service</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-col-3">
+                            <h3 class="footer-heading">
+                                Disclosures
+                            </h3>
+                            <div class="row">
+                                <div class="col-md">
+                                    <div class="footer-links">
+                                        <a href="#">Privacy Policy</a>
+                                        <a href="#">Terms of Use</a>
+                                        <a href="#">Accessibility Statement</a>
+                                        <a href="#">External Opt-Out Policy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="copyright">
+                            © Copyright 2012–2022 FastCarsMoney®. All Rights Reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     @stack('component-js')
 </body>
 </html>
