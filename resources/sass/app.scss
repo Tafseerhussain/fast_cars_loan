@@ -765,3 +765,82 @@ footer {
 		margin: 10px 0 20px;
 	}
 }
+
+// WHO WE ARE
+.who-we-are {
+	padding: 100px 0;
+	position: relative;
+	.container {
+		position: relative;
+	}
+	p {
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+	img.who-left {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 0;
+		pointer-events: none;
+		height: 300px;
+	}
+	img.who-right {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		pointer-events: none;
+		height: 50%;
+	}
+	.img-box-1 {
+		border-top-left-radius: 140px;
+		border-bottom-right-radius: 140px;
+		height: fit-content;
+		overflow: hidden;
+		box-shadow: $theme-shadow;
+		img {
+			max-width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	.img-box-2 {
+		border-top-left-radius: 140px;
+		border-bottom-right-radius: 140px;
+		height: fit-content;
+		overflow: hidden;
+		box-shadow: $theme-shadow;
+		img {
+			max-width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	.img-box-3 {
+		border-top-left-radius: 140px;
+		border-bottom-right-radius: 140px;
+		height: fit-content;
+		overflow: hidden;
+		box-shadow: $theme-shadow;
+		img {
+			max-width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	.img-box-4 {
+		border-top-right-radius: 140px;
+		border-bottom-left-radius: 140px;
+		height: fit-content;
+		overflow: hidden;
+		box-shadow: $theme-shadow;
+		margin-top: 20px;
+		img {
+			max-width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+}

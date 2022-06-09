@@ -12007,3 +12007,97 @@ footer .copyright {
   opacity: 0.5;
   margin: 10px 0 20px;
 }
+
+.who-we-are {
+  padding: 100px 0;
+  position: relative;
+}
+.who-we-are .container {
+  position: relative;
+}
+.who-we-are p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.who-we-are img.who-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  height: 300px;
+}
+.who-we-are img.who-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  height: 50%;
+}
+.who-we-are .img-box-1 {
+  border-top-left-radius: 140px;
+  border-bottom-right-radius: 140px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.who-we-are .img-box-1 img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.who-we-are .img-box-2 {
+  border-top-left-radius: 140px;
+  border-bottom-right-radius: 140px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.who-we-are .img-box-2 img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.who-we-are .img-box-3 {
+  border-top-left-radius: 140px;
+  border-bottom-right-radius: 140px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.who-we-are .img-box-3 img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.who-we-are .img-box-4 {
+  border-top-right-radius: 140px;
+  border-bottom-left-radius: 140px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.who-we-are .img-box-4 img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
