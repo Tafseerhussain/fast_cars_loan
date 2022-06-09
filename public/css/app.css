@@ -11991,3 +11991,19 @@ footer .copyright {
 .latest-blogs .blogs-row .blog-box:hover {
   border-color: #52C234;
 }
+
+.about-hero {
+  background: url("/img/about/about-hero-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+.about-hero h1, .about-hero .h1 {
+  font-size: 60px;
+  color: #fff;
+}
+.about-hero p {
+  color: #fff;
+  opacity: 0.5;
+  margin: 10px 0 20px;
+}
