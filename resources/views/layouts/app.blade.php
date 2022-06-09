@@ -58,10 +58,8 @@
                                     How it Works
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="#">How Title Loan Works</a></li>
+                                    <li><a class="dropdown-item" href="#">How Personal Loan Work</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -69,10 +67,12 @@
                                     Title Loan
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="#">Car Title Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">Car Title Pawns</a></li>
+                                    <li><a class="dropdown-item" href="#">Motorcycle Title Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">Motorcycle Title Pawns</a></li>
+                                    <li><a class="dropdown-item" href="#">RV Title Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">Personal Loans</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">

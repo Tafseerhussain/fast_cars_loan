@@ -11290,6 +11290,17 @@ p {
   line-height: 30px;
 }
 
+.dropdown-menu {
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #52C234;
+}
+
 .dropdown-toggle::after {
   border: 0 !important;
   font-family: "Font Awesome 6 Free";
