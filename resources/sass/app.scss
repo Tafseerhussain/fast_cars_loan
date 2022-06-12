@@ -32,20 +32,25 @@ p {
     font-size: 10px;
 }
 .section-title {
-	font-size: 40px;
-	color: #000;
+	font-size: 36px;
+	color: $black-color;
 	font-weight: 500;
+	line-height: 50px;
 }
 .btn {
 	background-color: $green-color;
 	border-radius: 8px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-	color: #fff !important;
+	color: $white-color !important;
 	padding: 12px 50px !important;
 	border: 0;
 }
 .btn:hover {
 	background: $green-color;
+}
+.btn-outline {
+	border: 1px solid $white-color;
+	background: transparent;
 }
 textarea:focus, 
 textarea.form-control:focus, 
@@ -99,7 +104,7 @@ footer {
 	.footer-col-1 {
 		p {
 			margin: 20px 0;
-			color: #fff;
+			color: $white-color;
 			opacity: 0.5;
 		}
 		.social-links {
@@ -112,10 +117,10 @@ footer {
 			margin-top: 20px;
 			font-size: 14px;
 			font-weight: 500;
-			color: #fff;
+			color: $white-color;
 			a {
 				text-decoration: none;
-				color: #fff;
+				color: $white-color;
 				opacity: 0.5;
 				font-weight: 400;
 			}
@@ -124,14 +129,14 @@ footer {
 	.footer-heading {
 		font-size: 18px;
 		font-weight: 500;
-		color: #fff;
+		color: $white-color;
 		margin-bottom: 20px;
 	}
 	.footer-links {
 		a {
 			display: block;
 			text-decoration: none;
-			color: #fff;
+			color: $white-color;
 			opacity: 0.5;
 			margin-bottom: 10px;
 			transition: 0.2;
@@ -142,7 +147,7 @@ footer {
 		}
 	}
 	.copyright {
-		color: #fff;
+		color: $white-color;
 		opacity: 0.5;
 		margin-top: 10px;
 	}
@@ -151,7 +156,7 @@ footer {
 // HOME HERO
 .home-hero {
     background: url('/img/home/hero-bg.jpg') no-repeat;
-    color: #fff;
+    color: $white-color;
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -176,7 +181,7 @@ footer {
 			margin-top: 40px;
 		}
 		.btn.btn-outline {
-			border: 1px solid #fff;
+			border: 1px solid $white-color;
 			background: transparent;
 			margin-top: 20px;
 			padding: 14px 30px !important;
@@ -187,11 +192,11 @@ footer {
 // MAIN SEARCH
 .main-search {
 	.input-group-text {
-		background: #fff;
+		background: $white-color;
 		border-right: 0;
 		border-top-left-radius: 8px;
 		border-bottom-left-radius: 8px;
-		border-color: #fff;
+		border-color: $white-color;
 		img {
 			width: 20px;
 		}
@@ -199,19 +204,19 @@ footer {
 	input {
 		border-left: 0;
 		padding-left: 0;
-		border-color: #fff;
+		border-color: $white-color;
 	}
 	button {
 		padding: 12px 20px !important;
 	}
 	input:focus {
-		border-color: #fff;
+		border-color: $white-color;
 	}
 }
 
 // HERO FORM
 .hero-form {
-	background: #fff;
+	background: $white-color;
 	padding: 24px;
 	box-shadow: $theme-shadow;
 	border-radius: 8px;
@@ -220,7 +225,7 @@ footer {
 	.form-head {
 		color: $blue-color;
 		font-size: 20px;
-		background: #fff;
+		background: $white-color;
 		box-shadow: $theme-shadow;
 		border-radius: 8px;
 		font-weight: 500;
@@ -290,10 +295,10 @@ footer {
 		.easy-step-center {
 			background-color: $blue-color;
 			h1 {
-				color: #fff;
+				color: $white-color;
 			}
 			.easy-step-text {
-				color: #fff;
+				color: $white-color;
 				opacity: 0.6;
 			}
 			img.round-arrow {
@@ -329,7 +334,7 @@ footer {
 		}
 		.list {
 			p {
-				color: #000;
+				color: $black-color;
 			}
 		}
 	}
@@ -362,7 +367,7 @@ footer {
 			h2 {
 				font-size: 24px;
 				font-weight: 500;
-				color: #000;
+				color: $black-color;
 				margin: 15px 0 15px;
 			}
 			p {
@@ -444,7 +449,7 @@ footer {
 			.advantage-list {
 				margin-top: 20px;
 				p {
-					color: #fff;
+					color: $white-color;
 					img {
 						filter: brightness(100);
 						margin-right: 10px;
@@ -483,7 +488,7 @@ footer {
 				}
 				.blog-title {
 					font-size: 18px;
-					color: #000;
+					color: $black-color;
 					margin-bottom: 20px;
 				}
 			}
@@ -524,7 +529,7 @@ footer {
 			}
 			h4 {
 				font-size: 20px;
-				color: #000;
+				color: $black-color;
 			}
 		}
 		.benefit-box:hover {
@@ -592,7 +597,7 @@ footer {
 				padding: 40px 40px 60px;
 				border-radius: 10px;
 				box-shadow: $theme-shadow;
-				background: #fff;
+				background: $white-color;
 				margin: 0 10px 100px;
 				position: relative;
 				transition: 0.3s;
@@ -612,13 +617,13 @@ footer {
 					transform: translateX(-50%);
 					img {
 						border-radius: 50%;
-						border: 2px solid #fff;
+						border: 2px solid $white-color;
 						box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 						height: 100px;
 					}
 					.name {
 						font-size: 18px;
-						color: #000;
+						color: $black-color;
 						font-weight: 500;
 						span {
 							font-weight: 400;
@@ -639,7 +644,7 @@ footer {
 					}
 				}
 				p {
-					color: #fff;
+					color: $white-color;
 				}
 			}
 			.slick-slide {
@@ -657,15 +662,15 @@ footer {
 // NEWSLETTER
 .newsletter {
 	padding: 100px 0;
-	background: linear-gradient(45deg, rgba(34,54,127, 0.8), rgba(34,54,127, 0.8)), url("/img/home/newsletter-bg.jpg") no-repeat;
+	background: linear-gradient(45deg, rgba($blue-color, 0.8), rgba($blue-color, 0.8)), url("/img/home/newsletter-bg.jpg") no-repeat;
 	background-size: cover;
 	background-position: center;
 	.email-box {
 		margin-top: 40px;
 		.input-group-text {
-			background: #fff;
+			background: $white-color;
 			border-right: 0;
-			border-color: #fff;
+			border-color: $white-color;
 			img {
 				width: 20px;
 			}
@@ -673,7 +678,7 @@ footer {
 		input {
 			border-top-left-radius: 8px;
 			border-bottom-left-radius: 8px;
-			border-color: #fff;
+			border-color: $white-color;
 			padding-left: 12px;
 		}
 		button {
@@ -681,7 +686,7 @@ footer {
 			font-weight: 500;
 		}
 		input:focus {
-			border-color: #fff;
+			border-color: $white-color;
 		}
 	}
 }
@@ -710,7 +715,7 @@ footer {
 				.blog-title {
 					font-size: 14px;
 					font-weight: 500;
-					color: #000;
+					color: $black-color;
 					text-decoration: none;
 					margin-bottom: 10px;
 					display: block;
@@ -733,7 +738,7 @@ footer {
 						display: block;
 					}
 					.name {
-						color: #000;
+						color: $black-color;
 						font-size: 14px;
 					}
 					.date {
@@ -757,10 +762,10 @@ footer {
 	padding: 150px 0;
 	h1 {
 		font-size: 60px;
-		color: #fff;
+		color: $white-color;
 	}
 	p {
-		color: #fff;
+		color: $white-color;
 		opacity: 0.5;
 		margin: 10px 0 20px;
 	}
@@ -841,6 +846,240 @@ footer {
 			max-width: 100%;
 			object-fit: cover;
 			object-position: center;
+		}
+	}
+}
+
+// WHAT WE OFFER
+.what-we-offer {
+	padding: 100px 0;
+	background-color: rgba($blue-color, 0.03);
+	position: relative;
+	.offer-top {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 50%;
+		z-index: 0;
+		pointer-events: none;
+	}
+	.container {
+		position: relative;
+	}
+	.offer-accordion {
+		margin-top: 30px;
+		.accordion-item {
+			margin-bottom: 20px;
+			box-shadow: $theme-shadow;
+			border-radius: 8px;
+			border: 0;
+			overflow: hidden;
+			.accordion-header {
+				button {
+					font-size: 20px;
+					font-weight: 500;
+					padding: 20px;
+				}
+			}
+			.accordion-button:not(.collapsed) {
+				background: $white-color;
+				color: $black-color;
+			}
+			.accordion-button:after {
+				background: none;
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				text-align: center;
+			}
+			.accordion-button:not(.collapsed)::after {
+				content: "+";
+				box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+			}
+			.accordion-button.collapsed::after {
+				content: "-";
+				box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+			}
+		}
+	}
+}
+
+// HOW LOAN WORKS
+.how-loan-works {
+	padding: 50px 0;
+	background: linear-gradient(45deg, rgba($white-color, 0.95), rgba($white-color, 0.7), rgba($white-color, 0.5)), url("/img/how-loan-works/hero.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+// LOAN LEFT (VIDEO)
+.loan-left {
+	padding: 50px 0;
+	h4 {
+		width: 70%;
+		font-size: 20px;
+		color: $black-color;
+		margin-bottom: 20px;
+	}
+	.loan-video {
+		max-width: 100%;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: $theme-shadow;
+		height: 100%;
+		padding: 0;
+		margin-left: auto;
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%;
+		iframe {
+			position: absolute;
+			border-radius: 8px;
+		}
+	}
+	p {
+		margin: 30px 0 20px;
+	}
+}
+
+// TITLE LOAN PAGE
+.title-loan-page {
+	.easy-steps {
+		padding-bottom: 170px;
+	}
+}
+
+// LOAN OR PAWN
+.loan-or-pawn {
+	padding: 100px 0;
+	background-color: rgba($blue-color, 0.03);
+	position: relative;
+	.loan-pawn-right {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 0;
+	}
+	.container {
+		position: relative;
+	}
+	h1 {
+		margin-bottom: 40px;
+	}
+	.loan-pawn-img {
+		width: 85%;
+		display: block;
+		margin-left: auto;
+		box-shadow: -30px -30px 0px rgba($blue-color,0.1);
+		border-radius: 8px;
+		img {
+			border-radius: 8px;
+		}
+	}
+}
+
+// LOAN APPLY
+.loan-apply {
+	padding: 70px 0;
+	background: linear-gradient(45deg, rgba($blue-color, 0.8), rgba($blue-color, 0.8)), url("/img/how-loan-works/loan-apply.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	.btn {
+		margin-top: 20px;
+	}
+}
+
+// LOAN REQUIREMNTS
+.loan-requirements {
+	padding: 100px 0;
+	.loan-requirements-accordion {
+		margin-top: 40px;
+		.accordion-item {
+			border: 0;
+			margin-bottom: 20px;
+			.accordion-button {
+				border-radius: 8px;
+				overflow: hidden;
+				border: 2px solid #e6e6e6;
+			}
+			.accordion-button:not(.collapsed) {
+				background: $white-color;
+				color: $black-color;
+				border-color: $green-color;
+			}
+			.accordion-button:not(.collapsed):after {
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+			}
+			.accordion-button {
+				img {
+					height: 18px;
+					margin-right: 8px;
+				}
+				font-size: 20px;
+			}
+			.accordion-body {
+				padding: 10px 0 0;
+				line-height: 27px;
+				a {
+					color: $green-color;
+				}
+			}
+		}
+	}
+}
+
+// PERSONAL LOAN APPLY
+.personal-loan-apply {
+	padding: 100px 0;
+	p {
+		margin-top: 30px;
+	}
+	.personal-loan-img {
+		width: 85%;
+		display: block;
+		margin-left: auto;
+		box-shadow: -30px -30px 0px rgba($blue-color,0.1);
+		border-radius: 8px;
+		border-radius: 50%;
+		overflow: hidden;
+		img {
+			border-radius: 50%;
+		}
+	}
+}
+
+// LOAN ONLINE
+.loan-online {
+	padding: 100px 0;
+	border-top-left-radius: 170px;
+	border-bottom-right-radius: 170px;
+	background: $blue-color;
+	p {
+		opacity: 0.5;
+		margin: 20px 0 30px;
+	}
+}
+
+// PERSONAL LOAN APPROVED
+.personal-loan-approved {
+	padding: 100px 0;
+	h5.sub {
+		color: $black-color;
+		margin: 20px 0 0;
+		font-size: 16px;
+	}
+	.approved-points {
+		.point-box {
+			border-radius: 8px;
+			box-shadow: $theme-shadow;
+			padding: 10px 14px;
+			span {
+				font-weight: 500;
+				color: $black-color;
+			}
 		}
 	}
 }

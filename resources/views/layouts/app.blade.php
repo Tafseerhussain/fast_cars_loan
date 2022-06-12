@@ -58,8 +58,8 @@
                                     How it Works
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">How Title Loan Works</a></li>
-                                    <li><a class="dropdown-item" href="#">How Personal Loan Work</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('how-title-loan-works') }}">How Title Loan Works</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('how-personal-loan-works') }}">How Personal Loan Work</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">

@@ -11312,22 +11312,28 @@ p {
 }
 
 .section-title {
-  font-size: 40px;
-  color: #000;
+  font-size: 36px;
+  color: #000000;
   font-weight: 500;
+  line-height: 50px;
 }
 
 .btn {
   background-color: #52C234;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  color: #fff !important;
+  color: #ffffff !important;
   padding: 12px 50px !important;
   border: 0;
 }
 
 .btn:hover {
   background: #52C234;
+}
+
+.btn-outline {
+  border: 1px solid #ffffff;
+  background: transparent;
 }
 
 textarea:focus,
@@ -11376,7 +11382,7 @@ footer .go-back-to-top {
 }
 footer .footer-col-1 p {
   margin: 20px 0;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
 }
 footer .footer-col-1 .social-links img {
@@ -11387,24 +11393,24 @@ footer .footer-col-1 .email-link {
   margin-top: 20px;
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #ffffff;
 }
 footer .footer-col-1 .email-link a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
   font-weight: 400;
 }
 footer .footer-heading {
   font-size: 18px;
   font-weight: 500;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 footer .footer-links a {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
   margin-bottom: 10px;
   transition: 0.2;
@@ -11414,14 +11420,14 @@ footer .footer-links a:hover {
   opacity: 1;
 }
 footer .copyright {
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
   margin-top: 10px;
 }
 
 .home-hero {
   background: url("/img/home/hero-bg.jpg") no-repeat;
-  color: #fff;
+  color: #ffffff;
   background-size: cover;
   background-position: center;
   min-height: 90vh;
@@ -11448,18 +11454,18 @@ footer .copyright {
   margin-top: 40px;
 }
 .home-hero .hero-left .btn.btn-outline {
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   background: transparent;
   margin-top: 20px;
   padding: 14px 30px !important;
 }
 
 .main-search .input-group-text {
-  background: #fff;
+  background: #ffffff;
   border-right: 0;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  border-color: #fff;
+  border-color: #ffffff;
 }
 .main-search .input-group-text img {
   width: 20px;
@@ -11467,17 +11473,17 @@ footer .copyright {
 .main-search input {
   border-left: 0;
   padding-left: 0;
-  border-color: #fff;
+  border-color: #ffffff;
 }
 .main-search button {
   padding: 12px 20px !important;
 }
 .main-search input:focus {
-  border-color: #fff;
+  border-color: #ffffff;
 }
 
 .hero-form {
-  background: #fff;
+  background: #ffffff;
   padding: 24px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -11487,7 +11493,7 @@ footer .copyright {
 .hero-form .form-head {
   color: #21367F;
   font-size: 20px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   font-weight: 500;
@@ -11556,10 +11562,10 @@ footer .copyright {
   background-color: #21367F;
 }
 .easy-steps .easy-step-row .easy-step-center h1, .easy-steps .easy-step-row .easy-step-center .h1 {
-  color: #fff;
+  color: #ffffff;
 }
 .easy-steps .easy-step-row .easy-step-center .easy-step-text {
-  color: #fff;
+  color: #ffffff;
   opacity: 0.6;
 }
 .easy-steps .easy-step-row .easy-step-center img.round-arrow {
@@ -11594,7 +11600,7 @@ footer .copyright {
   margin-bottom: 20px;
 }
 .fastcars-products .product-left .list p {
-  color: #000;
+  color: #000000;
 }
 .fastcars-products .product-right img {
   border-radius: 8px;
@@ -11622,7 +11628,7 @@ footer .copyright {
 .why-get-funded .funded-cards .funded-card h2, .why-get-funded .funded-cards .funded-card .h2 {
   font-size: 24px;
   font-weight: 500;
-  color: #000;
+  color: #000000;
   margin: 15px 0 15px;
 }
 .why-get-funded .funded-cards .funded-card p {
@@ -11700,7 +11706,7 @@ footer .copyright {
   margin-top: 20px;
 }
 .easy-cash-advantage .advantages .advantage-box .advantage-list p {
-  color: #fff;
+  color: #ffffff;
 }
 .easy-cash-advantage .advantages .advantage-box .advantage-list p img {
   filter: brightness(100);
@@ -11740,7 +11746,7 @@ footer .copyright {
 }
 .blog-posts .blogs-row .blog-post .blog-meta .blog-title {
   font-size: 18px;
-  color: #000;
+  color: #000000;
   margin-bottom: 20px;
 }
 
@@ -11779,7 +11785,7 @@ footer .copyright {
 }
 .fast-cars-portal .portal-benefits .benefit-box h4, .fast-cars-portal .portal-benefits .benefit-box .h4 {
   font-size: 20px;
-  color: #000;
+  color: #000000;
 }
 .fast-cars-portal .portal-benefits .benefit-box:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -11842,7 +11848,7 @@ footer .copyright {
   padding: 40px 40px 60px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background: #fff;
+  background: #ffffff;
   margin: 0 10px 100px;
   position: relative;
   transition: 0.3s;
@@ -11862,13 +11868,13 @@ footer .copyright {
 }
 .verified-testimonials .testimonials-row .testimonials-slider .testimonial-slide .testimonial-meta img {
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid #ffffff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
   height: 100px;
 }
 .verified-testimonials .testimonials-row .testimonials-slider .testimonial-slide .testimonial-meta .name {
   font-size: 18px;
-  color: #000;
+  color: #000000;
   font-weight: 500;
 }
 .verified-testimonials .testimonials-row .testimonials-slider .testimonial-slide .testimonial-meta .name span {
@@ -11886,7 +11892,7 @@ footer .copyright {
   filter: invert(100);
 }
 .verified-testimonials .testimonials-row .testimonials-slider .testimonial-slide.slick-current p {
-  color: #fff;
+  color: #ffffff;
 }
 .verified-testimonials .testimonials-row .testimonials-slider .slick-slide {
   transition: 0.3s;
@@ -11899,7 +11905,7 @@ footer .copyright {
 
 .newsletter {
   padding: 100px 0;
-  background: linear-gradient(45deg, rgba(34, 54, 127, 0.8), rgba(34, 54, 127, 0.8)), url("/img/home/newsletter-bg.jpg") no-repeat;
+  background: linear-gradient(45deg, rgba(33, 54, 127, 0.8), rgba(33, 54, 127, 0.8)), url("/img/home/newsletter-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -11907,9 +11913,9 @@ footer .copyright {
   margin-top: 40px;
 }
 .newsletter .email-box .input-group-text {
-  background: #fff;
+  background: #ffffff;
   border-right: 0;
-  border-color: #fff;
+  border-color: #ffffff;
 }
 .newsletter .email-box .input-group-text img {
   width: 20px;
@@ -11917,7 +11923,7 @@ footer .copyright {
 .newsletter .email-box input {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  border-color: #fff;
+  border-color: #ffffff;
   padding-left: 12px;
 }
 .newsletter .email-box button {
@@ -11925,7 +11931,7 @@ footer .copyright {
   font-weight: 500;
 }
 .newsletter .email-box input:focus {
-  border-color: #fff;
+  border-color: #ffffff;
 }
 
 .latest-blogs {
@@ -11957,7 +11963,7 @@ footer .copyright {
 .latest-blogs .blogs-row .blog-box .blog-meta .blog-title {
   font-size: 14px;
   font-weight: 500;
-  color: #000;
+  color: #000000;
   text-decoration: none;
   margin-bottom: 10px;
   display: block;
@@ -11981,7 +11987,7 @@ footer .copyright {
   display: block;
 }
 .latest-blogs .blogs-row .blog-box .blog-meta .blog-by .name {
-  color: #000;
+  color: #000000;
   font-size: 14px;
 }
 .latest-blogs .blogs-row .blog-box .blog-meta .blog-by .date {
@@ -12000,10 +12006,10 @@ footer .copyright {
 }
 .about-hero h1, .about-hero .h1 {
   font-size: 60px;
-  color: #fff;
+  color: #ffffff;
 }
 .about-hero p {
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
   margin: 10px 0 20px;
 }
@@ -12100,4 +12106,222 @@ footer .copyright {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.what-we-offer {
+  padding: 100px 0;
+  background-color: rgba(33, 54, 127, 0.03);
+  position: relative;
+}
+.what-we-offer .offer-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+.what-we-offer .container {
+  position: relative;
+}
+.what-we-offer .offer-accordion {
+  margin-top: 30px;
+}
+.what-we-offer .offer-accordion .accordion-item {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 0;
+  overflow: hidden;
+}
+.what-we-offer .offer-accordion .accordion-item .accordion-header button {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+}
+.what-we-offer .offer-accordion .accordion-item .accordion-button:not(.collapsed) {
+  background: #ffffff;
+  color: #000000;
+}
+.what-we-offer .offer-accordion .accordion-item .accordion-button:after {
+  background: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+}
+.what-we-offer .offer-accordion .accordion-item .accordion-button:not(.collapsed)::after {
+  content: "+";
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+}
+.what-we-offer .offer-accordion .accordion-item .accordion-button.collapsed::after {
+  content: "-";
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.how-loan-works {
+  padding: 50px 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), url("/img/how-loan-works/hero.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.loan-left {
+  padding: 50px 0;
+}
+.loan-left h4, .loan-left .h4 {
+  width: 70%;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.loan-left .loan-video {
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding: 0;
+  margin-left: auto;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.loan-left .loan-video iframe {
+  position: absolute;
+  border-radius: 8px;
+}
+.loan-left p {
+  margin: 30px 0 20px;
+}
+
+.title-loan-page .easy-steps {
+  padding-bottom: 170px;
+}
+
+.loan-or-pawn {
+  padding: 100px 0;
+  background-color: rgba(33, 54, 127, 0.03);
+  position: relative;
+}
+.loan-or-pawn .loan-pawn-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.loan-or-pawn .container {
+  position: relative;
+}
+.loan-or-pawn h1, .loan-or-pawn .h1 {
+  margin-bottom: 40px;
+}
+.loan-or-pawn .loan-pawn-img {
+  width: 85%;
+  display: block;
+  margin-left: auto;
+  box-shadow: -30px -30px 0px rgba(33, 54, 127, 0.1);
+  border-radius: 8px;
+}
+.loan-or-pawn .loan-pawn-img img {
+  border-radius: 8px;
+}
+
+.loan-apply {
+  padding: 70px 0;
+  background: linear-gradient(45deg, rgba(33, 54, 127, 0.8), rgba(33, 54, 127, 0.8)), url("/img/how-loan-works/loan-apply.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.loan-apply .btn {
+  margin-top: 20px;
+}
+
+.loan-requirements {
+  padding: 100px 0;
+}
+.loan-requirements .loan-requirements-accordion {
+  margin-top: 40px;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item {
+  border: 0;
+  margin-bottom: 20px;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-button {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #e6e6e6;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-button:not(.collapsed) {
+  background: #ffffff;
+  color: #000000;
+  border-color: #52C234;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-button:not(.collapsed):after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-button {
+  font-size: 20px;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-button img {
+  height: 18px;
+  margin-right: 8px;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-body {
+  padding: 10px 0 0;
+  line-height: 27px;
+}
+.loan-requirements .loan-requirements-accordion .accordion-item .accordion-body a {
+  color: #52C234;
+}
+
+.personal-loan-apply {
+  padding: 100px 0;
+}
+.personal-loan-apply p {
+  margin-top: 30px;
+}
+.personal-loan-apply .personal-loan-img {
+  width: 85%;
+  display: block;
+  margin-left: auto;
+  box-shadow: -30px -30px 0px rgba(33, 54, 127, 0.1);
+  border-radius: 8px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.personal-loan-apply .personal-loan-img img {
+  border-radius: 50%;
+}
+
+.loan-online {
+  padding: 100px 0;
+  border-top-left-radius: 170px;
+  border-bottom-right-radius: 170px;
+  background: #21367F;
+}
+.loan-online p {
+  opacity: 0.5;
+  margin: 20px 0 30px;
+}
+
+.personal-loan-approved {
+  padding: 100px 0;
+}
+.personal-loan-approved h5.sub, .personal-loan-approved .sub.h5 {
+  color: #000000;
+  margin: 20px 0 0;
+  font-size: 16px;
+}
+.personal-loan-approved .approved-points .point-box {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 14px;
+}
+.personal-loan-approved .approved-points .point-box span {
+  font-weight: 500;
+  color: #000000;
 }

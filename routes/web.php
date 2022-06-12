@@ -21,6 +21,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about-page');
 
+Route::get('/how-title-loan-works', function () {
+    return view('how-title-loan-works');
+})->name('how-title-loan-works');
+
+Route::get('/how-personal-loan-works', function () {
+    return view('how-personal-loan-works');
+})->name('how-personal-loan-works');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

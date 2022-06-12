@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="section-title">
-                    Verified testimonials
+                    Verified Testimonials
                 </h1>
             </div>
         </div>

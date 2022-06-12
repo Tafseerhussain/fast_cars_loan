@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\how-title-loan-works;
 
 use Illuminate\View\Component;
 
-class EasySteps extends Component
+class loan-or-pawn extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class EasySteps extends Component
      */
     public function render()
     {
-        return view('components.easy-steps');
+        return view('components.how-title-loan-works.loan-or-pawn');
     }
 }

@@ -2,17 +2,19 @@
 
 @section('content')
 
-    <x-home-hero/>
-    <x-easy-steps/>
-    <x-fastcars-products/>
-    <x-why-get-funded/>
-    <x-watch-video/>
-    <x-easy-cash-advantage/>
-    <x-blog-posts/>
-    <x-fast-cars-portal/>
-    <x-testimonials/>
-    <x-newsletter/>
-    <x-latest-blogs/>
+    <div class="home-page">
+        <x-home-hero/>
+        <x-common.easy-steps/>
+        <x-fastcars-products/>
+        <x-why-get-funded/>
+        <x-watch-video/>
+        <x-easy-cash-advantage/>
+        <x-blog-posts/>
+        <x-fast-cars-portal/>
+        <x-testimonials/>
+        <x-newsletter/>
+        <x-latest-blogs/>
+    </div>
 
     {{-- @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
