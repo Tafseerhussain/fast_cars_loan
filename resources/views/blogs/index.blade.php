@@ -22,6 +22,8 @@
 			</div>
 		</div>
 
+		@livewire('blogs.all-blogs')
+
 	</div>
 
 @endsection
