@@ -945,7 +945,7 @@ footer {
 }
 
 // TITLE LOAN PAGE
-.title-loan-page {
+.title-loan-work-page {
 	.easy-steps {
 		padding-bottom: 170px;
 	}
@@ -1288,3 +1288,20 @@ footer {
 	}
 }
 
+
+// BLOGS HEADER
+.blogs-header {
+	padding: 50px 0;
+	.blog-header {
+		background: linear-gradient(90deg, rgba($white-color, 0.6), rgba($white-color, 0.3)), url('/img/blog/all-blog.jpg') no-repeat;
+		background-size: cover;
+		background-position: center;
+		border-radius: 8px;
+		box-shadow: $theme-shadow;
+		padding: 100px 70px 200px;
+		p {
+			color: $black-color;
+			font-weight: 500;
+		}
+	}
+}

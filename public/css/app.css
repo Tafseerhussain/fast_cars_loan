@@ -12197,7 +12197,7 @@ footer .copyright {
   margin: 30px 0 20px;
 }
 
-.title-loan-page .easy-steps {
+.title-loan-work-page .easy-steps {
   padding-bottom: 170px;
 }
 
@@ -12511,4 +12511,20 @@ footer .copyright {
   border-color: #000000;
   color: #000000 !important;
   margin-left: 20px;
+}
+
+.blogs-header {
+  padding: 50px 0;
+}
+.blogs-header .blog-header {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)), url("/img/blog/all-blog.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 100px 70px 200px;
+}
+.blogs-header .blog-header p {
+  color: #000000;
+  font-weight: 500;
 }

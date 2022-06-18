@@ -37,6 +37,10 @@ Route::get('/advantages', function () {
     return view('advantages');
 })->name('advantages');
 
+Route::get('/blogs', function () {
+    return view('blogs.index');
+})->name('blogs');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

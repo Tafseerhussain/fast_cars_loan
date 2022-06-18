@@ -160,7 +160,7 @@
                                 <div class="col-md">
                                     <div class="footer-links">
                                         <a href="#">Apply Now!</a>
-                                        <a href="#">Blog</a>
+                                        <a href="{{ route('blogs') }}">Blog</a>
                                         <a href="#">Careers</a>
                                         <a href="#">Contact Customer Service</a>
                                     </div>

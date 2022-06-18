@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="title-loan-page">
+	<div class="title-loan-work-page">
 		<x-how-title-loan-works.hero/>
 		<x-common.easy-steps/>
 		<x-how-title-loan-works.loan-or-pawn/>
