@@ -11325,6 +11325,7 @@ p {
   color: #ffffff !important;
   padding: 12px 50px !important;
   border: 0;
+  border: 1px solid #52C234;
 }
 
 .btn:hover {
@@ -12324,4 +12325,190 @@ footer .copyright {
 .personal-loan-approved .approved-points .point-box span {
   font-weight: 500;
   color: #000000;
+}
+
+.title-loan-hero {
+  padding: 100px 0;
+  background: #21367F;
+}
+.title-loan-hero p {
+  opacity: 0.5;
+}
+.title-loan-hero .title-loan-img {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.call-box .customer-call-box {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  background: #ffffff;
+}
+.call-box .customer-call-box p {
+  font-weight: 300;
+  font-size: 20px;
+}
+.call-box .customer-call-box .give-us-call {
+  position: relative;
+  top: 8px;
+}
+.call-box .customer-call-box .give-us-call h4, .call-box .customer-call-box .give-us-call .h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #52C234;
+  margin-bottom: 6px;
+}
+.call-box .customer-call-box .give-us-call p {
+  font-size: 16px;
+}
+.call-box .customer-call-box .give-us-call img {
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title-loan-page .call-box {
+  margin-top: -60px;
+}
+
+.how-to-take-title-loan {
+  padding: 100px 0;
+}
+.how-to-take-title-loan .points {
+  margin-top: 30px;
+}
+.how-to-take-title-loan .points .point-box h4, .how-to-take-title-loan .points .point-box .h4 {
+  color: #000000;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+.how-to-take-title-loan .points p {
+  margin: 30px 0;
+}
+
+.title-loan-benefits {
+  margin-bottom: 50px;
+  padding: 100px 0;
+  background: rgba(33, 54, 127, 0.03);
+}
+.title-loan-benefits .section-title {
+  margin-bottom: 20px;
+}
+.title-loan-benefits .benefits .benefit {
+  margin: 10px 0;
+}
+.title-loan-benefits .benefits .benefit p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+
+.advantages-hero {
+  padding: 100px 0;
+}
+.advantages-hero .left {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.advantages-hero .left p {
+  margin: 20px 0 30px;
+}
+.advantages-hero .left p a {
+  white-space: nowrap;
+  color: #52C234;
+}
+.advantages-hero .right {
+  display: block;
+  width: 85%;
+  margin-left: auto;
+  position: relative;
+}
+.advantages-hero .right .dots-left {
+  position: absolute;
+  left: -8%;
+  top: -10%;
+}
+.advantages-hero .right .dots-right {
+  position: absolute;
+  bottom: -10%;
+  right: -8%;
+}
+.advantages-hero .right .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(33, 54, 127, 0.3);
+  border-radius: 8px;
+}
+.advantages-hero .right img.position-relative {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-boxes .advantage-box {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  padding: 50px 20px;
+}
+.advantage-boxes .advantage-box h4, .advantage-boxes .advantage-box .h4 {
+  color: #000000;
+  padding: 20px 0;
+}
+.advantage-boxes .advantage-box.green {
+  background: rgba(6, 168, 139, 0.1);
+}
+.advantage-boxes .advantage-box.blue {
+  background: rgba(33, 54, 127, 0.1);
+}
+.advantage-boxes .advantage-box.orange {
+  background: #FFFAF5;
+}
+.advantage-boxes .advantage-box.red {
+  background: #FFF3F8;
+}
+
+.get-your-loan {
+  padding: 100px 0;
+}
+.get-your-loan .left {
+  position: relative;
+  width: 90%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.get-your-loan .left img.position-relative {
+  border-radius: 8px;
+}
+.get-your-loan .left .top-right {
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 70%;
+}
+.get-your-loan .left .bottom-left {
+  position: absolute;
+  left: -30px;
+  bottom: -30px;
+  width: 70%;
+}
+.get-your-loan .right {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.get-your-loan .right .btn-outline {
+  border-color: #000000;
+  color: #000000 !important;
+  margin-left: 20px;
 }

@@ -14,7 +14,7 @@ p {
 	line-height: 30px;
 }
 .dropdown-menu {
-	border-radius: 8px;
+	border-radius: $theme-border-radius;
 	border: 0;
 	box-shadow: $theme-shadow;
 }
@@ -39,11 +39,12 @@ p {
 }
 .btn {
 	background-color: $green-color;
-	border-radius: 8px;
+	border-radius: $theme-border-radius;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 	color: $white-color !important;
 	padding: 12px 50px !important;
 	border: 0;
+	border: 1px solid $green-color;
 }
 .btn:hover {
 	background: $green-color;
@@ -219,7 +220,7 @@ footer {
 	background: $white-color;
 	padding: 24px;
 	box-shadow: $theme-shadow;
-	border-radius: 8px;
+	border-radius: $theme-border-radius;
 	position: relative;
 	color: $gray-color;
 	.form-head {
@@ -227,7 +228,7 @@ footer {
 		font-size: 20px;
 		background: $white-color;
 		box-shadow: $theme-shadow;
-		border-radius: 8px;
+		border-radius: $theme-border-radius;
 		font-weight: 500;
 		padding: 12px 20px;
 		transform: translateX(-40%);
@@ -238,7 +239,7 @@ footer {
 	}
 	.form-control {
 		padding: 10px;
-		border-radius: 8px; 
+		border-radius: $theme-border-radius; 
 	}
 	.form-check {
 		margin-top: 20px;
@@ -272,7 +273,7 @@ footer {
 	.easy-step-row {
 		margin-top: 90px;
 		.easy-step {
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			box-shadow: $theme-shadow;
 			padding: 20px;
 			background-color: #F0F3FF;
@@ -340,7 +341,7 @@ footer {
 	}
 	.product-right {
 		img {
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			box-shadow: $theme-shadow;
 		}
 	}
@@ -361,7 +362,7 @@ footer {
 		margin-top: 50px;
 		.funded-card {
 			padding: 30px 24px;
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			text-align: center;
 			background: rgba(255,255,255,0.9);
 			h2 {
@@ -442,7 +443,7 @@ footer {
 			margin-bottom: 40px;
 		}
 		.advantage-box {
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			box-shadow: $theme-shadow;
 			padding: 50px 60px;
 			background: $blue-color;
@@ -468,7 +469,7 @@ footer {
 		margin-top: 50px;
 		.blog-post {
 			box-shadow: $theme-shadow;
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			overflow: hidden;
 			.blog-img {
 				width: 100%;
@@ -518,7 +519,7 @@ footer {
 	.portal-benefits {
 		margin-top: 50px;
 		.benefit-box {
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			padding: 30px 20px;
 			text-align: center;
 			transition: 0.2s;
@@ -872,7 +873,7 @@ footer {
 		.accordion-item {
 			margin-bottom: 20px;
 			box-shadow: $theme-shadow;
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			border: 0;
 			overflow: hidden;
 			.accordion-header {
@@ -924,7 +925,7 @@ footer {
 	}
 	.loan-video {
 		max-width: 100%;
-		border-radius: 8px;
+		border-radius: $theme-border-radius;
 		overflow: hidden;
 		box-shadow: $theme-shadow;
 		height: 100%;
@@ -935,7 +936,7 @@ footer {
 		padding-bottom: 56.25%;
 		iframe {
 			position: absolute;
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 		}
 	}
 	p {
@@ -973,9 +974,9 @@ footer {
 		display: block;
 		margin-left: auto;
 		box-shadow: -30px -30px 0px rgba($blue-color,0.1);
-		border-radius: 8px;
+		border-radius: $theme-border-radius;
 		img {
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 		}
 	}
 }
@@ -1001,7 +1002,7 @@ footer {
 			border: 0;
 			margin-bottom: 20px;
 			.accordion-button {
-				border-radius: 8px;
+				border-radius: $theme-border-radius;
 				overflow: hidden;
 				border: 2px solid #e6e6e6;
 			}
@@ -1042,7 +1043,7 @@ footer {
 		display: block;
 		margin-left: auto;
 		box-shadow: -30px -30px 0px rgba($blue-color,0.1);
-		border-radius: 8px;
+		border-radius: $theme-border-radius;
 		border-radius: 50%;
 		overflow: hidden;
 		img {
@@ -1073,7 +1074,7 @@ footer {
 	}
 	.approved-points {
 		.point-box {
-			border-radius: 8px;
+			border-radius: $theme-border-radius;
 			box-shadow: $theme-shadow;
 			padding: 10px 14px;
 			span {
@@ -1083,3 +1084,207 @@ footer {
 		}
 	}
 }
+
+// TITLE LOAN HERO
+.title-loan-hero {
+	padding: 100px 0;
+	background: $blue-color;
+	p {
+		opacity: 0.5;
+	}
+	.title-loan-img {
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: $theme-shadow;
+	}
+}
+
+// CALL BOX
+.call-box {
+	.customer-call-box {
+		box-shadow: $theme-shadow;
+		border-radius: $theme-border-radius;
+		padding: 20px;
+		background: $white-color;
+		p {
+			font-weight: 300;
+			font-size: 20px;
+		}
+		.give-us-call {
+			position: relative;
+			top: 8px;
+			h4 {
+				font-size: 20px;
+				font-weight: 600;
+				color: $green-color;
+				margin-bottom: 6px;
+			}
+			p {
+				font-size: 16px;
+			}
+			img {
+				margin-right: 10px;
+				border-radius: 50%;
+				box-shadow: $theme-shadow;
+			}
+		}
+	}
+}
+
+.title-loan-page {
+	.call-box {
+		margin-top: -60px;
+	}
+}
+
+// HOW TO TAKE TITLE LOAN
+.how-to-take-title-loan {
+	padding: 100px 0;
+	.points {
+		margin-top: 30px;
+		.point-box {
+			h4 {
+				color: $black-color;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-left: 10px;
+			}
+		}
+		p {
+			margin: 30px 0;
+		}
+	}
+}
+
+// TITLE LOAN BENEFITS
+.title-loan-benefits {
+	margin-bottom: 50px;
+	padding: 100px 0;
+	background: rgba($blue-color, 0.03);
+	.section-title {
+		margin-bottom: 20px;
+	}
+	.benefits {
+		.benefit {
+			margin: 10px 0;
+			p {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+// ADVANTAGES
+.advantages-hero	{
+	padding: 100px 0;
+	.left {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		p {
+			margin: 20px 0 30px;
+			a {
+				white-space: nowrap;
+				color: $green-color;
+			}
+		}
+	}
+	.right {
+		display: block;
+		width: 85%;
+		margin-left: auto;
+		position: relative;
+		.dots-left {
+			position: absolute;
+			left: -8%;
+			top: -10%;
+		}
+		.dots-right {
+			position: absolute;
+			bottom: -10%;
+			right: -8%;
+		}
+		.overlay {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			background: rgba($blue-color, 0.3);
+			border-radius: 8px;
+		}
+		img.position-relative {
+			border-radius: 8px;
+			box-shadow: $theme-shadow;
+		}
+	}
+}
+
+// ADVANTAGE BOXES
+.advantage-boxes {
+	.advantage-box {
+		border-radius: 8px;
+		box-shadow: $theme-shadow;
+		margin: 40px 0;
+		padding: 50px 20px;
+		h4 {
+			color: $black-color;
+			padding: 20px 0;
+		}
+	}
+	.advantage-box.green {
+		background: rgba(#06A88B, 0.1);
+	}
+	.advantage-box.blue {
+		background: rgba($blue-color, 0.1);
+	}
+	.advantage-box.orange {
+		background: #FFFAF5;
+	}
+	.advantage-box.red {
+		background: #FFF3F8;
+	}
+}
+
+// GET YOUR LOAN
+.get-your-loan {
+	padding: 100px 0;
+	.left {
+		position: relative;
+		width: 90%;
+		display: block;
+		border-radius: 8px;
+		box-shadow: $theme-shadow;
+		img.position-relative {
+			border-radius: 8px;
+		}
+		.top-right {
+			position: absolute;
+			right: -30px;
+			top: -30px;
+			width: 70%;
+		}
+		.bottom-left {
+			position: absolute;
+			left: -30px;
+			bottom: -30px;
+			width: 70%;
+		}
+	}
+	.right {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		.btn-outline {
+			border-color: $black-color;
+			color: $black-color !important;
+			margin-left: 20px;
+		}
+	}
+}
+
