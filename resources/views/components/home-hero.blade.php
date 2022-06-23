@@ -24,7 +24,7 @@
                         <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         </p>
-                        <a href="#!" class="btn btn-outline">
+                        <a href="{{ route('apply-form') }}" class="btn btn-outline">
                             Apply for Loan
                         </a>
                     </div>

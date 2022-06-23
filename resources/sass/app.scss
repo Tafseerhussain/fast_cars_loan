@@ -13,6 +13,21 @@ body {
 p {
 	line-height: 30px;
 }
+form {
+	input:focus,
+	select:focus,
+	textarea:focus {
+		border-color: $green-color !important;
+		box-shadow: none !important;
+	}
+	input,textarea,select {
+		border-radius: 8px !important;
+	}
+	.input_error {
+		font-size: 12px;
+		color: red;
+	}
+}
 .dropdown-menu {
 	border-radius: $theme-border-radius;
 	border: 0;
@@ -68,6 +83,21 @@ input[type=number]:focus,
 .btn:focus,
 .btn:active {
   box-shadow: none !important;
+}
+
+.loading-state {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($white-color, 0.7);
+	.spinner-box {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 
 // NAVBAR
@@ -1391,5 +1421,164 @@ footer {
 				color: $green-color;
 			}
 		}
+	}
+}
+
+
+// APPLY FORM HEADER
+.apply-form-header {
+	padding: 100px 0 200px;
+	background: linear-gradient(45deg, rgba($blue-color, 0.8), rgba($blue-color, 0.8)),url('/img/apply-form/background.jpg') no-repeat;
+}
+
+// APPLY FORM
+.apply-for-loan-form {
+	padding: 50px;
+	border-radius: $theme-border-radius;
+	box-shadow: $theme-shadow;
+	background-color: $white-color;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	.heading {
+		color: $blue-color;
+		font-size: 32px;
+		text-transform: uppercase;
+	}
+}
+
+// APPPLY FOR LOAN PAGE
+.apply-form-page {
+	.apply-form {
+		margin-top: -150px;
+		padding-bottom: 100px;
+		h5 {
+			color: $black-color;
+			font-weight: 600;
+			margin-top: 30px;
+		}
+		.form-group {
+			margin: 10px 0;
+		}
+		input, select {
+			padding: 14px 20px;
+		}
+	}
+}
+
+// APPLY FORM ELIGIBLE
+.apply-form {
+	.eligible {
+		.header {
+			img.congrat-badge {
+				height: 120px;
+			}
+			h1.section-title {
+				margin: 10px 0;
+			}
+			p {
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			.upto-value {
+				color: $green-color;
+				font-weight: 600;
+				font-size: 24px;
+			}	
+		}
+		.line-border {
+			display: block;
+			width: 2px;
+			background: $light-gray;
+			margin: 0 auto;
+			height: 100%;
+		}
+		.body {
+			margin-top: 40px;
+			span {
+				font-weight: 600;
+				color: $black-color;
+			}
+		}
+	}
+}
+
+
+// FAQ PAGE
+.faq-header {
+	padding: 100px 0;
+	background: linear-gradient(45deg, rgba($blue-color, 0.8), rgba($blue-color, 0.8)), url("/img/faq/header-bg.jpg") no-repeat;
+	background-size: cover;
+	background-position: right;
+}
+
+// FAQ BODY
+.faq-body {
+	padding: 100px 0;
+	.accordion-item {
+		margin-bottom: 20px;
+		border-radius: $theme-border-radius;
+		border: 1px solid $light-gray;
+		overflow: hidden;
+		.accordion-header {
+			button {
+
+			background: #F8F8F8;
+				font-size: 20px;
+				font-weight: 500;
+				padding: 20px;
+			}
+		}
+		.accordion-button:not(.collapsed) {
+			color: $black-color;
+		}
+		.accordion-button:after {
+			background: none;
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			text-align: center;
+		}
+		.accordion-button:not(.collapsed)::after {
+			content: "+";
+			box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+		}
+		.accordion-button.collapsed::after {
+			content: "-";
+			box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+		}
+	}
+}
+
+// CONTACT HEADER
+.contact-header {
+	padding-top: 400px;
+	background: linear-gradient(45deg, rgba($blue-color, 0.8), rgba($blue-color, 0.8)), url('/img/contact/bg.jpg') no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+// CONTACT FORM
+.contact-form-box {
+	box-shadow: $theme-shadow;
+	border-radius: $theme-border-radius;
+	padding: 50px;
+	background: $white-color;
+	.left {
+		.contact-meta {
+			margin-top: 50px;
+			.meta-text {
+				margin-left: 10px;
+				h5 {
+					color: $black-color;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+.contact-form {
+	.contact-form-box {
+		margin-top: -150px;
 	}
 }

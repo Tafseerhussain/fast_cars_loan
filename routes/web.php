@@ -41,6 +41,18 @@ Route::get('/blogs', function () {
     return view('blogs.index');
 })->name('blogs');
 
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/apply-for-loan', function () {
+    return view('apply-form');
+})->name('apply-form');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

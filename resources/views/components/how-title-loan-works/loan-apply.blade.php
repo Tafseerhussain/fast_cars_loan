@@ -5,7 +5,7 @@
                 <h1 class="section-title text-white">
                     Less than 30 minutes to get your loan.
                 </h1>
-                <a href="#" class="btn btn-outline">
+                <a href="{{ route('apply-form') }}" class="btn btn-outline">
                     Apply for Loan
                 </a>
             </div>

@@ -51,7 +51,7 @@
                     <p>
                         Getting a car title loan could not be easier. If your car is paid off and you have the car title and an ID, you are on your way. Just stop in and get the process started. No credit check! No insurance needed! In most cases, out of state plates or temporary tags are not a problem. We also offer loans on Motorcycles, Boats and RV*
                     </p>
-                    <a href="#" class="btn">
+                    <a href="{{ route('apply-form') }}" class="btn">
                         Apply for Loan
                     </a>
                 </div>

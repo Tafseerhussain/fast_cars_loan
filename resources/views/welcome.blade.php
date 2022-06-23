@@ -9,7 +9,7 @@
         <x-why-get-funded/>
         <x-watch-video/>
         <x-easy-cash-advantage/>
-        <x-blog-posts/>
+        {{-- <x-blog-posts/> --}}
         <x-fast-cars-portal/>
         <x-testimonials/>
         <x-newsletter/>

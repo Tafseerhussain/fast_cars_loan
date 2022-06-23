@@ -15,7 +15,7 @@
     <p>
         Getting car title loans or motorcycle title loans with TitleMax® is easy! The entire process can be completed in as little as 30 minutes.
     </p>
-    <a href="#" class="btn">
+    <a href="{{ route('apply-form') }}" class="btn">
         Apply for Loan
     </a>
 </div>

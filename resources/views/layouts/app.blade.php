@@ -80,10 +80,13 @@
                                 <a class="nav-link" href="{{ route('advantages') }}">Advantages</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">FAQ</a>
+                                <a class="nav-link" href="{{ route('blogs') }}">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
                             </li>
                             <li class="nav-item account-btn">
-                                <a class="nav-link btn" href="#">
+                                <a class="nav-link btn" href="{{ route('login') }}">
                                     <i class="fa-regular fa-circle-user"></i>
                                     <span>Account</span>
                                 </a>
@@ -151,16 +154,17 @@
                             <div class="row">
                                 <div class="col-md">
                                     <div class="footer-links">
-                                        <a href="#">Home</a>
-                                        <a href="#">About Us</a>
-                                        <a href="#">How It Works</a>
+                                        <a href="/">Home</a>
+                                        <a href="{{ route('about-page') }}">About Us</a>
+                                        <a href="{{ route('how-title-loan-works') }}">How Title Loan Work</a>
+                                        <a href="{{ route('how-personal-loan-works') }}">How Personal Loan Work</a>
                                         <a href="#">Locations</a>
-                                        <a href="#">FAQs</a>
+                                        <a href="{{ route('faq') }}">FAQs</a>
                                     </div>
                                 </div>
                                 <div class="col-md">
                                     <div class="footer-links">
-                                        <a href="#">Apply Now!</a>
+                                        <a href="{{ route('apply-form') }}">Apply Now</a>
                                         <a href="{{ route('blogs') }}">Blog</a>
                                         <a href="#">Careers</a>
                                         <a href="#">Contact Customer Service</a>
