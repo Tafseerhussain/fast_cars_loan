@@ -1578,7 +1578,26 @@ footer {
 }
 
 .contact-form {
+	padding-bottom: 100px;
 	.contact-form-box {
 		margin-top: -150px;
 	}
+	.contact-form-area {
+		margin-top: 40px;
+		.form-control {
+			padding: 12px 10px;
+			margin-top: 4px;
+		}
+	}
+}
+
+// PRIVACY HEADER
+.policy-header {
+	background: $blue-color;
+	padding: 100px 0;
+}
+
+// PRIVACY POLICY DETAIL
+.privacy-policy-detail {
+	padding: 100px 0;
 }

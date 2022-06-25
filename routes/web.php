@@ -53,6 +53,10 @@ Route::get('/apply-for-loan', function () {
     return view('apply-form');
 })->name('apply-form');
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
