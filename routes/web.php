@@ -63,6 +63,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware' => ['admin']], function () {
     Route::get('admin-view', function() {
-        echo "admin";
+        return view('admin.index');
     })->name('admin.view');
 });
