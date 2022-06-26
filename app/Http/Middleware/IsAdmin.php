@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Auth;
 
 class IsAdmin
 {
@@ -19,6 +20,6 @@ class IsAdmin
         if (Auth::user() &&  Auth::user()->is_admin == 1) {
              return $next($request);
         }
-        return redirect('home')->with('error','You have not admin access');
+        return abort(404);
     }
 }
