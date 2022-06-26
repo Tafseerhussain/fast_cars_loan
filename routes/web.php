@@ -60,3 +60,9 @@ Route::get('/privacy-policy', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('admin-view', function() {
+        echo "admin";
+    })->name('admin.view');
+});
