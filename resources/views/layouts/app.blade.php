@@ -18,6 +18,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('component-css')
     @livewireStyles
+    @yield('custom-css')
 </head>
 <body>
     <div id="app">
@@ -39,19 +40,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
-                            {{-- @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
-                            <li class="nav-item">
+                        <li class="nav-item">
                                 <a class="nav-link" href="{{ route('about-page') }}">About</a>
                             </li>
                             <li class="nav-item dropdown">
@@ -85,6 +74,20 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
                             </li>
+                            
+                        @guest
+                            {{-- @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif --}}
+                            
                             <li class="nav-item account-btn">
                                 <a class="nav-link btn" href="{{ route('login') }}">
                                     <i class="fa-regular fa-circle-user"></i>
@@ -202,7 +205,7 @@
         </footer>
     </div>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    @stack('component-js')
     @livewireScripts
+    @yield('custom-js')
 </body>
 </html>

@@ -4,7 +4,7 @@ namespace App\View\Components\Common;
 
 use Illuminate\View\Component;
 
-class hero-form extends Component
+class HowLoanWorksVideo extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class hero-form extends Component
      */
     public function render()
     {
-        return view('components.common.hero-form');
+        return view('components.common.how-loan-works-video');
     }
 }

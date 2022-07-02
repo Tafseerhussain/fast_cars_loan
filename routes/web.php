@@ -57,12 +57,18 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 })->name('privacy-policy');
 
+Route::get('/application-form', function () {
+    return view('application-form');
+})->name('application-form');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// =====================================================
+// ADMIN ROUTES
+// =====================================================
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('admin-view', function() {
-        return view('admin.index');
-    })->name('admin.view');
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+    Route::get('/admin/customize/home', [App\Http\Controllers\AdminController::class, 'homepageCustomization'])->name('admin.home.customize');
 });

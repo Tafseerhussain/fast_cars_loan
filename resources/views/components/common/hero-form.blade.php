@@ -1,7 +1,7 @@
 <div>
     <form action="" class="hero-form">
         <h1 class="form-head">
-            Have your cash in hand with a few clicks!
+            {{ $message }}
         </h1>
         <div class="row">
             <div class="col-md-6">

@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Home;
 
 class HomeHero extends Component
 {
@@ -23,6 +24,7 @@ class HomeHero extends Component
      */
     public function render()
     {
-        return view('components.home-hero');
+        $hero = Home::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'form_head', 'hero_background']);
+        return view('components.home-hero', compact('hero'));
     }
 }

@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    @livewireStyles
 
 </head>
 
@@ -31,7 +32,7 @@
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <img src="{{ asset('img/logo.png') }}" alt="" class="non-toggle-logo">
                 <img src="{{ asset('img/fav.png') }}" alt="" class="toggle-logo">
             </a>
@@ -40,8 +41,9 @@
             <div class="sidebar-divider my-2"></div>
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+
+            <li class="nav-item {{ Request::route()->getName() == 'admin' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin') }}">
                     <img src="{{ asset('img/admin/icons/dashboard.svg') }}" alt="dashboard">
                     <span>Dashboard</span>
                 </a>
@@ -80,8 +82,17 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                <i class="fas fa-fw fa-cog"></i> Customize Interface
             </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item {{ Request::route()->getName() == 'admin.home.customize' ? 'active' : '' }}">
+                <a class="nav-link {{ Request::route()->getName() == 'admin.home.customize' ? 'active' : '' }}" 
+                    href="{{ route('admin.home.customize') }}">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -372,7 +383,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Fast Cars Loan {{ now()->year }}</span>
                     </div>
                 </div>
             </footer>
@@ -419,6 +430,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
+    @livewireScripts
     @yield('custom-js')
 
 </body>

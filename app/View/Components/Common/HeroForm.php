@@ -4,16 +4,13 @@ namespace App\View\Components\Common;
 
 use Illuminate\View\Component;
 
-class how-loan-works-video extends Component
+class HeroForm extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $message;
+
+    public function __construct($message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -23,6 +20,6 @@ class how-loan-works-video extends Component
      */
     public function render()
     {
-        return view('components.common.how-loan-works-video');
+        return view('components.common.hero-form');
     }
 }

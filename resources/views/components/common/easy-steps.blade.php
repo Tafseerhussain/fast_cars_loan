@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h1 class="section-title text-center">
-                    3 Easy Steps to Apply for Fast Title Loans Online or Near You!
+                    {{ $message->steps_heading }}
                 </h1>
             </div>
         </div>
@@ -12,14 +12,14 @@
                 <div class="easy-step">
                     <div class="easy-step-header d-flex">
                         <h1>
-                            Click or Call
+                            {{ $message->step_one_heading }}
                         </h1>
                         <div class="easy-step-img">
-                            <img src="{{ asset('icons/call.svg') }}" alt="">
+                            <img src="{{ asset($message->step_one_image) }}" alt="call">
                         </div>
                     </div>
                     <div class="easy-step-text">
-                        The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less!
+                        {{ $message->step_one_text }}
                     </div>
                 </div>
             </div>
@@ -29,14 +29,14 @@
                     <img src="{{ asset('img/round-arrow-bottom.png') }}" alt="round arrow" class="round-arrow-bottom">
                     <div class="easy-step-header d-flex">
                         <h1>
-                            Submit Info
+                            {{ $message->step_two_heading }}
                         </h1>
                         <div class="easy-step-img">
-                            <img src="{{ asset('icons/customer-info.svg') }}" alt="">
+                            <img src="{{ asset($message->step_two_image) }}" alt="info">
                         </div>
                     </div>
                     <div class="easy-step-text">
-                        The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less!
+                        {{ $message->step_two_text }}
                     </div>
                 </div>
             </div>
@@ -44,14 +44,14 @@
                 <div class="easy-step">
                     <div class="easy-step-header d-flex">
                         <h1>
-                            Get your Money
+                            {{ $message->step_three_heading }}
                         </h1>
                         <div class="easy-step-img">
-                            <img src="{{ asset('icons/get-money.svg') }}" alt="">
+                            <img src="{{ asset($message->step_three_image) }}" alt="money">
                         </div>
                     </div>
                     <div class="easy-step-text">
-                        The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less!
+                        {{ $message->step_three_text }}
                     </div>
                 </div>
             </div>

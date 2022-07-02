@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Freehand&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -11458,7 +11459,7 @@ footer .copyright {
 .home-hero {
   background: url("/img/home/hero-bg.jpg") no-repeat;
   color: #ffffff;
-  background-size: cover;
+  background-size: cover !important;
   background-position: center;
   min-height: 90vh;
   padding: 50px 0;
@@ -12791,4 +12792,355 @@ footer .copyright {
 
 .privacy-policy-detail {
   padding: 100px 0;
+}
+
+.application-form-page .application-form-header {
+  background-image: url("/img/apply-form/apply-form-header-bg-overlay.png"), url("/img/apply-form/apply-form-header-bg.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, left top;
+  background-size: cover, cover;
+  padding: 100px;
+  position: relative;
+}
+.application-form-page .application-form-header .apply-for-loan-form {
+  padding: 120px 0;
+}
+.application-form-page .application-form-header .apply-for-loan-form .upto-value {
+  color: #52C234;
+  font-size: 32px;
+  font-weight: 500;
+  border: 2px solid #52C234;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: inline-block;
+}
+.application-form-page .application-form-header .move-down {
+  position: absolute;
+  bottom: -53px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.application-form-fillout {
+  padding: 100px 0;
+}
+.application-form-fillout h3, .application-form-fillout .h3 {
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.application-form-fillout #application-form-scroll {
+  padding-top: 10px;
+}
+.application-form-fillout #application-form-scroll .list-group-item {
+  color: #838383;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0 !important;
+  padding: 16px 20px;
+}
+.application-form-fillout #application-form-scroll .list-group-item img {
+  filter: invert(59%) sepia(0%) saturate(578%) hue-rotate(138deg) brightness(88%) contrast(80%);
+}
+.application-form-fillout #application-form-scroll .list-group-item.active {
+  color: #52C234;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #52C234;
+  border-top: 0;
+  border-bottom: 0;
+}
+.application-form-fillout #application-form-scroll .list-group-item.active img {
+  filter: invert(55%) sepia(48%) saturate(612%) hue-rotate(61deg) brightness(103%) contrast(101%);
+}
+.application-form-fillout .application-form-scroll-body {
+  padding: 0 20px 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+.application-form-fillout .application-form-scroll-body form {
+  padding-top: 20px;
+}
+.application-form-fillout .application-form-scroll-body .card {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 0;
+  overflow: hidden;
+  padding: 16px 10px;
+}
+.application-form-fillout .application-form-scroll-body .card .card-header {
+  background: #ffffff;
+  border: 0;
+}
+.application-form-fillout .application-form-scroll-body .card .card-header img {
+  height: 40px;
+  filter: invert(55%) sepia(48%) saturate(612%) hue-rotate(61deg) brightness(103%) contrast(101%);
+}
+.application-form-fillout .application-form-scroll-body .card .card-header span {
+  font-size: 20px;
+  color: #52C234;
+  position: relative;
+  top: 3px;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body h6, .application-form-fillout .application-form-scroll-body .card .card-body .h6 {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body label {
+  margin-bottom: 4px;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body .form-control {
+  background-color: #F6F6F6;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body .form-control:focus,
+.application-form-fillout .application-form-scroll-body .card .card-body .form-control:active {
+  background-color: #ffffff;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body ::-moz-placeholder {
+  opacity: 0.5;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body :-ms-input-placeholder {
+  opacity: 0.5;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body ::placeholder {
+  opacity: 0.5;
+}
+.application-form-fillout .application-form-scroll-body .card .card-body .total-income-box {
+  color: #ffffff;
+  background: #21367F;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+.application-form-fillout .application-form-scroll-body .consent-box-card .consent-box {
+  background: #f6f6f6;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  max-height: 300px;
+  overflow-y: scroll;
+  font-size: 12px;
+}
+.application-form-fillout .application-form-scroll-body .consent-box-card .form-check-input {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px !important;
+}
+.application-form-fillout .application-form-scroll-body .consent-box-card label {
+  padding-left: 10px;
+  position: relative;
+  top: 3px;
+}
+.application-form-fillout .application-form-scroll-body .income-box .total-income-box {
+  margin-bottom: 20px;
+  position: relative;
+  left: 10px;
+  top: -9px;
+}
+.application-form-fillout .application-form-scroll-body .acknowledge-box .alert-danger {
+  font-size: 12px;
+  line-height: 24px;
+  border-color: #FF1572;
+  background: rgba(255, 21, 114, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+.application-form-fillout .application-form-scroll-body .acknowledge-box #signature {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  background: #f6f6f6;
+}
+.application-form-fillout .application-form-scroll-body .acknowledge-box .signature-input {
+  font-family: "Freehand", cursive !important;
+  font-size: 18px;
+}
+.application-form-fillout .application-form-scroll-body .acknowledge-box .contact-form-download img {
+  height: 50px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .box {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .box-header {
+  color: #444;
+  display: block;
+  position: relative;
+  margin: 10px 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .box-tools {
+  text-align: left;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .box-tools button {
+  border-radius: 8px;
+  border: 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .box-body img {
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  width: 150px;
+  padding: 10px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-wrapper {
+  border: 2px dashed #838383;
+  color: #838383;
+  position: relative;
+  padding: 20px 20px 80px;
+  border-radius: 10px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-wrapper:hover {
+  background: #f9f9f9;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-wrapper .browse {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #52C234;
+  color: #52C234;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: left;
+  font-size: 16px;
+  border-radius: 8px;
+  display: flex;
+  margin-left: 20px;
+  width: 100%;
+  color: #000000;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-desc img {
+  margin-right: 10px;
+  position: relative;
+  top: -10px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-desc small, .application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-desc .small {
+  color: #838383;
+  font-size: 12px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone {
+  position: absolute;
+  outline: none !important;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  opacity: 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone:focus {
+  position: absolute;
+  outline: none !important;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  opacity: 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .personal-dropzone-wrapper.dragover {
+  background: #ecf0f5;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .preview-zone {
+  text-align: center;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .preview-zone .box {
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income {
+  border: 2px dashed #838383;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  background: white;
+  transition: all 0.5s ease-out;
+  position: relative;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .cont,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .cont {
+  color: #000000;
+  transition: all 0.5s ease-out;
+  display: flex;
+  text-align: left;
+  padding: 20px 20px 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .cont p,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .cont p {
+  color: #000000 !important;
+  font-size: 16px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .cont small, .application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .cont .small,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .cont small,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .cont .small {
+  font-size: 12px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .cont img,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .cont img {
+  margin-right: 10px;
+  position: relative;
+  top: -10px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .cont .desc,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .cont .desc {
+  color: #838383;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple .browse,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income .browse {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #52C234;
+  color: #52C234;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple input,
+.application-form-fillout .application-form-scroll-body .application-form-box .drop-multiple-income input {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: red;
+  opacity: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box #list,
+.application-form-fillout .application-form-scroll-body .application-form-box #list-income-files {
+  width: 100%;
+  text-align: left;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box #list .thumb,
+.application-form-fillout .application-form-scroll-body .application-form-box #list-income-files .thumb {
+  height: 100px;
+  border: 1px solid #ebebeb;
+  margin: 10px 5px 0 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .radio-box {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .radio-box input:checked ~ label {
+  color: #000000;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .radio-box .form-check {
+  margin-top: 10px;
 }

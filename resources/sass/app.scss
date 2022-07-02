@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
 
 // Variables
 @import 'variables';
@@ -188,7 +189,7 @@ footer {
 .home-hero {
     background: url('/img/home/hero-bg.jpg') no-repeat;
     color: $white-color;
-    background-size: cover;
+    background-size: cover !important;
     background-position: center;
     min-height: 90vh;
     padding: 50px 0;
@@ -1600,4 +1601,370 @@ footer {
 // PRIVACY POLICY DETAIL
 .privacy-policy-detail {
 	padding: 100px 0;
+}
+
+// APPLICATION FORM PAGE
+.application-form-page {
+	.application-form-header {
+		background-image: url('/img/apply-form/apply-form-header-bg-overlay.png'), url('/img/apply-form/apply-form-header-bg.jpg');
+		background-repeat: no-repeat, no-repeat;
+		background-position: left top, left top;
+		background-size: cover, cover;
+		padding: 100px;
+		position: relative;
+		.apply-for-loan-form {
+			padding: 120px 0;
+			.upto-value {
+				color: $green-color;
+				font-size: 32px;
+				font-weight: 500;
+				border: 2px solid $green-color;
+				border-radius: $theme-border-radius;
+				padding: 10px 20px;
+				display: inline-block;
+			}
+		}
+		.move-down {
+			position: absolute;
+			bottom: -53px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+// APPLICATION FORM FILLOUT
+.application-form-fillout {
+	padding: 100px 0;
+	h3 {
+		color: $black-color;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	#application-form-scroll {
+		padding-top: 10px;
+		.list-group-item {
+			img {
+				filter: invert(59%) sepia(0%) saturate(578%) hue-rotate(138deg) brightness(88%) contrast(80%);
+			}
+			color: $gray-color;
+			border-left: 0;
+			border-right: 0;
+			border-radius: 0 !important;
+			padding: 16px 20px;
+		}
+		.list-group-item.active {
+			img {
+				filter: invert(55%) sepia(48%) saturate(612%) hue-rotate(61deg) brightness(103%) contrast(101%);
+			}
+			color: $green-color;
+			background: #fff;
+			box-shadow: $theme-shadow;
+			border-left: 5px solid $green-color;
+			border-top: 0;
+			border-bottom: 0;
+		}
+	}
+	.application-form-scroll-body {
+		padding: 0 20px 20px;
+		background: #f9f9f9;
+		border-radius: 10px;
+		form {
+			padding-top: 20px;
+		}
+		.card {
+			border-radius: 10px;
+			box-shadow: $theme-shadow;
+			border: 0;
+			overflow: hidden;
+			padding: 16px 10px;
+			.card-header {
+				img {
+					height: 40px;
+					filter: invert(55%) sepia(48%) saturate(612%) hue-rotate(61deg) brightness(103%) contrast(101%);
+				}
+				span {
+					font-size: 20px;
+					color: $green-color;
+					position: relative;
+					top: 3px;
+				}
+				background: $white-color;
+				border: 0;
+			}
+			.card-body {
+				h6 {
+					font-size: 16px;
+					color: $black-color;
+					font-weight: 500;
+					margin-bottom: 20px;
+				}
+				label {
+					margin-bottom: 4px;
+				}
+				.form-control {
+					background-color: #F6F6F6;
+					padding: 12px;
+					margin-bottom: 20px;
+				}
+				.form-control:focus,
+				.form-control:active {
+					background-color: $white-color;
+				}
+				::placeholder {
+					opacity: 0.5;
+				}
+				.total-income-box {
+					color: $white-color;
+					background: $blue-color;
+					border-radius: $theme-border-radius;
+					padding: 10px 20px;
+				}
+			}
+		}
+		.consent-box-card {
+			.consent-box {
+				background: #f6f6f6;
+				border-radius: $theme-border-radius;
+				padding: 10px;
+				border: 1px solid $light-gray;
+				max-height: 300px;
+				overflow-y: scroll;
+				font-size: 12px;
+			}
+			.form-check-input {
+				width: 20px;
+				height: 20px;
+				border-radius: 3px !important;
+			}
+			label {
+				padding-left: 10px;
+				position: relative;
+				top: 3px;
+			}
+		}
+		.income-box {
+			.total-income-box {
+				margin-bottom: 20px;
+				position: relative;
+				left: 10px;
+				top: -9px;
+			}
+		}
+		.acknowledge-box {
+			.alert-danger {
+				font-size: 12px;
+				line-height: 24px;
+				border-color: #FF1572;
+				background: rgba(#FF1572, 0.05);
+				padding: 10px;
+				border-radius: $theme-border-radius;
+			}
+			#signature {
+				border: 1px solid $light-gray;
+				border-radius: $theme-border-radius;
+				background: #f6f6f6;
+			}
+			.signature-input {
+				font-family: 'Freehand', cursive !important;
+				font-size: 18px;
+			}
+			.contact-form-download {
+				img {
+					height: 50px;
+				}
+			}
+		}
+		.application-form-box {
+			.box {
+				position: relative;
+				background: #ffffff;
+				width: 100%;
+			}
+			.box-header {
+				color: #444;
+				display: block;
+				position: relative;
+				margin: 10px 0;
+			}
+			.box-tools {
+				text-align: left;
+				button {
+					border-radius: 8px;
+					border: 0;
+				}
+			}
+			.box-body {
+				img {
+					border: 1px solid #ebebeb;
+					border-radius: 8px;
+					width: 150px;
+					padding: 10px;
+				}
+			}
+			.personal-dropzone-wrapper {
+				border: 2px dashed $gray-color;
+				color: $gray-color;
+				position: relative;
+				padding: 20px 20px 80px;
+				border-radius: 10px;
+				&:hover {
+					background: #f9f9f9;
+				}
+				.browse {
+		          padding: 8px 16px;
+		          border-radius: 5px;
+		          background: #fff;
+		          border: 1px solid $green-color;
+		          color: $green-color;
+		          display: inline-block;
+		          position: absolute;
+					right: 20px;
+					top: 50%;
+					transform: translateY(-50%);
+		        }
+			}
+			.personal-dropzone-desc {
+				position: absolute;
+				left: 0;
+				right: 0;
+				text-align: left;
+				font-size: 16px;
+				border-radius: 8px;
+				display: flex;
+				margin-left: 20px;
+				width: 100%;
+				color: $black-color;
+				img {
+					margin-right: 10px;
+					position: relative;
+					top: -10px;
+				}
+				small {
+					color: $gray-color;
+					font-size: 12px;
+				}
+			}
+			.personal-dropzone {
+				position: absolute;
+				outline: none !important;
+				width: 100%;
+				height: 150px;
+				cursor: pointer;
+				opacity: 0;
+				&:focus {
+					position: absolute;
+					outline: none !important;
+					width: 100%;
+					height: 150px;
+					cursor: pointer;
+					opacity: 0;
+				}
+			}
+			.personal-dropzone-wrapper.dragover {
+				background: #ecf0f5;
+			}
+			.preview-zone {
+				text-align: center;
+				.box {
+					box-shadow: none;
+					border-radius: 0;
+					margin-bottom: 0;
+				}
+			}
+
+			// Multiple files drop
+			.drop-multiple,
+			.drop-multiple-income {
+	          border: 2px dashed $gray-color;
+	          border-radius: 10px;
+	          overflow: hidden;
+	          text-align: center;
+	          background: white;
+	          -webkit-transition: all 0.5s ease-out;
+	          -moz-transition: all 0.5s ease-out;
+	          transition: all 0.5s ease-out;
+	          position: relative;
+	        }
+	        .drop-multiple .cont,
+	        .drop-multiple-income .cont {
+	          color: $black-color;
+	          -webkit-transition: all 0.5s ease-out;
+	          -moz-transition: all 0.5s ease-out;
+	          transition: all 0.5s ease-out;
+	          display: flex;
+	          text-align: left;
+	          padding: 20px 20px 0;
+	          p {
+	          	color: $black-color !important;
+	          	font-size: 16px;
+	          }
+	          small {
+	          	font-size: 12px;
+	          }
+	          img {
+					margin-right: 10px;
+					position: relative;
+					top: -10px;
+				}
+	        }
+	        .drop-multiple .cont .desc,
+	        .drop-multiple-income .cont .desc {
+	          color: $gray-color;
+	        }
+	        .drop-multiple .browse,
+	        .drop-multiple-income .browse {
+	          padding: 8px 16px;
+	          border-radius: 5px;
+	          background: #fff;
+	          border: 1px solid $green-color;
+	          color: $green-color;
+	          display: inline-block;
+	          position: absolute;
+				right: 20px;
+				top: 50%;
+				transform: translateY(-50%);
+	        }
+	        .drop-multiple input,
+	        .drop-multiple-income input {
+	          width: 100%;
+	          height: 100%;
+	          cursor: pointer;
+	          background: red;
+	          opacity: 0;
+	          margin: auto;
+	          position: absolute;
+	          top: 0;
+	          left: 0;
+	          bottom: 0;
+	          right: 0;
+	        }
+
+	        #list,
+	        #list-income-files {
+	          width: 100%;
+	          text-align: left;
+	        }
+	        #list .thumb,
+	        #list-income-files .thumb {
+	          height: 100px;
+	          border: 1px solid #ebebeb;
+	          margin: 10px 5px 0 0;
+	          padding: 10px;
+	          border-radius: 8px;
+	        }
+	        .radio-box {
+	        	border: 1px solid $light-gray;
+	        	border-radius: $theme-border-radius;
+	        	padding: 10px 20px;
+	        	margin-bottom: 20px;
+	        	input:checked ~ label {
+				  color: $black-color;
+				}
+				.form-check {
+					margin-top: 10px;
+				}
+	        }
+		}
+	}
 }
