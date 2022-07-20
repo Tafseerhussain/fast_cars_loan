@@ -12824,6 +12824,21 @@ footer .copyright {
 .application-form-fillout {
   padding: 100px 0;
 }
+.application-form-fillout .errors-alert {
+  position: fixed;
+  width: 500px;
+  max-width: 100%;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+  border: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.application-form-fillout .errors-alert strong {
+  margin-bottom: 10px;
+  display: block;
+}
 .application-form-fillout h3, .application-form-fillout .h3 {
   color: #000000;
   font-size: 20px;

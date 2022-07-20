@@ -1,4 +1,15 @@
 <div class="application-form-fillout" id="application-form">
+    @if ($haveErrors)
+        <div class="alert alert-danger alert-dismissible fade show errors-alert" role="alert">
+            <strong>Please fix the following errors first:</strong>
+            @if($errors->any())
+                <ul>
+                    {!! implode('', $errors->all('<li><small>:message</small></li>')) !!}
+                </ul>
+            @endif
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-9 offset-md-3">
@@ -56,11 +67,11 @@
                      </div>
                   </div>
                </div>
-                <div data-bs-spy="scroll" data-bs-target="#application-form-scroll" data-bs-offset="0" class="scrollspy-example application-form-scroll-body" tabindex="0" style="height: 500px; overflow: scroll; position: relative;">
+                <div data-bs-spy="scroll" data-bs-target="#application-form-scroll" data-bs-offset="0" class="scrollspy-example application-form-scroll-body" tabindex="0" style="height: 650px; overflow: scroll; position: relative;">
 
                     {{-- PERSONAL INFORMATION --}}
                     <div id="list-item-1"></div>
-                    <form action="#">
+                    <form wire:submit.prevent="submit">
                         <div class="card application-form-box">
                             <div class="card-header d-flex">
                                 <img src="{{ asset('img/apply-form/personal.svg') }}" alt="personal information">
@@ -70,21 +81,21 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="">Loan Amount ($)</label>
-                                        <input type="text" class="form-control" placeholder="1000">
+                                        <input type="text" class="form-control @error('loanAmount') border-danger @enderror" placeholder="1000" wire:model.defer="loanAmount">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">First Name</label>
-                                        <input type="text" class="form-control" placeholder="John">
+                                        <input type="text" class="form-control @error('personalFirstName') border-danger @enderror" placeholder="John" wire:model.defer="personalFirstName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Doe">
+                                        <input type="text" class="form-control @error('personalLastName') border-danger @enderror" placeholder="Doe" wire:model.defer="personalLastName">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Date Of Birth</label>
                                     </div>
                                     <div class="col-md-4">
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('birthMonth') border-danger @enderror" wire:model.defer="birthMonth">
                                             <option value="0" selected>Select Month</option>
                                             <option value="01">January</option>
                                             <option value="02">February</option>
@@ -101,7 +112,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('birthDate') border-danger @enderror" wire:model.defer="birthDate">
                                             <option value="0" selected>Select Day</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -137,7 +148,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('birthYear') border-danger @enderror" wire:model.defer="birthYear">
                                             <option value="0" selected>Select Year</option>
                                             <option value="1940">1940</option>
                                             <option value="1941">1941</option>
@@ -228,7 +239,7 @@
                                         <div class="form-group">
                                             <label class="control-label">Upload Your ID</label>
                                             
-                                            <div class="personal-dropzone-wrapper">
+                                            <div class="personal-dropzone-wrapper @error('personalId') border-danger @enderror">
                                               <div class="personal-dropzone-desc">
                                                 <img src="{{ asset('img/apply-form/upload-image.svg') }}" alt="upload icon">
                                                 <p>
@@ -239,7 +250,7 @@
                                               <div class="browse">
                                                   SELECT FILE
                                               </div>
-                                              <input type="file" name="img_logo" class="personal-dropzone" multiple>
+                                              <input type="file" name="img_logo" class="personal-dropzone" wire:model.defer="personalId">
                                             </div>
                                             <div class="preview-zone visually-hidden">
                                               <div class="box box-solid">
@@ -253,7 +264,10 @@
                                                 <div class="box-body text-start"></div>
                                               </div>
                                             </div>
-                                        </div> 
+                                        </div>
+                                        @if ($personalId)
+                                            <img src="{{ $personalId->temporaryUrl() }}" style="width: 150px" class="mt-2 img-thumbnail">
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -1096,6 +1110,14 @@
 
 @section('custom-css')
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+    <style>
+        /*.application-form-fillout .application-form-scroll-body .card .card-body .form-control {
+            margin-bottom: 0;
+        }
+        .application-form-fillout .application-form-scroll-body .card .card-body label {
+            margin-top: 20px;
+        }*/
+    </style>
 @endsection
 
 @section('custom-js')
@@ -1105,8 +1127,8 @@
 
     <script>
         $(document).ready(function(){
-            var height = $("#application-form-scroll").height() + 100;
-            $('.application-form-scroll-body').css('height', height);
+            // var height = $("#application-form-scroll").height() + 100;
+            // $('.application-form-scroll-body').css('height', height);
 
             // var canvas = document.getElementById("signature");
             // var signaturePad = new SignaturePad(canvas);

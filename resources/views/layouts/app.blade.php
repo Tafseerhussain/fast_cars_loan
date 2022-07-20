@@ -206,6 +206,7 @@
     </div>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     @livewireScripts
+    @stack('component-js')
     @yield('custom-js')
 </body>
 </html>

@@ -1636,6 +1636,21 @@ footer {
 // APPLICATION FORM FILLOUT
 .application-form-fillout {
 	padding: 100px 0;
+	.errors-alert {
+		position: fixed;
+		width: 500px;
+		max-width: 100%;
+		right: 20px;
+		top: 20px;
+		z-index: 1;
+		border: 0;
+		box-shadow: $theme-shadow;
+		border-radius: $theme-border-radius;
+		strong {
+			margin-bottom: 10px;
+			display: block;
+		}
+	}
 	h3 {
 		color: $black-color;
 		font-size: 20px;
