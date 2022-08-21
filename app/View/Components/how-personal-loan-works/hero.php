@@ -6,14 +6,11 @@ use Illuminate\View\Component;
 
 class hero extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $message;
+
     public function __construct()
     {
-        //
+        $this->message = "Have your cash in hand with a few clicks";
     }
 
     /**

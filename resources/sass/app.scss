@@ -1646,6 +1646,8 @@ footer {
 		border: 0;
 		box-shadow: $theme-shadow;
 		border-radius: $theme-border-radius;
+		max-height: 95%;
+		overflow-y: auto;
 		strong {
 			margin-bottom: 10px;
 			display: block;
@@ -1791,6 +1793,10 @@ footer {
 			}
 		}
 		.application-form-box {
+			.hidden-area {
+				opacity: 0.3;
+				pointer-events: none;
+			}
 			.box {
 				position: relative;
 				background: #ffffff;

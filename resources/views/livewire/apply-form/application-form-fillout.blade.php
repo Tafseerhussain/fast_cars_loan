@@ -1,4 +1,14 @@
 <div class="application-form-fillout" id="application-form">
+    @if (Auth::user()->applicationForm()->exists())
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Your application has been received. Our team will contact you soon. Thank you...</h1>
+                </div>
+            </div>
+        </div>
+    @else
+    
     @if ($haveErrors)
         <div class="alert alert-danger alert-dismissible fade show errors-alert" role="alert">
             <strong>Please fix the following errors first:</strong>
@@ -11,6 +21,9 @@
         </div>
     @endif
     <div class="container">
+        @if ($formCompleted)
+            Form Completed
+        @else
         <div class="row">
             <div class="col-md-9 offset-md-3">
                 <h3>
@@ -21,15 +34,15 @@
         <div class="row">
             <div class="col-md-3">
                 <div id="application-form-scroll" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#list-item-1">
+                    <a class="list-group-item list-group-item-action personal-info-tab" href="#list-item-1">
                         <img src="{{ asset('img/apply-form/personal.svg') }}" alt="personal">
                         <span class="ms-1">Personal Information</span>
                     </a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-2">
+                    <a class="list-group-item list-group-item-action contact-info-tab" href="#list-item-2">
                         <img src="{{ asset('img/apply-form/contact.svg') }}" alt="contact">
                         <span class="ms-1">Contact Information</span>
                     </a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-3">
+                    <a class="list-group-item list-group-item-action vehicle-info-tab" href="#list-item-3">
                         <img src="{{ asset('img/apply-form/vehicle.svg') }}" alt="vehicle">
                         <span class="ms-1">Vehicle Information</span>
                     </a>
@@ -66,7 +79,7 @@
                         <span class="visually-hidden">Loading...</span>
                      </div>
                   </div>
-               </div>
+                </div>
                 <div data-bs-spy="scroll" data-bs-target="#application-form-scroll" data-bs-offset="0" class="scrollspy-example application-form-scroll-body" tabindex="0" style="height: 650px; overflow: scroll; position: relative;">
 
                     {{-- PERSONAL INFORMATION --}}
@@ -284,89 +297,240 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="">Address</label>
-                                        <input type="text" class="form-control" placeholder="9151 Charles Court Lake Mary, FL 32746">
+                                        <input type="text" class="form-control @error('contactAddress') border-danger @enderror" placeholder="9151 Charles Court Lake Mary, FL 32746" wire:model.defer="contactAddress">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">State</label>
-                                        <select class="form-select form-control">
-                                            <option value="0" selected>Select State</option>
-                                            <option value="AL">Alabama</option>
-                                            <option value="AK">Alaska</option>
-                                            <option value="AZ">Arizona</option>
-                                            <option value="AR">Arkansas</option>
-                                            <option value="CA">California</option>
-                                            <option value="CO">Colorado</option>
-                                            <option value="CT">Connecticut</option>
-                                            <option value="DE">Delaware</option>
-                                            <option value="DC">District Of Columbia</option>
-                                            <option value="FL">Florida</option>
-                                            <option value="GA">Georgia</option>
-                                            <option value="HI">Hawaii</option>
-                                            <option value="ID">Idaho</option>
-                                            <option value="IL">Illinois</option>
-                                            <option value="IN">Indiana</option>
-                                            <option value="IA">Iowa</option>
-                                            <option value="KS">Kansas</option>
-                                            <option value="KY">Kentucky</option>
-                                            <option value="LA">Louisiana</option>
-                                            <option value="ME">Maine</option>
-                                            <option value="MD">Maryland</option>
-                                            <option value="MA">Massachusetts</option>
-                                            <option value="MI">Michigan</option>
-                                            <option value="MN">Minnesota</option>
-                                            <option value="MS">Mississippi</option>
-                                            <option value="MO">Missouri</option>
-                                            <option value="MT">Montana</option>
-                                            <option value="NE">Nebraska</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="NH">New Hampshire</option>
-                                            <option value="NJ">New Jersey</option>
-                                            <option value="NM">New Mexico</option>
-                                            <option value="NY">New York</option>
-                                            <option value="NC">North Carolina</option>
-                                            <option value="ND">North Dakota</option>
-                                            <option value="OH">Ohio</option>
-                                            <option value="OK">Oklahoma</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="PA">Pennsylvania</option>
-                                            <option value="RI">Rhode Island</option>
-                                            <option value="SC">South Carolina</option>
-                                            <option value="SD">South Dakota</option>
-                                            <option value="TN">Tennessee</option>
-                                            <option value="TX">Texas</option>
-                                            <option value="UT">Utah</option>
-                                            <option value="VT">Vermont</option>
-                                            <option value="VA">Virginia</option>
-                                            <option value="WA">Washington</option>
-                                            <option value="WV">West Virginia</option>
-                                            <option value="WI">Wisconsin</option>
-                                            <option value="WY">Wyoming</option>
-                                        </select>
+                                        <input type="text" class="form-control @error('contactState') border-danger @enderror" placeholder="Uttah" wire:model.defer="contactState" readonly disabled>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">City</label>
-                                        <select class="form-select form-control">
-                                            <option value="0" selected>Select City</option>
-                                            <option value="1" >City 1</option>
-                                            <option value="2" >City 2</option>
-                                            <option value="3" >City 3</option>
+                                        <select class="form-select form-control @error('contactCity') border-danger @enderror" wire:model.defer="contactCity">
+                                            <option value="0">Select City</option>
+                                            <option value="Alpine">Alpine</option>
+                                            <option value="American Fork">American Fork</option>
+                                            <option value="Aurora">Aurora</option>
+                                            <option value="Ballard">Ballard</option>
+                                            <option value="Beaver">Beaver</option>
+                                            <option value="Beaver County">Beaver County</option>
+                                            <option value="Benjamin">Benjamin</option>
+                                            <option value="Benson">Benson</option>
+                                            <option value="Blanding">Blanding</option>
+                                            <option value="Bluffdale">Bluffdale</option>
+                                            <option value="Bountiful">Bountiful</option>
+                                            <option value="Box Elder County">Box Elder County</option>
+                                            <option value="Brigham City">Brigham City</option>
+                                            <option value="Cache County">Cache County</option>
+                                            <option value="Canyon Rim">Canyon Rim</option>
+                                            <option value="Carbon County">Carbon County</option>
+                                            <option value="Carbonville">Carbonville</option>
+                                            <option value="Castle Dale">Castle Dale</option>
+                                            <option value="Cedar City">Cedar City</option>
+                                            <option value="Cedar Hills">Cedar Hills</option>
+                                            <option value="Centerfield">Centerfield</option>
+                                            <option value="Centerville">Centerville</option>
+                                            <option value="Clearfield">Clearfield</option>
+                                            <option value="Clinton">Clinton</option>
+                                            <option value="Coalville">Coalville</option>
+                                            <option value="Cottonwood Heights">Cottonwood Heights</option>
+                                            <option value="Daggett County">Daggett County</option>
+                                            <option value="Daniel">Daniel</option>
+                                            <option value="Davis County">Davis County</option>
+                                            <option value="Delta">Delta</option>
+                                            <option value="Draper">Draper</option>
+                                            <option value="Duchesne">Duchesne</option>
+                                            <option value="Duchesne County">Duchesne County</option>
+                                            <option value="Eagle Mountain">Eagle Mountain</option>
+                                            <option value="East Carbon City">East Carbon City</option>
+                                            <option value="East Millcreek">East Millcreek</option>
+                                            <option value="Elk Ridge">Elk Ridge</option>
+                                            <option value="Elwood">Elwood</option>
+                                            <option value="Emery County">Emery County</option>
+                                            <option value="Enoch">Enoch</option>
+                                            <option value="Enterprise">Enterprise</option>
+                                            <option value="Ephraim">Ephraim</option>
+                                            <option value="Erda">Erda</option>
+                                            <option value="Fairview">Fairview</option>
+                                            <option value="Farmington">Farmington</option>
+                                            <option value="Farr West">Farr West</option>
+                                            <option value="Ferron">Ferron</option>
+                                            <option value="Fillmore">Fillmore</option>
+                                            <option value="Fountain Green">Fountain Green</option>
+                                            <option value="Francis">Francis</option>
+                                            <option value="Fruit Heights">Fruit Heights</option>
+                                            <option value="Garfield County">Garfield County</option>
+                                            <option value="Garland">Garland</option>
+                                            <option value="Genola">Genola</option>
+                                            <option value="Grand County">Grand County</option>
+                                            <option value="Granite">Granite</option>
+                                            <option value="Grantsville">Grantsville</option>
+                                            <option value="Gunnison">Gunnison</option>
+                                            <option value="Harrisville">Harrisville</option>
+                                            <option value="Heber City">Heber City</option>
+                                            <option value="Helper">Helper</option>
+                                            <option value="Herriman">Herriman</option>
+                                            <option value="Highland">Highland</option>
+                                            <option value="Hildale">Hildale</option>
+                                            <option value="Hill Air Force Base">Hill Air Force Base</option>
+                                            <option value="Holladay">Holladay</option>
+                                            <option value="Honeyville">Honeyville</option>
+                                            <option value="Hooper">Hooper</option>
+                                            <option value="Huntington">Huntington</option>
+                                            <option value="Hurricane">Hurricane</option>
+                                            <option value="Hyde Park">Hyde Park</option>
+                                            <option value="Hyrum">Hyrum</option>
+                                            <option value="Iron County">Iron County</option>
+                                            <option value="Ivins">Ivins</option>
+                                            <option value="Juab County">Juab County</option>
+                                            <option value="Junction">Junction</option>
+                                            <option value="Kamas">Kamas</option>
+                                            <option value="Kanab">Kanab</option>
+                                            <option value="Kane County">Kane County</option>
+                                            <option value="Kaysville">Kaysville</option>
+                                            <option value="Kearns">Kearns</option>
+                                            <option value="LaVerkin">LaVerkin</option>
+                                            <option value="Layton">Layton</option>
+                                            <option value="Lehi">Lehi</option>
+                                            <option value="Lewiston">Lewiston</option>
+                                            <option value="Liberty">Liberty</option>
+                                            <option value="Lindon">Lindon</option>
+                                            <option value="Little Cottonwood Creek Valley">Little Cottonwood Creek Valley</option>
+                                            <option value="Loa">Loa</option>
+                                            <option value="Logan">Logan</option>
+                                            <option value="Maeser">Maeser</option>
+                                            <option value="Magna">Magna</option>
+                                            <option value="Manila">Manila</option>
+                                            <option value="Manti">Manti</option>
+                                            <option value="Mapleton">Mapleton</option>
+                                            <option value="Marriott-Slaterville">Marriott-Slaterville</option>
+                                            <option value="Mendon">Mendon</option>
+                                            <option value="Midvale">Midvale</option>
+                                            <option value="Midway">Midway</option>
+                                            <option value="Milford">Milford</option>
+                                            <option value="Millard County">Millard County</option>
+                                            <option value="Millcreek">Millcreek</option>
+                                            <option value="Millville">Millville</option>
+                                            <option value="Moab">Moab</option>
+                                            <option value="Mona">Mona</option>
+                                            <option value="Monroe">Monroe</option>
+                                            <option value="Monticello">Monticello</option>
+                                            <option value="Morgan">Morgan</option>
+                                            <option value="Morgan County">Morgan County</option>
+                                            <option value="Moroni">Moroni</option>
+                                            <option value="Mount Olympus">Mount Olympus</option>
+                                            <option value="Mount Pleasant">Mount Pleasant</option>
+                                            <option value="Mountain Green">Mountain Green</option>
+                                            <option value="Murray">Murray</option>
+                                            <option value="Naples">Naples</option>
+                                            <option value="Nephi">Nephi</option>
+                                            <option value="Nibley">Nibley</option>
+                                            <option value="North Logan">North Logan</option>
+                                            <option value="North Ogden">North Ogden</option>
+                                            <option value="North Salt Lake">North Salt Lake</option>
+                                            <option value="Oakley">Oakley</option>
+                                            <option value="Ogden">Ogden</option>
+                                            <option value="Oquirrh">Oquirrh</option>
+                                            <option value="Orangeville">Orangeville</option>
+                                            <option value="Orem">Orem</option>
+                                            <option value="Panguitch">Panguitch</option>
+                                            <option value="Park City">Park City</option>
+                                            <option value="Parowan">Parowan</option>
+                                            <option value="Payson">Payson</option>
+                                            <option value="Perry">Perry</option>
+                                            <option value="Piute County">Piute County</option>
+                                            <option value="Plain City">Plain City</option>
+                                            <option value="Pleasant Grove">Pleasant Grove</option>
+                                            <option value="Pleasant View">Pleasant View</option>
+                                            <option value="Price">Price</option>
+                                            <option value="Providence">Providence</option>
+                                            <option value="Provo">Provo</option>
+                                            <option value="Randolph">Randolph</option>
+                                            <option value="Rich County">Rich County</option>
+                                            <option value="Richfield">Richfield</option>
+                                            <option value="Richmond">Richmond</option>
+                                            <option value="River Heights">River Heights</option>
+                                            <option value="Riverdale">Riverdale</option>
+                                            <option value="Riverton">Riverton</option>
+                                            <option value="Roosevelt">Roosevelt</option>
+                                            <option value="Roy">Roy</option>
+                                            <option value="Saint George">Saint George</option>
+                                            <option value="Salem">Salem</option>
+                                            <option value="Salina">Salina</option>
+                                            <option value="Salt Lake City">Salt Lake City</option>
+                                            <option value="Salt Lake County">Salt Lake County</option>
+                                            <option value="San Juan County">San Juan County</option>
+                                            <option value="Sandy">Sandy</option>
+                                            <option value="Sandy Hills">Sandy Hills</option>
+                                            <option value="Sanpete County">Sanpete County</option>
+                                            <option value="Santa Clara">Santa Clara</option>
+                                            <option value="Santaquin">Santaquin</option>
+                                            <option value="Saratoga Springs">Saratoga Springs</option>
+                                            <option value="Sevier County">Sevier County</option>
+                                            <option value="Silver Summit">Silver Summit</option>
+                                            <option value="Smithfield">Smithfield</option>
+                                            <option value="Snyderville">Snyderville</option>
+                                            <option value="South Jordan">South Jordan</option>
+                                            <option value="South Jordan Heights">South Jordan Heights</option>
+                                            <option value="South Ogden">South Ogden</option>
+                                            <option value="South Salt Lake">South Salt Lake</option>
+                                            <option value="South Weber">South Weber</option>
+                                            <option value="South Willard">South Willard</option>
+                                            <option value="Spanish Fork">Spanish Fork</option>
+                                            <option value="Spring City">Spring City</option>
+                                            <option value="Spring Glen">Spring Glen</option>
+                                            <option value="Springville">Springville</option>
+                                            <option value="Stansbury park">Stansbury park</option>
+                                            <option value="Summit County">Summit County</option>
+                                            <option value="Summit Park">Summit Park</option>
+                                            <option value="Sunset">Sunset</option>
+                                            <option value="Syracuse">Syracuse</option>
+                                            <option value="Taylorsville">Taylorsville</option>
+                                            <option value="Tooele">Tooele</option>
+                                            <option value="Tooele County">Tooele County</option>
+                                            <option value="Toquerville">Toquerville</option>
+                                            <option value="Tremonton">Tremonton</option>
+                                            <option value="Uintah">Uintah</option>
+                                            <option value="Uintah County">Uintah County</option>
+                                            <option value="Utah County">Utah County</option>
+                                            <option value="Vernal">Vernal</option>
+                                            <option value="Vineyard">Vineyard</option>
+                                            <option value="Wasatch County">Wasatch County</option>
+                                            <option value="Washington">Washington</option>
+                                            <option value="Washington County">Washington County</option>
+                                            <option value="Washington Terrace">Washington Terrace</option>
+                                            <option value="Wayne County">Wayne County</option>
+                                            <option value="Weber County">Weber County</option>
+                                            <option value="Wellington">Wellington</option>
+                                            <option value="Wellsville">Wellsville</option>
+                                            <option value="Wendover">Wendover</option>
+                                            <option value="West Bountiful">West Bountiful</option>
+                                            <option value="West Haven">West Haven</option>
+                                            <option value="West Jordan">West Jordan</option>
+                                            <option value="West Mountain">West Mountain</option>
+                                            <option value="West Point">West Point</option>
+                                            <option value="West Valley City">West Valley City</option>
+                                            <option value="White City">White City</option>
+                                            <option value="Willard">Willard</option>
+                                            <option value="Wolf Creek">Wolf Creek</option>
+                                            <option value="Woodland Hills">Woodland Hills</option>
+                                            <option value="Woods Cross">Woods Cross</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Zip Code</label>
-                                        <input type="text" class="form-control" placeholder="12345">
+                                        <input type="text" class="form-control @error('contactZip') border-danger @enderror" placeholder="12345" wire:model.defer="contactZip">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Email</label>
-                                        <input type="text" class="form-control" placeholder="John@example.com">
+                                        <input type="text" class="form-control @error('contactEmail') border-danger @enderror" placeholder="John@example.com" wire:model.defer="contactEmail">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="0000-5478-112">
+                                        <input type="text" class="form-control @error('contactPhone') border-danger @enderror" placeholder="0000-5478-112" wire:model.defer="contactPhone">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Best Time to Call</label>
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('contactBestTimeToCall') border-danger @enderror" wire:model.defer="contactBestTimeToCall">
                                             <option value="0" selected>Select Time</option>
                                             <option value="1">AnyTime</option>
                                             <option value="2">Noon</option>
@@ -389,51 +553,56 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label for="">Year</label>
-                                        <input type="text" class="form-control" placeholder="2022">
+                                        <input type="text" class="form-control @error('vehicleYear') border-danger @enderror" wire:model.defer="vehicleYear" placeholder="2022">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Make</label>
-                                        <input type="text" class="form-control" placeholder="Audi">
+                                        <input type="text" class="form-control @error('vehicleMake') border-danger @enderror" wire:model.defer="vehicleMake" placeholder="Audi">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Model</label>
-                                        <input type="text" class="form-control" placeholder="A6">
+                                        <input type="text" class="form-control @error('vehicleModel') border-danger @enderror" wire:model.defer="vehicleModel" placeholder="A6">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Trim</label>
-                                        <input type="text" class="form-control" placeholder="330e Sedan 4D">
+                                        <input type="text" class="form-control @error('vehicleTrim') border-danger @enderror" wire:model.defer="vehicleTrim" placeholder="330e Sedan 4D">
                                     </div>
                                      <div class="col-md-4">
                                         <label for="">License Plate Number</label>
-                                        <input type="text" class="form-control" placeholder="IAH-0087">
+                                        <input type="text" class="form-control @error('vehicleLicensePlateNumber') border-danger @enderror" wire:model.defer="vehicleLicensePlateNumber" placeholder="IAH-0087">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Mileage</label>
-                                        <input type="text" class="form-control" placeholder="20">
+                                        <input type="text" class="form-control @error('vehicleMileage') border-danger @enderror" wire:model.defer="vehicleMileage" placeholder="20">
                                     </div>
                                     <div class="col-12">
                                         <label for="">VIN (Vehicle Identification Number)</label>
-                                        <input type="text" class="form-control" placeholder="N/A">
+                                        <input type="text" class="form-control @error('vehicleVinNumber') border-danger @enderror" wire:model.defer="vehicleVinNumber" placeholder="N/A">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Upload Car Images</label>
-                                        <div class="drop-multiple">
+                                        <div class="drop-multiple @error('vehicleImages') border-danger @enderror">
                                             <div class="cont">
                                                 <img src="{{ asset('img/apply-form/upload-image.svg') }}" alt="upload icon">
                                                 <p class="tit">
                                                     Select images or drag and drop here
                                                     <br>
                                                     <small class="desc">
-                                                        JPG, PNG or SVG, image size no more than 10MB
+                                                        JPG, PNG or SVG, image size no more than 2MB
                                                     </small>
                                                 </p>
                                             </div>
                                             <div class="browse">
                                                 SELECT FILES
                                             </div>
-                                            <input id="files" multiple="true" name="files[]" type="file" />
+                                            <input id="files" multiple="true" type="file" wire:model.defer="vehicleImages"/>
                                         </div>
                                         <output id="list"></output>
+                                        @if ($vehicleImages)
+                                            @foreach ($vehicleImages as $image)
+                                                <img src="{{ $image->temporaryUrl() }}" style="width: 150px" class="mt-2 img-thumbnail">
+                                            @endforeach
+                                        @endif
                                     </div>  
                                 </div>
                             </div>
@@ -450,7 +619,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="">How Long Have You Live In Your Home</label>
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('livingInHomeTime') border-danger @enderror" wire:model.defer="livingInHomeTime">
                                             <option value="0" selected>Select</option>
                                             <option value="1">AnyTime</option>
                                             <option value="2">Noon</option>
@@ -459,12 +628,12 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('rentOrOwn') border-danger @enderror">
                                             <label for="">Do You Rent Or Own?</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="rentOrOwn" id="rentOrOwn1">
+                                                        <input class="form-check-input" type="radio" name="rentOrOwn" id="rentOrOwn1" wire:model.defer="rentOrOwn" value="rent">
                                                         <label class="form-check-label" for="rentOrOwn1">
                                                             Rent
                                                         </label>
@@ -472,7 +641,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="rentOrOwn" id="rentOrOwn2" checked>
+                                                        <input class="form-check-input" type="radio" name="rentOrOwn" id="rentOrOwn2" wire:model.defer="rentOrOwn" value="own">
                                                         <label class="form-check-label" for="rentOrOwn2">
                                                             Own
                                                         </label>
@@ -482,12 +651,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('usCitizen') border-danger @enderror">
                                             <label for="">Are You a US Citizen?</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="usCitizen" id="usCitizen1">
+                                                        <input class="form-check-input" type="radio" name="usCitizen" id="usCitizen1" value="us_citizen" wire:model.defer="usCitizen">
                                                         <label class="form-check-label" for="usCitizen1">
                                                             Yes
                                                         </label>
@@ -495,7 +664,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="usCitizen" id="usCitizen2" checked>
+                                                        <input class="form-check-input" type="radio" name="usCitizen" id="usCitizen2" value="non_us_citizen" wire:model.defer="usCitizen">
                                                         <label class="form-check-label" for="usCitizen2">
                                                             No
                                                         </label>
@@ -505,12 +674,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('inMilitary') border-danger @enderror">
                                             <label for="">Are You In The Military?</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="inMilitary" id="inMilitary1">
+                                                        <input class="form-check-input" type="radio" name="inMilitary" id="inMilitary1" value="military" wire:model.defer="inMilitary">
                                                         <label class="form-check-label" for="inMilitary1">
                                                             Yes
                                                         </label>
@@ -518,7 +687,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="inMilitary" id="inMilitary2" checked>
+                                                        <input class="form-check-input" type="radio" name="inMilitary" id="inMilitary2" value="non_military" wire:model.defer="inMilitary">
                                                         <label class="form-check-label" for="inMilitary2">
                                                             No
                                                         </label>
@@ -528,12 +697,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('dependentInMilitary') border-danger @enderror">
                                             <label for="">Are You a Someone Dependent In The Military?</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="dependentMilitary" id="dependentMilitary1">
+                                                        <input class="form-check-input" type="radio" name="dependentMilitary" id="dependentMilitary1" value="dependent" wire:model.defer="dependentInMilitary">
                                                         <label class="form-check-label" for="dependentMilitary1">
                                                             Yes
                                                         </label>
@@ -541,7 +710,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="dependentMilitary" id="dependentMilitary2" checked>
+                                                        <input class="form-check-input" type="radio" name="dependentMilitary" id="dependentMilitary2" value="non_dependent" wire:model.defer="dependentInMilitary">
                                                         <label class="form-check-label" for="dependentMilitary2">
                                                             No
                                                         </label>
@@ -552,7 +721,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="">Driver’s Licence Number</label>
-                                        <input type="text" class="form-control" placeholder="021457">
+                                        <input type="text" class="form-control @error('driversLicenseNumber') border-danger @enderror" placeholder="021457" wire:model.defer="driversLicenseNumber">
                                     </div>
                                 </div>
                             </div>
@@ -569,15 +738,15 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="">Where Do You Work?</label>
-                                        <input type="text" class="form-control" placeholder="Company">
+                                        <input type="text" class="form-control @error('employmentWorkPlace') border-danger @enderror" placeholder="Company" wire:model.defer="employmentWorkPlace">
                                     </div>
                                     <div class="col-12">
                                         <label for="">Address</label>
-                                        <input type="text" class="form-control" placeholder="9151 Charles Court Lake Mary, FL 32746">
+                                        <input type="text" class="form-control @error('employmentAddress') border-danger @enderror" placeholder="9151 Charles Court Lake Mary, FL 32746" wire:model.defer="employmentAddress">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">State</label>
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('employmentState') border-danger @enderror" wire:model.defer="employmentState">
                                             <option value="0" selected>Select State</option>
                                             <option value="AL">Alabama</option>
                                             <option value="AK">Alaska</option>
@@ -634,7 +803,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">City</label>
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('employmentCity') border-danger @enderror" wire:model.defer="employmentCity">
                                             <option value="0" selected>Select City</option>
                                             <option value="1" >City 1</option>
                                             <option value="2" >City 2</option>
@@ -643,11 +812,11 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Zip Code</label>
-                                        <input type="text" class="form-control" placeholder="12345">
+                                        <input type="text" class="form-control @error('employmentZipCode') border-danger @enderror" placeholder="12345" wire:model.defer="employmentZipCode">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">How Often Do You Get Paid?</label>
-                                        <select class="form-select form-control">
+                                        <select class="form-select form-control @error('employmentGettingPaidTime') border-danger @enderror" wire:model.defer="employmentGettingPaidTime">
                                             <option value="0" selected>Select City</option>
                                             <option value="1" >City 1</option>
                                             <option value="2" >City 2</option>
@@ -656,19 +825,19 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Last Payday</label>
-                                        <input type="text" class="form-control datePickerInput" placeholder="mm/dd/yyyy">
+                                        <input type="text" class="form-control datePickerInput @error('employmentLastPayday') border-danger @enderror" placeholder="yyyy/mm/dd" wire:model.defer="employmentLastPayday">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Next Payday</label>
-                                        <input type="text" class="form-control datePickerInput" placeholder="mm/dd/yyyy">
+                                        <input type="text" class="form-control datePickerInput @error('employmentNextPayday') border-danger @enderror" placeholder="yyyy/mm/dd" wire:model.defer="employmentNextPayday">
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('employmentDirectDeposit') border-danger @enderror">
                                             <label for="">Direct Deposit</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="directDeposit" id="directDeposit1">
+                                                        <input class="form-check-input" type="radio" name="directDeposit" id="directDeposit1" wire:model.defer="employmentDirectDeposit">
                                                         <label class="form-check-label" for="directDeposit1">
                                                             Yes
                                                         </label>
@@ -676,7 +845,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="directDeposit" id="directDeposit2" checked>
+                                                        <input class="form-check-input" type="radio" name="directDeposit" id="directDeposit2" wire:model.defer="employmentDirectDeposit">
                                                         <label class="form-check-label" for="directDeposit2">
                                                             No
                                                         </label>
@@ -686,12 +855,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('employmentTypeOfIncome') border-danger @enderror">
                                             <label for="">What Type Of Income Is This?</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="incomeType" id="incomeType1">
+                                                        <input class="form-check-input" type="radio" name="incomeType" id="incomeType1" wire:model.defer="employmentTypeOfIncome">
                                                         <label class="form-check-label" for="incomeType1">
                                                             Employment
                                                         </label>
@@ -699,7 +868,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="incomeType" id="incomeType2" checked>
+                                                        <input class="form-check-input" type="radio" name="incomeType" id="incomeType2" wire:model.defer="employmentTypeOfIncome">
                                                         <label class="form-check-label" for="incomeType2">
                                                             Benefits
                                                         </label>
@@ -720,22 +889,22 @@
                                 <span class="ms-2">Personal References</span>
                             </div>
                             <div class="card-body">
-                                <div class="row">
+                                <div class="row first-reference-box">
                                     <div class="col-12">
                                         <h6>Reference # 1</h6>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">First Name</label>
-                                        <input type="text" class="form-control" placeholder="John">
+                                        <input type="text" class="form-control" placeholder="John" wire:model.defer="firstReferenceFirstName" id="ref1FirstName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Doe">
+                                        <input type="text" class="form-control" placeholder="Doe" wire:model.defer="firstReferenceLastName" id="ref1LastName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">What Is Your Relationship With This Person?</label>
-                                        <select class="form-select form-control">
-                                            <option value="0" selected>Select Relation</option>
+                                        <select class="form-select form-control" wire:model.defer="firstReferenceRelation" id="ref1Relation">
+                                            <option value="" selected>Select Relation</option>
                                             <option value="family">Family</option>
                                             <option value="friend">Friend</option>
                                             <option value="business">Business</option>
@@ -744,26 +913,26 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Reference Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="0000-5478-112">
+                                        <input type="text" class="form-control" placeholder="0000-5478-112" wire:model.defer="firstReferencePhoneNumber" id="ref1Phone">
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
+                                <div class="row second-reference-box hidden-area">
                                     <div class="col-12">
                                         <h6>Reference # 2</h6>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">First Name</label>
-                                        <input type="text" class="form-control" placeholder="John">
+                                        <input type="text" class="form-control" placeholder="John" wire:model.defer="secondReferenceFirstName" id="ref2FirstName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Doe">
+                                        <input type="text" class="form-control" placeholder="Doe" wire:model.defer="secondReferenceLastName" id="ref2LastName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">What Is Your Relationship With This Person?</label>
-                                        <select class="form-select form-control">
-                                            <option value="0" selected>Select Relation</option>
+                                        <select class="form-select form-control" wire:model.defer="secondReferenceRelation" id="ref2Relation">
+                                            <option value="" selected>Select Relation</option>
                                             <option value="family">Family</option>
                                             <option value="friend">Friend</option>
                                             <option value="business">Business</option>
@@ -772,26 +941,26 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Reference Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="0000-5478-112">
+                                        <input type="text" class="form-control" placeholder="0000-5478-112" wire:model.defer="secondReferencePhoneNumber" id="ref2Phone">
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
+                                <div class="row third-reference-box hidden-area">
                                     <div class="col-12">
                                         <h6>Reference # 3</h6>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">First Name</label>
-                                        <input type="text" class="form-control" placeholder="John">
+                                        <input type="text" class="form-control" placeholder="John" wire:model.defer="thirdReferenceFirstName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Doe">
+                                        <input type="text" class="form-control" placeholder="Doe" wire:model.defer="thirdReferenceLastName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">What Is Your Relationship With This Person?</label>
-                                        <select class="form-select form-control">
-                                            <option value="0" selected>Select Relation</option>
+                                        <select class="form-select form-control" wire:model.defer="thirdReferenceRelation">
+                                            <option value="" selected>Select Relation</option>
                                             <option value="family">Family</option>
                                             <option value="friend">Friend</option>
                                             <option value="business">Business</option>
@@ -800,14 +969,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Reference Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="0000-5478-112">
+                                        <input type="text" class="form-control" placeholder="0000-5478-112" wire:model.defer="thirdReferencePhoneNumber">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {{-- CONSENT TO RECIEVE ELECTRONIC DOCUMENTS --}}
-                        <div id="list-item-7"></h4>
+                        <div id="list-item-7"></div>
                         <div class="card application-form-box mt-5 consent-box-card">
                             <div class="card-header d-flex">
                                 <img src="{{ asset('img/apply-form/consent.svg') }}" alt="consent">
@@ -841,13 +1010,13 @@
                                     </div>
                                     <div class="col-12 mt-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="termAgreementsCheck">
+                                            <input class="form-check-input @error('consentAgreement') border-danger @enderror" type="checkbox" value="" id="termAgreementsCheck" wire:model.defer="consentAgreement">
                                             <label class="form-check-label" for="termAgreementsCheck">
                                                 I have read and understand and accept the terms of the Consent for Electronic Records.*
                                             </label>
                                         </div>
                                         <div class="form-check mt-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="agreeListCheck">
+                                            <input class="form-check-input @error('pointsAgreement') border-danger @enderror" type="checkbox" value="" id="agreeListCheck" wire:model.defer="pointsAgreement">
                                             <label class="form-check-label" for="agreeListCheck">
                                                 By checking here you agree that we may (i) call you at any number provided on your credit application, including your cell phone, with an auto dialer or pre recorded message (ii) write you, via US postal service and/or electronic mail or (iii) contact you by text message or other wireless communication method on any telephone number listed on your application, in order to inform you about special promotions, savings and services we believe may be of interest to you as well as account status information. You may be charged by your wireless provider in order to receive text messages. You may change your preferences at any time by contacting us at support@americantitleloans.com or by calling us at 855-269-8485.
                                             </label>
@@ -871,16 +1040,16 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Net From Job</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('netFromJob') border-danger @enderror" id="netFromJob" placeholder="$" id="netFromJob" wire:model.defer="netFromJob">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Other Income</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('otherIncome') border-danger @enderror" id="otherIncome" placeholder="$" wire:model.defer="otherIncome">
                                     </div>
                                     <div class="col-12 d-flex">
                                         <label for="">Total Montly Income</label>
-                                        <span class="total-income-box d-block">
-                                            $1020
+                                        <span class="total-income-box total-income-value d-block">
+                                            $<span></span>
                                         </span>
                                     </div>
                                     <div class="col-12">
@@ -888,44 +1057,44 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Rent/Mortgage</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('rentMortage') border-danger @enderror" id="rentMortage" placeholder="$" wire:model.defer="rentMortage">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Insurance</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('insuranceExpense') border-danger @enderror" id="insuranceExpense" placeholder="$" wire:model.defer="insuranceExpense">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Utilities</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('utilitiesExpense') border-danger @enderror" id="utilitiesExpense" placeholder="$" wire:model.defer="utilitiesExpense">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Credit Cards</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('creditCardsExpense') border-danger @enderror" id="cardsExpense" placeholder="$" wire:model.defer="creditCardsExpense">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Food</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('foodExpense') border-danger @enderror" id="foodExpense" placeholder="$" wire:model.defer="foodExpense">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="">Music/Other</label>
-                                        <input type="text" class="form-control" placeholder="$">
+                                        <input type="text" class="form-control @error('musicOrOtherExpense') border-danger @enderror" id="otherExpense" placeholder="$" wire:model.defer="musicOrOtherExpense">
                                     </div>
                                     <div class="col-12 d-flex">
-                                        <label for="">Total Montly Income</label>
-                                        <span class="total-income-box d-block">
-                                            $650
+                                        <label for="">Total Montly Expenses</label>
+                                        <span class="total-income-box total-expenses-value d-block">
+                                            $<span></span>
                                         </span>
                                     </div>
                                     <div class="col-12">
                                         <h6>Total Disposable Income (Monthly)</h6>
                                     </div>
                                     <div class="col-12 d-flex">
-                                        <label for="">Total Montly Income</label>
-                                        <span class="total-income-box d-block">
-                                            $650
+                                        <label for="">Total Disposable Income</label>
+                                        <span class="total-income-box total-disposable-value d-block">
+                                            $<span></span>
                                         </span>
                                     </div>
-                                    <div class="col-12">
+                                    {{-- <div class="col-12">
                                         <label for="">Upload Car Images</label>
                                         <div class="drop-multiple-income">
                                             <div class="cont">
@@ -944,7 +1113,7 @@
                                             <input id="files-income" multiple="true" name="files-income[]" type="file" />
                                         </div>
                                         <output id="list-income-files"></output>
-                                    </div> 
+                                    </div>  --}}
                                 </div>
                             </div>
                         </div>
@@ -959,12 +1128,12 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('filedForBackruptcy') border-danger @enderror">
                                             <label for="">Have You Filed For Bankruptcy Anytime In The Last 6 Month?</label>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="filedBankruptcy" id="filedBankruptcy1">
+                                                        <input class="form-check-input" type="radio" name="filedBankruptcy" id="filedBankruptcy1" value="yes" wire:model.defer="filedForBackruptcy">
                                                         <label class="form-check-label" for="filedBankruptcy1">
                                                             Yes
                                                         </label>
@@ -972,7 +1141,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="filedBankruptcy" id="filedBankruptcy2" checked>
+                                                        <input class="form-check-input" type="radio" name="filedBankruptcy" id="filedBankruptcy2" value="no" wire:model.defer="filedForBackruptcy">
                                                         <label class="form-check-label" for="filedBankruptcy2">
                                                             No
                                                         </label>
@@ -981,17 +1150,17 @@
                                             </div>
                                             <div class="col-md-6 mt-4">
                                                 <label for="">If Yes, Date Filed?</label>
-                                                <input type="text" class="form-control datePickerInput" placeholder="mm/dd/yyyy">
+                                                <input type="text" class="form-control datePickerInput @error('dateFiled') border-danger @enderror" placeholder="yyyy/mm/dd"  wire:model.defer="dateFiled">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('status') border-danger @enderror">
                                             <label for="">Status:</label>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="filedStatus" id="filedStatus1">
+                                                        <input class="form-check-input" type="radio" name="filedStatus" id="filedStatus1" value="dismissed" wire:model.defer="status">
                                                         <label class="form-check-label" for="filedStatus1">
                                                             Dismissed
                                                         </label>
@@ -999,7 +1168,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="filedStatus" id="filedStatus2">
+                                                        <input class="form-check-input" type="radio" name="filedStatus" id="filedStatus2" value="discharged" wire:model.defer="status">
                                                         <label class="form-check-label" for="filedStatus2">
                                                             Discharged
                                                         </label>
@@ -1007,7 +1176,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="filedStatus" id="filedStatus3" checked>
+                                                        <input class="form-check-input" type="radio" name="filedStatus" id="filedStatus3" value="pending" wire:model.defer="status">
                                                         <label class="form-check-label" for="filedStatus3">
                                                             Pending
                                                         </label>
@@ -1017,12 +1186,12 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="radio-box">
+                                        <div class="radio-box @error('suitOrLegalAction') border-danger @enderror">
                                             <label for="">Are You Party To Any Suit Or Legal Action, Or Are There Any Unsatisfied JUdgements Against You?</label>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="legalAction" id="legalAction1">
+                                                        <input class="form-check-input" type="radio" name="legalAction" id="legalAction1" value="yes" wire:model.defer="suitOrLegalAction">
                                                         <label class="form-check-label" for="legalAction1">
                                                             Yes
                                                         </label>
@@ -1030,7 +1199,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="legalAction" id="legalAction2" checked>
+                                                        <input class="form-check-input" type="radio" name="legalAction" id="legalAction2" value="no" wire:model.defer="suitOrLegalAction">
                                                         <label class="form-check-label" for="legalAction2">
                                                             No
                                                         </label>
@@ -1049,7 +1218,7 @@
                                         {{-- <canvas id="signature" width="400px" height="150"></canvas>
                                         <br>
                                         <a class="btn btn-sm" href="#!" id="clear-signature">Clear</a> --}}
-                                        <input type="text" class="form-control signature-input">
+                                        <input type="text" class="form-control signature-input @error('signature') border-danger @enderror" wire:model.defer="signature">
                                     </div>
                                     <div class="col-12">
                                         <label for="" class="d-block">Contract Form</label>
@@ -1058,7 +1227,7 @@
                                             <span>Download File</span>
                                         </a>
                                     </div>
-                                    <div class="col-12 mt-4">
+                                    {{-- <div class="col-12 mt-4">
                                         <div class="form-group">
                                             <label class="control-label">Upload Contract</label>
                                             
@@ -1078,17 +1247,17 @@
                                             <div class="preview-zone visually-hidden">
                                               <div class="box box-solid">
                                                 <div class="box-header with-border">
-                                                  {{-- <div class="box-tools">
+                                                  <div class="box-tools">
                                                     <button type="button" class="btn-danger remove-preview btn-sm">
                                                       <i class="fa fa-times"></i> Remove
                                                     </button>
-                                                  </div> --}}
+                                                  </div>
                                                 </div>
                                                 <div class="box-body text-start"></div>
                                               </div>
                                             </div>
                                         </div> 
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -1105,11 +1274,14 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
+    @endif
 </div>
 
 @section('custom-css')
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         /*.application-form-fillout .application-form-scroll-body .card .card-body .form-control {
             margin-bottom: 0;
@@ -1122,20 +1294,81 @@
 
 @section('custom-js')
 
-    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script> --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script> --}}
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         $(document).ready(function(){
-            // var height = $("#application-form-scroll").height() + 100;
-            // $('.application-form-scroll-body').css('height', height);
-
-            // var canvas = document.getElementById("signature");
-            // var signaturePad = new SignaturePad(canvas);
             
-            // $('#clear-signature').on('click', function(){
-            //     signaturePad.clear();
+            // $('.application-form-scroll-body').scroll(function (event) {
+            //     var height = $('.application-form-scroll-body').offset().top;
+            //     if ($('#list-item-1').offset().top - height >= 0) {
+            //         $('#application-form-scroll .list-group-item').removeClass('.active');
+            //         $('.personal-info-tab').addClass('active');
+            //     }
+            //     if ($('#list-item-2').offset().top - height >= 0) {
+            //         $('#application-form-scroll .list-group-item').removeClass('.active');
+            //         $('.contact-info-tab').addClass('active');
+            //     }
+                
             // });
+
+            $("#netFromJob, #otherIncome")
+            .on("keydown keyup", sumIncome);
+            function sumIncome() {
+                $(".total-income-value span").html(Number($("#netFromJob").val()) + Number($("#otherIncome").val()));
+            }
+
+            $("#rentMortage, #insuranceExpense, #utilitiesExpense, #cardsExpense, #foodExpense, #otherExpense")
+            .on("keydown keyup", sumExpenses);
+            function sumExpenses() {
+                $(".total-expenses-value span")
+                .html(
+                    Number($("#rentMortage").val()) + 
+                    Number($("#insuranceExpense").val()) +
+                    Number($("#utilitiesExpense").val()) +
+                    Number($("#cardsExpense").val()) +
+                    Number($("#foodExpense").val()) +
+                    Number($("#otherExpense").val())
+                );
+            }
+
+            $("#rentMortage, #insuranceExpense, #utilitiesExpense, #cardsExpense, #foodExpense, #otherExpense, #netFromJob, #otherIncome")
+            .on("keydown keyup", finalDispose);
+            function finalDispose() {
+                $(".total-disposable-value span")
+                .html(
+                    Number($(".total-income-value span").html()) -
+                    Number($(".total-expenses-value span").html())
+                );
+            }
+
+            $("#ref1FirstName, #ref1LastName, #ref1Relation, #ref1Phone")
+            .on("keydown keyup", checkRef1);
+            function checkRef1() {
+                if ($("#ref1FirstName").val() != '' && 
+                    $("#ref1LastName").val() != '' && 
+                    $("#ref1Relation").val() != '' && 
+                    $("#ref1Phone").val() != '') {
+                    $('.second-reference-box').removeClass('hidden-area');
+                } else {
+                    $('.second-reference-box').addClass('hidden-area');
+                }
+            }
+
+            $("#ref2FirstName, #ref2LastName, #ref2Relation, #ref2Phone")
+            .on("keydown keyup", checkRef2);
+            function checkRef2() {
+                if ($("#ref2FirstName").val() != '' && 
+                    $("#ref2LastName").val() != '' && 
+                    $("#ref2Relation").val() != '' && 
+                    $("#ref2Phone").val() != '') {
+                    $('.third-reference-box').removeClass('hidden-area');
+                } else {
+                    $('.third-reference-box').addClass('hidden-area');
+                }
+            }
 
         });
 
@@ -1310,9 +1543,11 @@
         $('#files').change(handleFileSelect);
         $('#files-income').change(handleFileSelectIncome);
 
-        $(function(){
-          $('.datePickerInput').datepicker();
-        });
+        // $(function(){
+        //   $('.datePickerInput').datepicker();
+        // });
+
+        $(".datePickerInput").flatpickr();
 
     </script>   
     

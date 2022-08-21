@@ -12834,6 +12834,8 @@ footer .copyright {
   border: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  max-height: 95%;
+  overflow-y: auto;
 }
 .application-form-fillout .errors-alert strong {
   margin-bottom: 10px;
@@ -12974,6 +12976,10 @@ footer .copyright {
 }
 .application-form-fillout .application-form-scroll-body .acknowledge-box .contact-form-download img {
   height: 50px;
+}
+.application-form-fillout .application-form-scroll-body .application-form-box .hidden-area {
+  opacity: 0.3;
+  pointer-events: none;
 }
 .application-form-fillout .application-form-scroll-body .application-form-box .box {
   position: relative;

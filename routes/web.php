@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\FormFillout\VehicleInformation;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +72,14 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/application-form', function () {
         return view('application-form');
     })->name('application-form');
+});
+
+Route::get('test', function() {
+    $car = VehicleInformation::all();
+    foreach ($car as $key => $value) {
+        $images = json_decode($value->vehicle_images);
+        foreach ($images as $k => $i) {
+            echo $i->image;
+        }
+    }
 });

@@ -6,7 +6,10 @@
             </div>
             <div class="col-md-5 offset-md-1">
                 <div class="loan-right">
-                    <x-common.hero-form/>
+                    @php
+                        $message = "Have your cash in hand with a few clicks!";
+                    @endphp
+                    <x-common.hero-form :message="$message"/>
                 </div>
             </div>
         </div>
