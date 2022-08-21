@@ -68,7 +68,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/apply-for-loan', function () {
         return view('apply-form');
     })->name('apply-form');
-    
+
+    Route::get('/admin/loan-applications', [App\Http\Controllers\AdminController::class, 'viewLoanApplications'])->name('admin.loan-applications');
+    Route::get('/admin/loan-applications/{id}', [App\Http\Controllers\AdminController::class, 'viewLoanApplication'])->name('admin.loan-application');
+});
+
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/application-form', function () {
         return view('application-form');
     })->name('application-form');

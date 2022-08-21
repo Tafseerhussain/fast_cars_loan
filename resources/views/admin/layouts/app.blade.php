@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @livewireStyles
+    @yield('custom-css')
 
 </head>
 
@@ -56,10 +57,10 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item {{ Request::route()->getName() == 'admin.loan-applications' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.loan-applications') }}">
                     <img src="{{ asset('img/admin/icons/applications.svg') }}" alt="applications">
-                    <span>Applications</span>
+                    <span>Loan Applications</span>
                 </a>
             </li>
 
