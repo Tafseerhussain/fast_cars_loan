@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card my-5">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -63,6 +63,12 @@
                                     </a>
                                 @endif
                             </div>
+                        </div>
+
+                        <div class="row text-center mt-4">
+                            <p>
+                                Don't have an account? <a href="{{ route('register') }}">Register Now</a>
+                            </p>
                         </div>
                     </form>
                 </div>
