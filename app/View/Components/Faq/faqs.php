@@ -13,9 +13,9 @@ class faqs extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($faqs)
     {
-        $this->faqs = Faq::all();
+        $this->faqs = $faqs;
     }
 
     /**

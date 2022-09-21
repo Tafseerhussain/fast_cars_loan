@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\FormFillout\VehicleInformation;
+use App\Models\Faq;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,8 @@ Route::get('/blogs', function () {
 })->name('blogs');
 
 Route::get('/faq', function () {
-    return view('faq');
+    $faqs = Faq::all();
+    return view('faq', compact('faqs'));
 })->name('faq');
 
 Route::get('/contact', function () {

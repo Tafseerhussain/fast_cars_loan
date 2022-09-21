@@ -17,7 +17,7 @@
 				</div>
 			</div>
 		</div>
-		<x-faq.faqs/>
+		<x-faq.faqs :faqs="$faqs"/>
 	</div>
 
 @endsection
