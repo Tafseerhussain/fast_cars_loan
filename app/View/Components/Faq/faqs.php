@@ -7,6 +7,7 @@ use App\Models\Faq;
 
 class faqs extends Component
 {
+    public $faqs;
     /**
      * Create a new component instance.
      *
@@ -14,7 +15,7 @@ class faqs extends Component
      */
     public function __construct()
     {
-        //
+        $this->faqs = Faq::all();
     }
 
     /**
@@ -24,7 +25,7 @@ class faqs extends Component
      */
     public function render()
     {
-        $faqs = Faq::all();
-        return view('components.faq.faqs', compact('faqs'));
+        // $faqs = Faq::all();
+        return view('components.faq.faqs');
     }
 }
