@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FormFillout\Form;
 use App\Models\User;
+use App\Models\Blog;
+use App\Models\Faq;
 
 class AdminController extends Controller
 {
@@ -29,5 +31,20 @@ class AdminController extends Controller
     {
         $users = User::where('is_admin', '!=', '1')->latest()->get();
         return view('admin.clients.index', compact('users'));
+    }
+    public function viewBlogs()
+    {
+        $blogs = Blog::latest()->get();
+        return view('admin.blogs.index', compact('blogs'));
+    }
+    public function editBlog($id)
+    {
+        $blog = Blog::findOrFail($id);
+        return view('admin.blogs.edit', compact('blog'));
+    }
+    public function viewFaqs()
+    {
+        $faqs = Faq::latest()->get();
+        return view('admin.faqs.index', compact('faqs'));
     }
 }

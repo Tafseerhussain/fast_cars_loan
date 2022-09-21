@@ -88,7 +88,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item {{ Request::route()->getName() == 'admin.home.customize' ? 'active' : '' }}">
-                <a class="nav-link {{ Request::route()->getName() == 'admin.home.customize' ? 'active' : '' }}" 
+                <a class="nav-link" 
                     href="{{ route('admin.home.customize') }}">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span>
@@ -120,23 +120,26 @@
 
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Blogs</span></a>
+            <li class="nav-item {{ Request::route()->getName() == 'admin.blogs' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.blogs') }}">
+                    <i class="fas fa-fw fa-blog"></i>
+                    <span>Blogs</span>
+                </a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Faqs</span></a>
+            <li class="nav-item {{ Request::route()->getName() == 'admin.faqs' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.faqs') }}">
+                    <i class="fas fa-fw fa-question"></i>
+                    <span>Faqs</span>
+                </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Testimonials</span></a>
+                    <i class="fas fa-fw fa-quote-left"></i>
+                    <span>Testimonials</span>
+                </a>
             </li>
 
             <!-- Divider -->

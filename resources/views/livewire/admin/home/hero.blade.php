@@ -29,7 +29,7 @@
                  <span class="sr-only">Loading...</span>
                </div>
                @if (session()->has('successMessage'))
-                   <span class="text-success font-weight-bold">
+                   <span class="alert alert-success font-weight-bold d-block mt-3">
                        {{ session('successMessage') }}
                    </span>
                @endif
@@ -57,7 +57,7 @@
                  <span class="sr-only">Loading...</span>
                </div>
                @if (session()->has('successMessageImage'))
-                   <span class="text-success font-weight-bold">
+                   <span class="alert alert-success font-weight-bold d-block mt-3">
                        {{ session('successMessageImage') }}
                    </span>
                @endif

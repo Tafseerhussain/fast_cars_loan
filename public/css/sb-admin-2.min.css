@@ -11314,3 +11314,27 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+.avatar-xxl .avatar-img {
+  height: 4rem;
+}
+.avatar .avatar-img {
+  border-radius: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 3rem;
+  width: auto;
+}
+.avatar-xxl {
+  height: 4rem;
+  width: 4rem;
+}
+.avatar {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
