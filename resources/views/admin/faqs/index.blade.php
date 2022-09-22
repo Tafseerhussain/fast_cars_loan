@@ -16,7 +16,7 @@
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Faqsss</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Faqs</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -42,7 +42,7 @@
                                     </td>
                                     <td>{{ $faq->created_at->format('d M, Y') }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Faq">
+                                        <a href="{{ route('admin.faq.edit', $faq->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Faq">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Faq">

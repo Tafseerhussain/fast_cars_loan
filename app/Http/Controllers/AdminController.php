@@ -14,10 +14,16 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+    public function adminProfile()
+    {
+        return view('admin.profile');
+    }
     public function homepageCustomization()
     {
         return view('admin.customize.home');
     }
+
+    // LOAN APPLICATIONS
     public function viewLoanApplications()
     {
         return view('admin.loanApplications.index');
@@ -27,11 +33,15 @@ class AdminController extends Controller
         $application = Form::where('form_specific_id', $id)->first();
         return view('admin.loanApplications.view', compact('application'));
     }
+
+    // CLIENTS
     public function viewClients()
     {
         $users = User::where('is_admin', '!=', '1')->latest()->get();
         return view('admin.clients.index', compact('users'));
     }
+
+    // BLOGS
     public function viewBlogs()
     {
         $blogs = Blog::latest()->get();
@@ -46,10 +56,17 @@ class AdminController extends Controller
     {
         return view('admin.blogs.create');
     }
+
+    // FAQS
     public function viewFaqs()
     {
         $faqs = Faq::latest()->get();
         return view('admin.faqs.index', compact('faqs'));
+    }
+    public function editFaq($id)
+    {
+        $faq = Faq::findOrFail($id);
+        return view('admin.faqs.edit', compact('faq'));
     }
     public function addNewFaq()
     {
