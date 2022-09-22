@@ -4,7 +4,14 @@
 
 	<div class="container-fluid">
 
-        <div class="admin-loan-applications">
+        <div class="admin-faqs">
+
+            <a class="btn btn-primary btn-icon-split mb-4" href="{{ route('admin.faqs.add') }}">
+                <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Add New FAQ</span>
+            </a>
     
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
@@ -35,10 +42,10 @@
                                     </td>
                                     <td>{{ $faq->created_at->format('d M, Y') }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View Application">
-                                            <i class="fas fa-eye"></i>
+                                        <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Faq">
+                                            <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Application">
+                                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Faq">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

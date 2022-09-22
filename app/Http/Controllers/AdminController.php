@@ -42,9 +42,17 @@ class AdminController extends Controller
         $blog = Blog::findOrFail($id);
         return view('admin.blogs.edit', compact('blog'));
     }
+    public function addNewBlog()
+    {
+        return view('admin.blogs.create');
+    }
     public function viewFaqs()
     {
         $faqs = Faq::latest()->get();
         return view('admin.faqs.index', compact('faqs'));
+    }
+    public function addNewFaq()
+    {
+        return view('admin.faqs.create');
     }
 }

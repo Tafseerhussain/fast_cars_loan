@@ -5,6 +5,13 @@
 	<div class="container-fluid">
 
         <div class="admin-loan-applications">
+
+            <a class="btn btn-primary btn-icon-split mb-4" href="{{ route('admin.blog.add') }}">
+                <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Add New Blog</span>
+            </a>
     
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
@@ -38,10 +45,10 @@
                                     </td>
                                     <td>{{ $blog->created_at->format('d M, Y') }}</td>
                                     <td>
-                                        <a href="{{ route('admin.blog.edit', $blog->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View Application">
-                                            <i class="fas fa-eye"></i>
+                                        <a href="{{ route('admin.blog.edit', $blog->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Blog">
+                                            <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Application">
+                                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Blog">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
