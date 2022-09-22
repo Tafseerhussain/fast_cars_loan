@@ -52,6 +52,12 @@ class AdminController extends Controller
         $blog = Blog::findOrFail($id);
         return view('admin.blogs.edit', compact('blog'));
     }
+    public function deleteBlog($id)
+    {
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+        return redirect()->back()->with('success', 'Blog Deleted!');
+    }
     public function addNewBlog()
     {
         return view('admin.blogs.create');
@@ -67,6 +73,12 @@ class AdminController extends Controller
     {
         $faq = Faq::findOrFail($id);
         return view('admin.faqs.edit', compact('faq'));
+    }
+    public function deleteFaq($id)
+    {
+        $faq = Faq::findOrFail($id);
+        $faq->delete();
+        return redirect()->back()->with('success', 'Faq Deleted!');
     }
     public function addNewFaq()
     {

@@ -79,10 +79,12 @@ Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/admin/blogs', [App\Http\Controllers\AdminController::class, 'viewBlogs'])->name('admin.blogs');
     Route::get('/admin/blogs/edit/{id}', [App\Http\Controllers\AdminController::class, 'editBlog'])->name('admin.blog.edit');
+    Route::get('/admin/blogs/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteBlog'])->name('admin.blog.delete');
     Route::get('/admin/blogs/add', [App\Http\Controllers\AdminController::class, 'addNewBlog'])->name('admin.blog.add');
 
     Route::get('/admin/faqs', [App\Http\Controllers\AdminController::class, 'viewFaqs'])->name('admin.faqs');
     Route::get('/admin/faq/edit/{id}', [App\Http\Controllers\AdminController::class, 'editFaq'])->name('admin.faq.edit');
+    Route::get('/admin/faq/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteFaq'])->name('admin.faq.delete');
     Route::get('/admin/faqs/add', [App\Http\Controllers\AdminController::class, 'addNewFaq'])->name('admin.faqs.add');
 
     Route::get('/admin/profile', [App\Http\Controllers\AdminController::class, 'adminProfile'])->name('admin.profile');

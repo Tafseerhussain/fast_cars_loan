@@ -48,9 +48,11 @@
                                         <a href="{{ route('admin.blog.edit', $blog->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Blog">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Blog">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+                                        <span data-toggle="tooltip" data-placement="top" title="Delete Blog">
+                                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-delete" data-id="{{ $blog->id }}">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -62,6 +64,27 @@
 
         </div>
 
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Blog?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure that you want to delete this blog?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a class="btn btn-danger" id="deleteButton" href="#">Delete</a>
+          </div>
+        </div>
+      </div>
     </div>
 
 @endsection
@@ -81,5 +104,8 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            $('#deleteButton').attr('href', '/admin/blogs/delete/'+$(e.relatedTarget).data('id'));
+        });
     </script>   
 @endsection
