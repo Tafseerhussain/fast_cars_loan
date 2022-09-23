@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use App\Models\Home;
 
-class fastcars-products extends Component
+class FastCarProducts extends Component
 {
     public $product;
     /**
@@ -25,6 +25,6 @@ class fastcars-products extends Component
      */
     public function render()
     {
-        return view('components.fastcars-products');
+        return view('components.fast-car-products');
     }
 }
