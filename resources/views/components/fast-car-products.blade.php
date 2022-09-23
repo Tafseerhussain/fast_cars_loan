@@ -5,23 +5,16 @@
                 <div class="product-left">
                     <h1 class="section-title">{{ $product->product_heading }}</h1>
                     <p>{!! $product->product_subheading !!}</p>
+                    @php
+                        $product_points = explode(',', $product->product_points);
+                    @endphp
                     <div class="list">
+                        @foreach ($product_points as $point)
                         <p>
                             <img src="{{ asset('icons/green-tick.svg') }}" alt="green tick">
-                            <span>Vehicle Title Loans</span>
+                            <span>{{ $point }}</span>
                         </p>
-                        <p>
-                            <img src="{{ asset('icons/green-tick.svg') }}" alt="green tick">
-                            <span>Pawns on vehicle title</span>
-                        </p>
-                        <p>
-                            <img src="{{ asset('icons/green-tick.svg') }}" alt="green tick">
-                            <span>Motorcycle title loans and pawns</span>
-                        </p>
-                        <p>
-                            <img src="{{ asset('icons/green-tick.svg') }}" alt="green tick">
-                            <span>Personal loans</span>
-                        </p>
+                        @endforeach
                     </div>
                     <p>
                         {{ $product->product_text }}

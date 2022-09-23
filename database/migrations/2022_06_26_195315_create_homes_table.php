@@ -41,9 +41,7 @@ return new class extends Migration
             // PRODUCTS SECTION
             $table->string('product_heading')->default('FastCarsMoney products');
             $table->string('product_subheading')->default('We have a variety of products so that our customers can choose the best option.<br>At FastCarsMoney we offer:');
-            $table->string('product_points')->default('[
-                "Vehicle Title Loans", "Pawns on vehicle title", "Motorcycle title loans and pawns", "Personal loans"
-            ]');
+            $table->string('product_points')->default('Vehicle Title Loans,Pawns on vehicle title,Motorcycle title loans and pawns,Personal loans');
             $table->longText('product_text')->default('At FastCarMoney we know that a crisis from the past does not determine the rest of your life. For us it is essential that our service guarantees your satisfaction and ensures the success of your future, which is why we take care of every aspect of our vehicle title loans. Take advantage of our policy of accepting most types of credit scores, allowing us to help you get back on track with your finances.');
             $table->string('product_image')->default('img/home/product.jpg');
 
