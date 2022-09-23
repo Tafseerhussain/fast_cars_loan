@@ -34,6 +34,20 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- FASTCARS PRODUCTS --}}
+                <div class="card shadow mb-4 border-left-success">
+                    <a href="#collapseProducts" class="d-block card-header py-3 collapsed" data-toggle="collapse"
+                        role="button" aria-expanded="true" aria-controls="collapseProducts">
+                        <h6 class="m-0 font-weight-bold text-primary">FastCar Products Section</h6>
+                    </a>
+                    <div class="collapse" id="collapseProducts">
+                        <div class="card-body">
+                            @livewire('admin.home.fastcar-products')
+                        </div>
+                    </div>
+                </div>
+
         	</div>
             
         </div>
