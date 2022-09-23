@@ -19,8 +19,7 @@ use App\Models\Testimonial;
 
 Route::get('/', function () {
     $testimonials = Testimonial::latest()->get();
-    $product = Home::where('id', 1)->first(['product_heading','product_subheading', 'product_points', 'product_text', 'product_image']);
-    return view('welcome', compact(['testimonials', 'product']));
+    return view('welcome', compact(['testimonials']));
 });
 
 Route::get('/about', function () {
