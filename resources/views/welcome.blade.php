@@ -5,7 +5,7 @@
     <div class="home-page">
         <x-home-hero/>
         <x-common.easy-steps/>
-        <x-fastcars-products/>
+        <x-fastcars-products :product='$product'/>
         <x-why-get-funded/>
         <x-watch-video/>
         <x-easy-cash-advantage/>

@@ -3,9 +3,11 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Home;
 
 class fastcars-products extends Component
 {
+    public $product;
     /**
      * Create a new component instance.
      *
@@ -13,7 +15,7 @@ class fastcars-products extends Component
      */
     public function __construct()
     {
-        //
+        $this->product = Home::where('id', 1)->first(['product_heading','product_subheading', 'product_points', 'product_text', 'product_image']);
     }
 
     /**

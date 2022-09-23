@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\FormFillout\VehicleInformation;
+use App\Models\Home;
 use App\Models\Faq;
 use App\Models\Testimonial;
 
@@ -18,7 +19,8 @@ use App\Models\Testimonial;
 
 Route::get('/', function () {
     $testimonials = Testimonial::latest()->get();
-    return view('welcome', compact('testimonials'));
+    $product = Home::where('id', 1)->first(['product_heading','product_subheading', 'product_points', 'product_text', 'product_image']);
+    return view('welcome', compact(['testimonials', 'product']));
 });
 
 Route::get('/about', function () {
