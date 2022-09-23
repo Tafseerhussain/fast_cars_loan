@@ -7,6 +7,7 @@ use App\Models\FormFillout\Form;
 use App\Models\User;
 use App\Models\Blog;
 use App\Models\Faq;
+use App\Models\Testimonial;
 
 class AdminController extends Controller
 {
@@ -83,5 +84,27 @@ class AdminController extends Controller
     public function addNewFaq()
     {
         return view('admin.faqs.create');
+    }
+
+    // TESTIMONIALS
+    public function viewTestimonials()
+    {
+        $testimonials = Testimonial::latest()->get();
+        return view('admin.testimonials.index', compact('testimonials'));
+    }
+    public function addNewTestimonial()
+    {
+        return view('admin.testimonials.create');
+    }
+    public function editTestimonial($id)
+    {
+        $testimonial = Testimonial::findOrFail($id);
+        return view('admin.testimonials.edit', compact('testimonial'));
+    }
+    public function deleteTestimonial($id)
+    {
+        $testimonial = Testimonial::findOrFail($id);
+        $testimonial->delete();
+        return redirect()->back()->with('success', 'Testimonial Deleted!');
     }
 }

@@ -87,6 +87,11 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/faq/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteFaq'])->name('admin.faq.delete');
     Route::get('/admin/faqs/add', [App\Http\Controllers\AdminController::class, 'addNewFaq'])->name('admin.faqs.add');
 
+    Route::get('/admin/testimonials', [App\Http\Controllers\AdminController::class, 'viewTestimonials'])->name('admin.testimonials');
+    Route::get('/admin/testimonials/add', [App\Http\Controllers\AdminController::class, 'addNewTestimonial'])->name('admin.testimonials.add');
+    Route::get('/admin/testimonials/edit/{id}', [App\Http\Controllers\AdminController::class, 'editTestimonial'])->name('admin.testimonials.edit');
+    Route::get('/admin/testimonials/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteTestimonial'])->name('admin.testimonials.delete');
+
     Route::get('/admin/profile', [App\Http\Controllers\AdminController::class, 'adminProfile'])->name('admin.profile');
 });
 

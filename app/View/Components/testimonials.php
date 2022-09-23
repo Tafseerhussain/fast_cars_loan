@@ -3,17 +3,15 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Testimonial;
 
 class testimonials extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $testimonials;
+    
     public function __construct()
     {
-        //
+        $this->testimonials = Testimonial::latest()->get();
     }
 
     /**

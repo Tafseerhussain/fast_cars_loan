@@ -135,8 +135,8 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item {{ Request::route()->getName() == 'admin.testimonials' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.testimonials') }}">
                     <i class="fas fa-fw fa-quote-left"></i>
                     <span>Testimonials</span>
                 </a>
