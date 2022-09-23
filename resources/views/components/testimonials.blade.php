@@ -9,112 +9,89 @@
         </div>
         <div class="row testimonials-row">
             <div class="col-12">
-                @if (!$testimonials->isEmpty())
-                    @if (count($testimonials) < 3)
-                        <div class="testimonials-slider text-center">
-                            {{-- Testimonial --}}
-                            <div class="testimonial-slide">
-                                <div class="testimonial-head">
-                                    <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
-                                </div>
-                                <p class="testimonial-text">
-                                    It was quick, easy, and convenient. I had a good experience. The process was simple.
-                                </p>
-                                <div class="testimonial-meta">
-                                    <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
-                                    <div class="name">
-                                        Tammy W.
-                                        <span>Van Nuys, CA</span>
-                                    </div>
-                                </div>
+                @if (count($testimonials) < 3)
+                    <div class="testimonials-slider text-center">
+                        {{-- Testimonial --}}
+                        <div class="testimonial-slide">
+                            <div class="testimonial-head">
+                                <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
                             </div>
-                            {{-- Testimonial --}}
-                            <div class="testimonial-slide">
-                                <div class="testimonial-head">
-                                    <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
-                                </div>
-                                <p class="testimonial-text">
-                                    It was quick, easy, and convenient. I had a good experience. The process was simple.
-                                </p>
-                                <div class="testimonial-meta">
-                                    <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
-                                    <div class="name">
-                                        Tammy W.
-                                        <span>Van Nuys, CA</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Testimonial --}}
-                            <div class="testimonial-slide">
-                                <div class="testimonial-head">
-                                    <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
-                                </div>
-                                <p class="testimonial-text">
-                                    It was quick, easy, and convenient. I had a good experience. The process was simple.
-                                </p>
-                                <div class="testimonial-meta">
-                                    <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
-                                    <div class="name">
-                                        Tammy W.
-                                        <span>Van Nuys, CA</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Testimonial --}}
-                            <div class="testimonial-slide">
-                                <div class="testimonial-head">
-                                    <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
-                                </div>
-                                <p class="testimonial-text">
-                                    It was quick, easy, and convenient. I had a good experience. The process was simple.
-                                </p>
-                                <div class="testimonial-meta">
-                                    <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
-                                    <div class="name">
-                                        Tammy W.
-                                        <span>Van Nuys, CA</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Testimonial --}}
-                            <div class="testimonial-slide">
-                                <div class="testimonial-head">
-                                    <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
-                                </div>
-                                <p class="testimonial-text">
-                                    It was quick, easy, and convenient. I had a good experience. The process was simple.
-                                </p>
-                                <div class="testimonial-meta">
-                                    <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
-                                    <div class="name">
-                                        Tammy W.
-                                        <span>Van Nuys, CA</span>
-                                    </div>
+                            <p class="testimonial-text">
+                                It was quick, easy, and convenient. I had a good experience. The process was simple.
+                            </p>
+                            <div class="testimonial-meta">
+                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
+                                <div class="name">
+                                    Tammy W.
+                                    <span>Van Nuys, CA</span>
                                 </div>
                             </div>
                         </div>
-                    @else
-                        <div class="testimonials-slider text-center">
-                            @foreach ($testimonials as $testimonial)
-                                <div class="testimonial-slide">
-                                    <div class="testimonial-head">
-                                        <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
-                                    </div>
-                                    <p class="testimonial-text">
-                                        It was quick, easy, and convenient. I had a good experience. The process was simple.
-                                    </p>
-                                    <div class="testimonial-meta">
-                                        <img src="{{ asset($testimonial->image) }}" alt="client">
-                                        <div class="name">
-                                            Tammy W.
-                                            <span>Van Nuys, CA</span>
-                                        </div>
-                                    </div>
+                        {{-- Testimonial --}}
+                        <div class="testimonial-slide">
+                            <div class="testimonial-head">
+                                <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
+                            </div>
+                            <p class="testimonial-text">
+                                It was quick, easy, and convenient. I had a good experience. The process was simple.
+                            </p>
+                            <div class="testimonial-meta">
+                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
+                                <div class="name">
+                                    Tammy W.
+                                    <span>Van Nuys, CA</span>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
-                    @endif
-               
+                        {{-- Testimonial --}}
+                        <div class="testimonial-slide">
+                            <div class="testimonial-head">
+                                <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
+                            </div>
+                            <p class="testimonial-text">
+                                It was quick, easy, and convenient. I had a good experience. The process was simple.
+                            </p>
+                            <div class="testimonial-meta">
+                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
+                                <div class="name">
+                                    Tammy W.
+                                    <span>Van Nuys, CA</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Testimonial --}}
+                        <div class="testimonial-slide">
+                            <div class="testimonial-head">
+                                <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
+                            </div>
+                            <p class="testimonial-text">
+                                It was quick, easy, and convenient. I had a good experience. The process was simple.
+                            </p>
+                            <div class="testimonial-meta">
+                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
+                                <div class="name">
+                                    Tammy W.
+                                    <span>Van Nuys, CA</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Testimonial --}}
+                        <div class="testimonial-slide">
+                            <div class="testimonial-head">
+                                <img src="{{ asset('img/home/testimonial-head.svg') }}" alt="testimonial logo">
+                            </div>
+                            <p class="testimonial-text">
+                                It was quick, easy, and convenient. I had a good experience. The process was simple.
+                            </p>
+                            <div class="testimonial-meta">
+                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="client">
+                                <div class="name">
+                                    Tammy W.
+                                    <span>Van Nuys, CA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @else
                     <div class="testimonials-slider text-center">
                         @foreach ($testimonials as $testimonial)
