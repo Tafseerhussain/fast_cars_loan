@@ -18,8 +18,7 @@ use App\Models\Testimonial;
 */
 
 Route::get('/', function () {
-    $testimonials = Testimonial::latest()->get();
-    return view('welcome', compact(['testimonials']));
+    return view('welcome');
 });
 
 Route::get('/about', function () {
