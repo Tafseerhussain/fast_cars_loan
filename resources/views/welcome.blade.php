@@ -11,7 +11,7 @@
         <x-easy-cash-advantage/>
         {{-- <x-blog-posts/> --}}
         <x-fast-cars-portal/>
-        <x-testimonials/>
+        <x-testimonials :testimonials='$testimonials'/>
         <x-newsletter/>
         <x-latest-blogs/>
     </div>

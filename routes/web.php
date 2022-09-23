@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\FormFillout\VehicleInformation;
 use App\Models\Faq;
+use App\Models\Testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Models\Faq;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $testimonials = Testimonial::latest()->get();
+    return view('welcome', compact('testimonials'));
 });
 
 Route::get('/about', function () {

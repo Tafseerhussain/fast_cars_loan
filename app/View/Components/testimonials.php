@@ -9,9 +9,9 @@ class testimonials extends Component
 {
     public $testimonials;
     
-    public function __construct()
+    public function __construct($testimonials)
     {
-        $this->testimonials = Testimonial::latest()->get();
+        $this->testimonials = $testimonials;
     }
 
     /**
