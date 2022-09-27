@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Testimonial;
+use App\Models\Email;
 
 class AdminController extends Controller
 {
@@ -106,5 +107,17 @@ class AdminController extends Controller
         $testimonial = Testimonial::findOrFail($id);
         $testimonial->delete();
         return redirect()->back()->with('success', 'Testimonial Deleted!');
+    }
+
+    // EMAILS
+    public function loanApproval()
+    {
+        $approval = Email::first();
+        return view('admin.emails.loan-approval', compact('approval'));
+    }
+    public function loanRejected()
+    {
+        $rejected = Email::first();
+        return view('admin.emails.loan-rejected', compact('rejected'));
     }
 }
