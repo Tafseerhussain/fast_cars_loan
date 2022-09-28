@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 use App\Models\FormFillout\VehicleInformation;
 use App\Models\Home;
 use App\Models\Faq;
 use App\Models\Testimonial;
+use App\Mail\Admin\LoanApproval;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,11 +109,10 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::get('test', function() {
-    $car = VehicleInformation::all();
-    foreach ($car as $key => $value) {
-        $images = json_decode($value->vehicle_images);
-        foreach ($images as $k => $i) {
-            echo $i->image;
-        }
-    }
+    $mailData = [
+        'name' => 'Test Name',
+        'loan_amount' => 1000
+    ];
+    Mail::to('sajjadaslammm@gmail.com')->send(new LoanApproval($mailData));
+    dd('mail sent');
 });
