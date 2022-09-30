@@ -133,7 +133,8 @@ Route::get('test', function() {
         //Content
         $phpmailer->isHTML(true);                                  //Set email format to HTML
         $phpmailer->Subject = "Loan Approved";
-        $phpmailer->Body    = view('emails.admin.loan-approval')->render();
+        $test = "Sajjad Aslam";
+        $phpmailer->Body    = view('emails.admin.loan-approval', compact('test'))->render();
 
         $phpmailer->send();
         echo 'Message has been sent';

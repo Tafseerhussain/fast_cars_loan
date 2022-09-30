@@ -364,6 +364,7 @@
                     </tr>
                     <tr>
                       <td>
+                      	<h2>Hello {{ $test }}</h2>
                         <p>Loan Approved</p>
                         <hr>
                       </td>
