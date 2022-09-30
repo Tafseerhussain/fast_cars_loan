@@ -121,7 +121,7 @@ Route::get('test', function() {
 
         $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER; 
         $phpmailer->isSMTP();
-        $phpmailer->Host = $host;
+        $phpmailer->Host = "$host";
         $phpmailer->SMTPAuth = true;
         $phpmailer->Username = 'admin@fastcarsfastmoney.com';
         $phpmailer->Password = 'J1thGimZkGvX';
