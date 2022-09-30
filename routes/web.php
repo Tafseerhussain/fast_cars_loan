@@ -114,14 +114,13 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('test', function() {
 
-    $host = env('MAIL_MAILER');
     try {
 
         $phpmailer = new PHPMailer(true);
 
         $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER; 
         $phpmailer->isSMTP();
-        $phpmailer->Host = "$host";
+        $phpmailer->Host = 'business87.web-hosting.com';
         $phpmailer->SMTPAuth = true;
         $phpmailer->Username = 'admin@fastcarsfastmoney.com';
         $phpmailer->Password = 'J1thGimZkGvX';
