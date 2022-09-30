@@ -131,13 +131,13 @@ Route::get('test', function() {
 
         //Recipients
         $phpmailer->setFrom(env('MAIL_FROM_ADDRESS'));
-        $phpmailer->addAddress('sajjadaslammm@gmail.com');
+        $phpmailer->addAddress("sajjadaslammm@gmail.com");
 
         //Content
         $phpmailer->isHTML(true);                                  //Set email format to HTML
-        $phpmailer->Subject = 'Here is the subject';
-        $phpmailer->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $phpmailer->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $phpmailer->Subject = "Here is the subject";
+        $phpmailer->Body    = "This is the HTML message body <b>in bold!</b>";
+        $phpmailer->AltBody = "This is the body in plain text for non-HTML mail clients";
 
         $phpmailer->send();
         echo 'Message has been sent';
