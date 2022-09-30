@@ -114,8 +114,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('test', function() {
 
-    require '../vendor/autoload.php';
-
     try {
 
         $phpmailer = new PHPMailer(true);
