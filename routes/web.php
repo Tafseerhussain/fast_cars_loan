@@ -122,15 +122,15 @@ Route::get('test', function() {
 
         $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER; 
         $phpmailer->isSMTP();
-        $phpmailer->Host = env('MAIL_MAILER');;
+        $phpmailer->Host = 'business87.web-hosting.com';
         $phpmailer->SMTPAuth = true;
-        $phpmailer->Username = env('MAIL_USERNAME');
-        $phpmailer->Password = env('MAIL_PASSWORD');
-        $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $phpmailer->Username = 'admin@fastcarsfastmoney.com';
+        $phpmailer->Password = 'J1thGimZkGvX';
+        $phpmailer->SMTPSecure = 'tls';
         $phpmailer->Port = env('MAIL_PORT');
 
         //Recipients
-        $phpmailer->setFrom(env('MAIL_FROM_ADDRESS'));
+        $phpmailer->setFrom('admin@fastcarsfastmoney.com');
         $phpmailer->addAddress("sajjadaslammm@gmail.com");
 
         //Content
