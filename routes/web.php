@@ -213,7 +213,7 @@ Route::get('test', function() {
                   line-height: inherit;
                 }
 
-                a[x-apple-data-detectors='true'] {
+                a[x-apple-data-detectors="true"] {
                   color: inherit !important;
                   text-decoration: none !important;
                 }
