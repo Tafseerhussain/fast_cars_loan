@@ -120,4 +120,11 @@ class AdminController extends Controller
         $rejected = Email::first();
         return view('admin.emails.loan-rejected', compact('rejected'));
     }
+
+    public function approveTheLoan($id)
+    {
+        dd($id);
+        $form = Form::findOrFail($id);
+        dd($form);
+    }
 }

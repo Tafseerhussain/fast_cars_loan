@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('user_id');
             $table->string('form_specific_id');
+            $table->boolean('approved')->default(0);
             $table->timestamps();
         });
     }

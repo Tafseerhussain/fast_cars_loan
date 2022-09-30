@@ -35,7 +35,7 @@ class LoginController extends Controller
             return redirect()->intended('/admin');
         }
 
-        return redirect()->intended('/home');
+        return redirect()->intended('/application-form');
     }
 
     /**

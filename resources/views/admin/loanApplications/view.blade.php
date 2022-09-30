@@ -411,12 +411,35 @@
                 <button class="btn btn-outline-danger bg-transparent">
                     Reject
                 </button>
-                <button class="btn btn-primary ml-2">
+                <a href="{{ route('admin.loan.approve', $application->id) }}" class="btn btn-primary ml-2">
                     Approve
-                </button>
+                </a>
             </div>
         </div>
 
+    </div>
+
+     <!-- Logout Modal-->
+    <div class="modal fade" id="loanDecisionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Approve this Loan?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Are you sure you want to approve this loan?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="{{ route('admin.loan.approve', $application->id) }}">Yes</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

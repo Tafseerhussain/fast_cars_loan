@@ -367,17 +367,19 @@
                     </tr>
                     <tr>
                       <td>
-                      	<h4>Hello {{ $test }},</h4>
+                      	<h1>Hello {{ $test }},</h1>
                         <p>Congratulations! Your loan have been approved by Fast Cars Fast Money.</p>
-                        <h4 class="text-center">
+                        <h1 class="text-center">
                         	$4000
-                        </h4>
+                        </h1>
                         <p>
                         	To take advantage of this loan offer, check the loan contract below for more details.
                         </p>
-                        <a href="#" class="fastcars-btn">
-                        	View Contract
-                        </a>
+                        <div class="text-center">
+	                        <a href="#" class="fastcars-btn">
+	                        	View Contract
+	                        </a>
+                        </div>
                         <hr>
                         <p class="text-center">
                         	Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don't hesitate to re-apply after meeting the conditions mentioned above.

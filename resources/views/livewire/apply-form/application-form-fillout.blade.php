@@ -3,7 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Your application has been received. Our team will contact you soon. Thank you...</h1>
+                    <div class="card rounded py-5">
+                        <div class="text-center">
+                            <img src="{{ asset('img/apply-form/tick.png') }}" style="max-width:100%; width: 100px;" alt="">
+                            <h3 class="mt-3">Your application has been received. Our team will contact you soon. Thank you...</h3>
+                            <a href="/" class="btn mt-3">Return Home</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@ class EmailSeeder extends Seeder
                 'link_to_contract' => 'temp',
                 'denial_message' => 'After reviewing your loan application, I regret to inform you that we are unable to loan you the requested amount of:',
                 'denial_reason' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'last_message_approval' => 'Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don\'t hesitate to reapply after meeting the conditions mentioned above.',
+                'last_message_approval' => 'Thank you for thinking of Fast Cars Fast Money for your lending needs.',
                 'last_message_rejected' => 'Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don\'t hesitate to reapply after meeting the conditions mentioned above.',
            ]);
         } else {
@@ -36,7 +36,7 @@ class EmailSeeder extends Seeder
                 'link_to_contract' => 'temp',
                 'denial_message' => 'After reviewing your loan application, I regret to inform you that we are unable to loan you the requested amount of:',
                 'denial_reason' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'last_message_approval' => 'Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don\'t hesitate to reapply after meeting the conditions mentioned above.',
+                'last_message_approval' => 'Thank you for thinking of Fast Cars Fast Money for your lending needs.',
                 'last_message_rejected' => 'Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don\'t hesitate to reapply after meeting the conditions mentioned above.',
             ]);
         }
