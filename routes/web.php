@@ -125,8 +125,8 @@ Route::get('test', function() {
         $phpmailer->Password = env('MAIL_PASSWORD');
 
         //Recipients
-        $phpmailer->setFrom('from@example.com');
-        $phpmailer->addAddress('joe@example.net');
+        $phpmailer->setFrom('admin@fastcarsfastmoney.com');
+        $phpmailer->addAddress('sajjadaslammm@gmail.com');
 
         //Content
         $phpmailer->isHTML(true);                                  //Set email format to HTML
