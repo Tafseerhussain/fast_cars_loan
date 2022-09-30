@@ -12,7 +12,7 @@
                             Our Advantages
                         </a>
                     </p>
-                    <a href="#" class="btn">Apply for Loan</a>
+                    <a href="{{ route('application-form') }}" class="btn">Apply for Loan</a>
                 </div>
             </div>
             <div class="col-md-6">

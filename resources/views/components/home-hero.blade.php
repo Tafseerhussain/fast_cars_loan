@@ -14,7 +14,7 @@
                         <h1 class="text-start">
                             {{ $hero->hero_head }}
                         </h1>
-                        <div class="main-search">
+                        {{-- <div class="main-search">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">
                                     <img src="{{ asset('icons/search.svg') }}" alt="search">
@@ -24,11 +24,11 @@
                                     <img src="{{ asset('icons/arrow-right-white.svg') }}" alt="">
                                 </button>
                             </div>
-                        </div>
+                        </div> --}}
                         <p class="text-start">
                             {{ $hero->hero_text }}
                         </p>
-                        <a href="{{ route('apply-form') }}" class="btn btn-outline text-capitalize">
+                        <a href="{{ route('application-form') }}" class="btn btn-outline text-capitalize">
                             {{ $hero->hero_btn }}
                         </a>
                     </div>

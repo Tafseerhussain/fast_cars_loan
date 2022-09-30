@@ -6,7 +6,7 @@
 		<x-about.hero/>
 		<x-about.who-we-are/>
 		<x-about.what-we-offer/>
-		<x-testimonials/>
+		<x-user-testimonial/>
 	</div>
 
 @endsection

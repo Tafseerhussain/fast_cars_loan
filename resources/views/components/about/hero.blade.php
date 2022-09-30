@@ -8,7 +8,7 @@
                 <p>
                     FastCarsMoney Loans has been passionate about creating a superior level respect and understanding for our customers.
                 </p>
-                <a href="{{ route('apply-form') }}" class="btn">Apple for Loan</a>
+                <a href="{{ route('application-form') }}" class="btn">Apple for Loan</a>
             </div>
         </div>
     </div>
