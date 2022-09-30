@@ -330,8 +330,8 @@
           line-height: inherit;
         }
       }
-      .lavender-btn {
-        background-image: linear-gradient(45deg, #9c9cff, #8585de);
+      .fastcars-btn {
+        background-image: linear-gradient(45deg, #52C234, #52C234);
         border-radius: 2px !important;
         padding: 0.4rem 0.7rem !important;
         white-space: nowrap !important;
@@ -340,6 +340,9 @@
         border: none !important;
         display: inline-block !important;
         box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2) !important;
+      }
+      .text-center {
+      	text-align: center;
       }
     </style>
   </head>
@@ -364,9 +367,21 @@
                     </tr>
                     <tr>
                       <td>
-                      	<h2>Hello {{ $test }}</h2>
-                        <p>Loan Approved</p>
+                      	<h4>Hello {{ $test }},</h4>
+                        <p>Congratulations! Your loan have been approved by Fast Cars Fast Money.</p>
+                        <h4 class="text-center">
+                        	$4000
+                        </h4>
+                        <p>
+                        	To take advantage of this loan offer, check the loan contract below for more details.
+                        </p>
+                        <a href="#" class="fastcars-btn">
+                        	View Contract
+                        </a>
                         <hr>
+                        <p class="text-center">
+                        	Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don't hesitate to re-apply after meeting the conditions mentioned above.
+                        </p>
                       </td>
                     </tr>
                   </table>
