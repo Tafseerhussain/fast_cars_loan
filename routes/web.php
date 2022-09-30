@@ -124,9 +124,9 @@ Route::get('test', function() {
         $phpmailer->isSMTP();
         $phpmailer->Host = env('MAIL_HOST');
         $phpmailer->SMTPAuth = true;
-        $phpmailer->Username = env('MAIL_USERNAME');
-        $phpmailer->Password = env('MAIL_PASSWORD');
-        $phpmailer->SMTPSecure = env('MAIL_ENCRYPTION');
+        $phpmailer->Username = 'admin@fastcarsfastmoney.com';
+        $phpmailer->Password = 'J1thGimZkGvX';
+        $phpmailer->SMTPSecure = 'tls';
         $phpmailer->Port = env('MAIL_PORT');
 
         //Recipients
