@@ -103,6 +103,7 @@ class ComposerStaticInitbab7a6eed33f57f7bb6b3e00baea488e
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'N' => 
         array (
@@ -366,6 +367,10 @@ class ComposerStaticInitbab7a6eed33f57f7bb6b3e00baea488e
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'NunoMaduro\\Collision\\' => 
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
@@ -537,6 +542,8 @@ class ComposerStaticInitbab7a6eed33f57f7bb6b3e00baea488e
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\Admin\\Blog\\AddNewBlog' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Blog/AddNewBlog.php',
         'App\\Http\\Livewire\\Admin\\Blog\\FormEdit' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Blog/FormEdit.php',
+        'App\\Http\\Livewire\\Admin\\Emails\\LoanApproval' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Emails/LoanApproval.php',
+        'App\\Http\\Livewire\\Admin\\Emails\\LoanRejected' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Emails/LoanRejected.php',
         'App\\Http\\Livewire\\Admin\\Faq\\AddNewFaq' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Faq/AddNewFaq.php',
         'App\\Http\\Livewire\\Admin\\Faq\\EditForm' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Faq/EditForm.php',
         'App\\Http\\Livewire\\Admin\\Home\\FastcarProducts' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Home/FastcarProducts.php',
@@ -560,6 +567,7 @@ class ComposerStaticInitbab7a6eed33f57f7bb6b3e00baea488e
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\Admin\\LoanApproval' => __DIR__ . '/../..' . '/app/Mail/Admin/LoanApproval.php',
         'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
         'App\\Models\\Email' => __DIR__ . '/../..' . '/app/Models/Email.php',
         'App\\Models\\Faq' => __DIR__ . '/../..' . '/app/Models/Faq.php',
@@ -710,6 +718,7 @@ class ComposerStaticInitbab7a6eed33f57f7bb6b3e00baea488e
         'Database\\Seeders\\AdminSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminSeeder.php',
         'Database\\Seeders\\BlogSeeder' => __DIR__ . '/../..' . '/database/seeders/BlogSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\EmailSeeder' => __DIR__ . '/../..' . '/database/seeders/EmailSeeder.php',
         'Database\\Seeders\\FaqSeeder' => __DIR__ . '/../..' . '/database/seeders/FaqSeeder.php',
         'Database\\Seeders\\HomeSeeder' => __DIR__ . '/../..' . '/database/seeders/HomeSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -3449,6 +3458,12 @@ class ComposerStaticInitbab7a6eed33f57f7bb6b3e00baea488e
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\SolutionsRepositories\\NullSolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/SolutionsRepositories/NullSolutionsRepository.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
+        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
+        'PHPMailer\\PHPMailer\\OAuthTokenProvider' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuthTokenProvider.php',
+        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
+        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
+        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',

@@ -113,6 +113,17 @@ Route::get('test', function() {
         'name' => 'Test Name',
         'loan_amount' => 1000
     ];
-    Mail::to('sajjadaslammm@gmail.com')->send(new LoanApproval($mailData));
-    dd('mail sent');
+    // Mail::to('test@example.com')->send(new LoanApproval($mailData));
+
+    $to = "sajjadaslammm@gmail.com";
+    $subject = "My subject";
+    $txt = "Hello world!";
+    $headers = "From: webmaster@example.com" . "\r\n" .
+    "CC: sajjadaslammm.com";
+
+    if (mail($to,$subject,$txt,$headers)) {
+        dd('mail sent');
+    } else {
+        dd('mail not sent');
+    }
 });

@@ -28,6 +28,6 @@ class LoanApproval extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.admin.loan-approval');
+        return $this->subject('Test Email')->view('emails.admin.loan-approval');
     }
 }
