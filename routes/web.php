@@ -130,7 +130,7 @@ Route::get('test', function() {
         $phpmailer->Port = env('MAIL_PORT');
 
         //Recipients
-        $phpmailer->setFrom('admin@fastcarsfastmoney.com');
+        $phpmailer->setFrom(env('MAIL_FROM_ADDRESS'));
         $phpmailer->addAddress('sajjadaslammm@gmail.com');
 
         //Content
