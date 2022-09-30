@@ -118,11 +118,11 @@ Route::get('test', function() {
 
         $phpmailer = new PHPMailer();
         $phpmailer->isSMTP();
-        $phpmailer->Host = 'smtp.mailtrap.io';
+        $phpmailer->Host = env('MAIL_MAILER');;
         $phpmailer->SMTPAuth = true;
-        $phpmailer->Port = 2525;
-        $phpmailer->Username = '8c34b83771942c';
-        $phpmailer->Password = 'd5d45f655eef6d';
+        $phpmailer->Port = env('MAIL_PORT');
+        $phpmailer->Username = env('MAIL_USERNAME');
+        $phpmailer->Password = env('MAIL_PASSWORD');
 
         //Recipients
         $phpmailer->setFrom('from@example.com');
