@@ -118,7 +118,6 @@ Route::get('test', function() {
 
         $phpmailer = new PHPMailer(true);
 
-        $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER; 
         $phpmailer->isSMTP();
         $phpmailer->Host = 'business87.web-hosting.com';
         $phpmailer->SMTPAuth = true;
