@@ -114,18 +114,23 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('test', function() {
 
+    require '../vendor/autoload.php';
+
     try {
 
-        $phpmailer = new PHPMailer();
+        $phpmailer = new PHPMailer(true);
+
+        $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER; 
         $phpmailer->isSMTP();
         $phpmailer->Host = env('MAIL_MAILER');;
         $phpmailer->SMTPAuth = true;
-        $phpmailer->Port = env('MAIL_PORT');
         $phpmailer->Username = env('MAIL_USERNAME');
         $phpmailer->Password = env('MAIL_PASSWORD');
+        $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $phpmailer->Port = env('MAIL_PORT');
 
         //Recipients
-        $phpmailer->setFrom('admin@fastcarsfastmoney.com');
+        $phpmailer->setFrom(env('MAIL_FROM_ADDRESS'), 'Sajjad Aslam');
         $phpmailer->addAddress('sajjadaslammm@gmail.com');
 
         //Content
