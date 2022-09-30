@@ -8,6 +8,10 @@ use App\Models\Faq;
 use App\Models\Testimonial;
 use App\Mail\Admin\LoanApproval;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -109,21 +113,34 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::get('test', function() {
-    $mailData = [
-        'name' => 'Test Name',
-        'loan_amount' => 1000
-    ];
-    // Mail::to('test@example.com')->send(new LoanApproval($mailData));
 
-    $to = "sajjadaslammm@gmail.com";
-    $subject = "My subject";
-    $txt = "Hello world!";
-    $headers = "From: webmaster@example.com" . "\r\n" .
-    "CC: sajjadaslammm.com";
+    try {
 
-    if (mail($to,$subject,$txt,$headers)) {
-        dd('mail sent');
-    } else {
-        dd('mail not sent');
+        $phpmailer = new PHPMailer();
+        $phpmailer->isSMTP();
+        $phpmailer->Host = 'smtp.mailtrap.io';
+        $phpmailer->SMTPAuth = true;
+        $phpmailer->Port = 2525;
+        $phpmailer->Username = '8c34b83771942c';
+        $phpmailer->Password = 'd5d45f655eef6d';
+
+        //Recipients
+        $phpmailer->setFrom('from@example.com');
+        $phpmailer->addAddress('joe@example.net');
+
+        //Content
+        $phpmailer->isHTML(true);                                  //Set email format to HTML
+        $phpmailer->Subject = 'Here is the subject';
+        $phpmailer->Body    = 'This is the HTML message body <b>in bold!</b>';
+        $phpmailer->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $phpmailer->send();
+        echo 'Message has been sent';
+
+    } catch (Exception $e) {
+
+        echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+
     }
+
 });
