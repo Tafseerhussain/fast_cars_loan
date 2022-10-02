@@ -149,7 +149,7 @@ class AdminController extends Controller
 
             //Recipients
             $phpmailer->setFrom('admin@fastcarsfastmoney.com');
-            $phpmailer->addAddress("sajjadaslammm@gmail.com");
+            $phpmailer->addAddress($user->email);
 
             //Content
             $phpmailer->isHTML(true);                                  //Set email format to HTML
