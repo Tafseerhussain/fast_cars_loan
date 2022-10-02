@@ -106,6 +106,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/email/loan-rejected', [App\Http\Controllers\AdminController::class, 'loanRejected'])->name('admin.loan.rejected');
 
     Route::post('/admin/application/approve', [App\Http\Controllers\AdminController::class, 'approveLoanApplication'])->name('admin.application.approve');
+    Route::post('/admin/application/reject', [App\Http\Controllers\AdminController::class, 'rejectLoanApplication'])->name('admin.application.reject');
 
 });
 

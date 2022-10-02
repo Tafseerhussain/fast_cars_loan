@@ -11,10 +11,10 @@
                     <thead>
                         <tr>
                             <th>Application ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>User</th>
                             <th>Contact</th>
                             <th>Loan Amount</th>
+                            <th>Status</th>
                             <th>Submitted On</th>
                             <th></th>
                         </tr>
@@ -23,10 +23,33 @@
                         @foreach ($applications as $app)
                         <tr>
                             <td>{{ $app->form_specific_id }}</td>
-                            <td>{{ $app->user->name }}</td>
-                            <td>{{ $app->user->email }}</td>
+                            <td><small>{{ $app->user->name }}</small> <br>{{ $app->user->email }}</td>
                             <td>{{ $app->contactInfo->phone }}</td>
                             <td>{{ $app->personalInfo->loan_amount }}</td>
+                            <td>
+                                @if ($app->approved == 0)
+                                    <a href="#" class="btn btn-warning btn-icon-split btn-sm">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </span>
+                                        <span class="text">Not Approved</span>
+                                    </a>
+                                @elseif($app->approved == 1)
+                                    <a href="#" class="btn btn-success btn-icon-split btn-sm">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Approved</span>
+                                    </a>
+                                @elseif($app->approved == 2)
+                                    <a href="#" class="btn btn-danger btn-icon-split btn-sm">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-times"></i>
+                                        </span>
+                                        <span class="text">Rejected</span>
+                                    </a>
+                                @endif
+                            </td>
                             <td>{{ $app->created_at->format('d M, Y') }}</td>
                             <td>
                                 <a href="/admin/loan-applications/{{ $app->id }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View Application">

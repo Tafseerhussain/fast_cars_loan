@@ -125,6 +125,7 @@ class AdminController extends Controller
         return view('admin.emails.loan-rejected', compact('rejected'));
     }
 
+    // APPROVING THE LOAN
     public function approveLoanApplication(Request $request)
     {
         $id = $request->applicationID;
@@ -166,5 +167,49 @@ class AdminController extends Controller
         }
 
         return redirect('/admin/loan-applications')->with('success', 'Loan Application Approved!');
+    }
+
+    // REJECTING THE LOAN
+    public function rejectLoanApplication(Request $request)
+    {
+        $id = $request->applicationID;
+        $form = Form::findOrFail($id);
+        $form->approved = 2;
+        $form->save();
+
+        $user = $form->user;
+        $em = Email::first();
+        
+        try {
+
+            $phpmailer = new PHPMailer(true);
+
+            $phpmailer->isSMTP();
+            $phpmailer->Host = 'business87.web-hosting.com';
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Username = 'admin@fastcarsfastmoney.com';
+            $phpmailer->Password = 'J1thGimZkGvX';
+            $phpmailer->SMTPSecure = 'tls';
+            $phpmailer->Port = env('MAIL_PORT');
+
+            //Recipients
+            $phpmailer->setFrom('admin@fastcarsfastmoney.com');
+            $phpmailer->addAddress($user->email);
+
+            //Content
+            $phpmailer->isHTML(true);                                  //Set email format to HTML
+            $phpmailer->Subject = "Loan Approved";
+            $phpmailer->Body    = view('emails.admin.loan-rejection', compact(['user', 'em', 'form']))->render();
+
+            $phpmailer->send();
+            echo 'Message has been sent';
+
+        } catch (Exception $e) {
+
+            echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+
+        }
+
+        return redirect('/admin/loan-applications')->with('rejected', 'Loan Application Rejected!');
     }
 }

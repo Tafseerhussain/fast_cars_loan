@@ -408,18 +408,28 @@
         </div>
         <div class="row application-actions-btns mt-2">
             <div class="col-12">
-                <button class="btn btn-outline-danger bg-transparent">
-                    Reject
-                </button>
-                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#loanDecisionModal">
-                    Approve
-                </button>
+                @if ($application->approved == 0)
+                    <button class="btn btn-outline-danger bg-transparent" data-toggle="modal" data-target="#loanDecisionModal2">
+                        Reject
+                    </button>
+                    <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#loanDecisionModal">
+                        Approve
+                    </button>
+                @elseif ($application->approved == 1)
+                    <div class="alert alert-success text-center">
+                        This Loan has been Approved!
+                    </div>
+                @elseif ($application->approved == 2)
+                    <div class="alert alert-danger text-center">
+                        This Loan has been Rejected!
+                    </div>
+                @endif
             </div>
         </div>
 
     </div>
 
-     <!-- Logout Modal-->
+     <!-- Approval Modal-->
     <div class="modal fade" id="loanDecisionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -430,7 +440,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Are you sure you want to approve this loan? <b>This Action is Irreversible. {{ $application->id }}</b></div>
+                <div class="modal-body">Are you sure you want to approve this loan? <b>This Action is Irreversible.</b></div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="{{ route('admin.application.approve') }}" 
@@ -439,6 +449,34 @@
                         Yes
                     </a>
                     <form id="loan-approve-form" action="{{ route('admin.application.approve') }}" method="POST" class="d-none">
+                        @csrf
+                        <input type="hidden" value="{{ $application->id }}" name="applicationID">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Rejection Modal --}}
+    <div class="modal fade" id="loanDecisionModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reject this Loan?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Are you sure you want to Reject this loan? <b>This Action is Irreversible.</b></div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-danger" href="{{ route('admin.application.reject') }}" 
+                        onclick="event.preventDefault();
+                        document.getElementById('loan-reject-form').submit();">
+                        Yes
+                    </a>
+                    <form id="loan-reject-form" action="{{ route('admin.application.reject') }}" method="POST" class="d-none">
                         @csrf
                         <input type="hidden" value="{{ $application->id }}" name="applicationID">
                     </form>

@@ -7,6 +7,7 @@
                         <div class="text-center">
                             <img src="{{ asset('img/apply-form/tick.png') }}" style="max-width:100%; width: 100px;" alt="">
                             <h3 class="mt-3">Your application has been received. Our team will contact you soon. Thank you...</h3>
+                            <code><b>NOTE:</b>Please make sure to check your spam for email. Sometimes Email land in spam.</code><br>
                             <a href="/" class="btn mt-3">Return Home</a>
                         </div>
                     </div>
