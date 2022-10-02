@@ -10,6 +10,10 @@ use App\Models\Faq;
 use App\Models\Testimonial;
 use App\Models\Email;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 class AdminController extends Controller
 {
     public function index()
@@ -32,7 +36,7 @@ class AdminController extends Controller
     }
     public function viewLoanApplication($id)
     {
-        $application = Form::where('form_specific_id', $id)->first();
+        $application = Form::where('id', $id)->first();
         return view('admin.loanApplications.view', compact('application'));
     }
 
@@ -121,10 +125,46 @@ class AdminController extends Controller
         return view('admin.emails.loan-rejected', compact('rejected'));
     }
 
-    public function approveTheLoan($id)
+    public function approveLoanApplication(Request $request)
     {
-        dd($id);
+        $id = $request->applicationID;
         $form = Form::findOrFail($id);
-        dd($form);
+        $form->approved = 1;
+        $form->save();
+
+        $user = $form->user;
+        $em = Email::first();
+
+        try {
+
+            $phpmailer = new PHPMailer(true);
+
+            $phpmailer->isSMTP();
+            $phpmailer->Host = 'business87.web-hosting.com';
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Username = 'admin@fastcarsfastmoney.com';
+            $phpmailer->Password = 'J1thGimZkGvX';
+            $phpmailer->SMTPSecure = 'tls';
+            $phpmailer->Port = env('MAIL_PORT');
+
+            //Recipients
+            $phpmailer->setFrom('admin@fastcarsfastmoney.com');
+            $phpmailer->addAddress("sajjadaslammm@gmail.com");
+
+            //Content
+            $phpmailer->isHTML(true);                                  //Set email format to HTML
+            $phpmailer->Subject = "Loan Approved";
+            $phpmailer->Body    = view('emails.admin.loan-approval', compact(['user', 'em', 'form']))->render();
+
+            $phpmailer->send();
+            echo 'Message has been sent';
+
+        } catch (Exception $e) {
+
+            echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+
+        }
+
+        return redirect('/admin/loan-applications')->with('success', 'Loan Application Approved!');
     }
 }

@@ -367,22 +367,22 @@
                     </tr>
                     <tr>
                       <td>
-                      	<h1>Hello {{ $test }},</h1>
-                        <p>Congratulations! Your loan have been approved by Fast Cars Fast Money.</p>
+                      	<h1>Hello {{ $user->name }},</h1>
+                        <p>{{ $em->approval_message }}</p>
                         <h1 class="text-center">
-                        	$4000
+                        	${{ $form->personalInfo->loan_amount }}
                         </h1>
                         <p>
-                        	To take advantage of this loan offer, check the loan contract below for more details.
+                        	{{ $em->approval_message_line_two }}
                         </p>
                         <div class="text-center">
-	                        <a href="#" class="fastcars-btn">
+	                        <a href="{{ $em->link_to_contract }}" target="_blank" class="fastcars-btn">
 	                        	View Contract
 	                        </a>
                         </div>
                         <hr>
                         <p class="text-center">
-                        	Thank you for thinking of Fast Cars Fast Money for your lending needs. Please don't hesitate to re-apply after meeting the conditions mentioned above.
+                        	{{ $em->last_message_approval }}
                         </p>
                       </td>
                     </tr>

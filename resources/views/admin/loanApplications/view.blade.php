@@ -411,9 +411,9 @@
                 <button class="btn btn-outline-danger bg-transparent">
                     Reject
                 </button>
-                <a href="{{ route('admin.loan.approve', $application->id) }}" class="btn btn-primary ml-2">
+                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#loanDecisionModal">
                     Approve
-                </a>
+                </button>
             </div>
         </div>
 
@@ -430,12 +430,17 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Are you sure you want to approve this loan?</div>
+                <div class="modal-body">Are you sure you want to approve this loan? <b>This Action is Irreversible. {{ $application->id }}</b></div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('admin.loan.approve', $application->id) }}">Yes</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    <a class="btn btn-primary" href="{{ route('admin.application.approve') }}" 
+                        onclick="event.preventDefault();
+                        document.getElementById('loan-approve-form').submit();">
+                        Yes
+                    </a>
+                    <form id="loan-approve-form" action="{{ route('admin.application.approve') }}" method="POST" class="d-none">
                         @csrf
+                        <input type="hidden" value="{{ $application->id }}" name="applicationID">
                     </form>
                 </div>
             </div>

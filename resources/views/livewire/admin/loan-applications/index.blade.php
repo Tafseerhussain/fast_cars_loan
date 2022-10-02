@@ -29,7 +29,7 @@
                             <td>{{ $app->personalInfo->loan_amount }}</td>
                             <td>{{ $app->created_at->format('d M, Y') }}</td>
                             <td>
-                                <a href="/admin/loan-applications/{{ $app->form_specific_id }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View Application">
+                                <a href="/admin/loan-applications/{{ $app->id }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View Application">
                                     <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete Application">

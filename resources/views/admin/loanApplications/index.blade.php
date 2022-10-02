@@ -4,6 +4,19 @@
 
 	<div class="container-fluid">
 
+        @if (session()->has('success'))
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>Application Approved!</strong> Email has been sent to the user.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+        @endif
+
         @livewire('admin.loan-applications.index')
 
     </div>

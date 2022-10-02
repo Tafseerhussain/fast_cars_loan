@@ -105,7 +105,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/email/loan-approval', [App\Http\Controllers\AdminController::class, 'loanApproval'])->name('admin.loan.approval');
     Route::get('/admin/email/loan-rejected', [App\Http\Controllers\AdminController::class, 'loanRejected'])->name('admin.loan.rejected');
 
-    Route::get('/admin/loan-applications/approve/{$id}', [App\Http\Controllers\AdminController::class, 'adminApproveLoan'])->name('admin.loan.approve');
+    Route::post('/admin/application/approve', [App\Http\Controllers\AdminController::class, 'approveLoanApplication'])->name('admin.application.approve');
+
 });
 
 Route::group(['middleware' => ['auth']], function () {
