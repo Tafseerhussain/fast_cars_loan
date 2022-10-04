@@ -17,33 +17,48 @@ return new class extends Migration
             $table->id();
 
             // HOME HERO
-            $table->string('hero_head')->default('Lorem Ipsum dolor sit amet consectetur.');
-            $table->string('hero_text')->default('Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam obcaecati, repudiandae est perferendis odio suscipit ea inventore laudantium expedita.');
-            $table->string('hero_btn')->default('Apply for Loan');
-            $table->string('form_head')->default('Have your cash in hand with a few clicks!');
-            $table->string('hero_background')->default('img/home/hero-bg.jpg');
+            $table->string('hero_head');
+            $table->string('hero_text');
+            $table->string('hero_btn');
+            $table->string('form_head');
+            $table->string('hero_background');
 
             // STEPS SECTION
-            $table->string('steps_heading')->default('3 Easy Steps to Apply for Fast Title Loans Online or Near You!');
-            
-            $table->string('step_one_heading')->default('Click or Call');
-            $table->string('step_one_text')->default('The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less');
-            $table->string('step_one_image')->default('icons/call.svg');
-
-            $table->string('step_two_heading')->default('Submit Info Text');
-            $table->string('step_two_text')->default('The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less');
-            $table->string('step_two_image')->default('icons/customer-info.svg');
-
-            $table->string('step_three_heading')->default('Get Your Money');
-            $table->string('step_three_text')->default('The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less');
-            $table->string('step_three_image')->default('icons/get-money.svg');
+            $table->string('steps_heading');  
+            $table->string('step_one_heading');
+            $table->string('step_one_text');
+            $table->string('step_one_image');
+            $table->string('step_two_heading');
+            $table->string('step_two_text');
+            $table->string('step_two_image');
+            $table->string('step_three_heading');
+            $table->string('step_three_text');
+            $table->string('step_three_image');
 
             // PRODUCTS SECTION
-            $table->string('product_heading')->default('FastCarsMoney products');
-            $table->string('product_subheading')->default('We have a variety of products so that our customers can choose the best option.<br>At FastCarsMoney we offer:');
-            $table->string('product_points')->default('Vehicle Title Loans,Pawns on vehicle title,Motorcycle title loans and pawns,Personal loans');
-            $table->longText('product_text')->default('At FastCarMoney we know that a crisis from the past does not determine the rest of your life. For us it is essential that our service guarantees your satisfaction and ensures the success of your future, which is why we take care of every aspect of our vehicle title loans. Take advantage of our policy of accepting most types of credit scores, allowing us to help you get back on track with your finances.');
-            $table->string('product_image')->default('img/home/product.jpg');
+            $table->string('product_heading');
+            $table->text('product_subheading');
+            $table->string('product_points');
+            $table->longText('product_text');
+            $table->string('product_image');
+
+            // WHY GET FUNDED SECTION
+            $table->text('funding_heading');
+            $table->text('funding_subheading');
+            $table->text('funding_background');
+
+            $table->string('funding_card_one_image');
+            $table->string('funding_card_one_heading');
+            $table->text('funding_card_one_text');
+            $table->string('funding_card_two_image');
+            $table->string('funding_card_two_heading');
+            $table->text('funding_card_two_text');
+            $table->string('funding_card_three_image');
+            $table->string('funding_card_three_heading');
+            $table->text('funding_card_three_text');
+            $table->string('funding_card_four_image');
+            $table->string('funding_card_four_heading');
+            $table->text('funding_card_four_text');
 
 
             $table->timestamps();

@@ -11665,6 +11665,10 @@ footer .copyright {
 .why-get-funded .funded-cards .funded-card p {
   line-height: 27px;
 }
+.why-get-funded .funded-cards .funded-card .funded-card-img img {
+  height: 110px;
+  max-width: 100%;
+}
 
 .watch-video {
   padding: 100px 0;

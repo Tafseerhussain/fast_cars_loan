@@ -6,7 +6,7 @@
         <x-home-hero/>
         <x-common.easy-steps/>
         <x-fast-car-products/>
-        <x-why-get-funded/>
+        <x-why-get-funding/>
         <x-watch-video/>
         <x-easy-cash-advantage/>
         {{-- <x-blog-posts/> --}}

@@ -33,7 +33,7 @@
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin') }}">
                 <img src="{{ asset('img/logo.png') }}" alt="" class="non-toggle-logo">
                 <img src="{{ asset('img/fav.png') }}" alt="" class="toggle-logo">
             </a>
@@ -159,6 +159,13 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+             <li class="nav-item">
+                <a class="nav-link" href="{{ route('welcome') }}" target="_blank">
+                    <i class="fas fa-fw fa-globe"></i>
+                    <span>Visit Website</span>
+                </a>
+            </li>            
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

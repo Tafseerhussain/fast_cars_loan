@@ -11338,3 +11338,6 @@ body.sidebar-toggled footer.sticky-footer {
   align-items: center;
   justify-content: center;
 }
+.admin-why-get-funded .cards_form img {
+  max-width: 100%;
+}

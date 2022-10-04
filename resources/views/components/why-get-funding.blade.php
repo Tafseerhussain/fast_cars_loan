@@ -1,12 +1,12 @@
-<div class="why-get-funded">
+<div class="why-get-funded" style="background-image: url({{ $funded->funding_background }});">
    <div class="container">
        <div class="row">
            <div class="col-12 text-center text-white">
                <h1>
-                   Why Get Funded With the Help of FastCarsMoney Title Loans?
+                   {{ $funded->funding_heading }}
                </h1>
                <p>
-                   <span>Title Loan Benefits</span> You can get today.
+                   {{ $funded->funding_subheading }}
                </p>
            </div>
        </div>
@@ -14,12 +14,12 @@
            <div class="col-lg-3 col-md-6">
                <div class="funded-card shadow">
                    <div class="funded-card-img">
-                       <img src="{{ asset('img/home/fast-cash.svg') }}" alt="fast-cash">
+                       <img src="{{ asset($funded->funding_card_one_image) }}" alt="fast-cash">
                        <h2>
-                           Get Cash Fast
+                           {{ $funded->funding_card_one_heading }}
                        </h2>
                        <p>
-                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                           {{ $funded->funding_card_one_text }}
                        </p>
                    </div>
                </div>
@@ -27,12 +27,12 @@
            <div class="col-lg-3 col-md-6">
                <div class="funded-card shadow">
                    <div class="funded-card-img">
-                       <img src="{{ asset('img/home/keep-car.svg') }}" alt="keep-car">
+                       <img src="{{ asset($funded->funding_card_two_image) }}" alt="keep-car">
                        <h2>
-                           Keep Your Car
+                           {{ $funded->funding_card_two_heading }}
                        </h2>
                        <p>
-                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                           {{ $funded->funding_card_two_text }}
                        </p>
                    </div>
                </div>
@@ -40,12 +40,12 @@
            <div class="col-lg-3 col-md-6">
                <div class="funded-card shadow">
                    <div class="funded-card-img">
-                       <img src="{{ asset('img/home/bad-credit.svg') }}" alt="bad-credit">
+                       <img src="{{ asset($funded->funding_card_three_image) }}" alt="bad-credit">
                        <h2>
-                           Bad Credit OK
+                           {{ $funded->funding_card_three_heading }}
                        </h2>
                        <p>
-                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                           {{ $funded->funding_card_three_text }}
                        </p>
                    </div>
                </div>
@@ -53,12 +53,12 @@
            <div class="col-lg-3 col-md-6">
                <div class="funded-card shadow">
                    <div class="funded-card-img">
-                       <img src="{{ asset('img/home/convenient-terms.svg') }}" alt="convenient-terms">
+                       <img src="{{ asset($funded->funding_card_four_image) }}" alt="convenient-terms">
                        <h2>
-                           Convenient Terms
+                           {{ $funded->funding_card_four_heading }}
                        </h2>
                        <p>
-                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                           {{ $funded->funding_card_four_text }}
                        </p>
                    </div>
                </div>
