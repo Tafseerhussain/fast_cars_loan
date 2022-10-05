@@ -74,14 +74,28 @@
                     </div>
                 </div>
 
+                {{-- EASY CASH ADVANTAGE SECTION --}}
                 <div class="card shadow mb-4 border-left-success">
                     <a href="#collapseEasyCash" class="d-block card-header py-3 collapsed" data-toggle="collapse"
                         role="button" aria-expanded="true" aria-controls="collapseEasyCash">
-                        <h6 class="m-0 font-weight-bold text-primary">Eash Cash Advantage Section <code>(Sixth Section)</code></h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Easy Cash Advantage Section <code>(Sixth Section)</code></h6>
                     </a>
                     <div class="collapse" id="collapseEasyCash">
                         <div class="card-body">
                             @livewire('admin.home.easy-cash-advantage')
+                        </div>
+                    </div>
+                </div>
+
+                {{-- CUSTOMER PORTAL SECTION --}}
+                <div class="card shadow mb-4 border-left-success">
+                    <a href="#collapseCustomerPortal" class="d-block card-header py-3 collapsed" data-toggle="collapse"
+                        role="button" aria-expanded="true" aria-controls="collapseCustomerPortal">
+                        <h6 class="m-0 font-weight-bold text-primary">Customer Portal Section <code>(Seventh Section)</code></h6>
+                    </a>
+                    <div class="collapse" id="collapseCustomerPortal">
+                        <div class="card-body">
+                            @livewire('admin.home.customer-portal')
                         </div>
                     </div>
                 </div>

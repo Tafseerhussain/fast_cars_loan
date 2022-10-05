@@ -10,7 +10,7 @@
         <x-watch-loan-video/>
         <x-easy-cash-advantages/>
         {{-- <x-blog-posts/> --}}
-        <x-fast-cars-portal/>
+        <x-customer-portal/>
         <x-user-testimonial/>
         <x-newsletter/>
         <x-latest-blogs/>

@@ -5,40 +5,40 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="section-title">
-                    Fast Cars Money Customer Portal
+                    {{ $portal->portal_heading }}
                 </h1>
             </div>
         </div>
         <div class="row portal-benefits">
             <div class="col-lg-3 col-md-6">
                 <div class="benefit-box easy-to-use">
-                    <img src="{{ asset('img/home/easy-to-use.svg') }}" alt="easy to use">
-                    <h4>Easy to Use</h4>
+                    <img src="{{ asset($portal->portal_card_one_image) }}" alt="easy to use">
+                    <h4>{{ $portal->portal_card_one_text }}</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="benefit-box manage-accounts">
-                    <img src="{{ asset('img/home/manage-accounts.svg') }}" alt="manage account">
-                    <h4>Manage Accounts</h4>
+                    <img src="{{ asset($portal->portal_card_two_image) }}" alt="manage account">
+                    <h4>{{ $portal->portal_card_two_text }}</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="benefit-box check-balances">
-                    <img src="{{ asset('img/home/check-balances.svg') }}" alt="check balances">
-                    <h4>Check Balances</h4>
+                    <img src="{{ asset($portal->portal_card_three_image) }}" alt="check balances">
+                    <h4>{{ $portal->portal_card_three_text }}</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="benefit-box make-payment">
-                    <img src="{{ asset('img/home/make-payment.svg') }}" alt="make payment">
-                    <h4>Make a Payment 24/7</h4>
+                    <img src="{{ asset($portal->portal_card_four_image) }}" alt="make payment">
+                    <h4>{{ $portal->portal_card_four_text }}</h4>
                 </div>
             </div>
         </div>
-        <div class="row access-portal">
+        {{-- <div class="row access-portal">
             <div class="col-12 text-center">
                 <p>Access the <a href="#"> Customer Portal</a></p>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

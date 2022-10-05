@@ -73,6 +73,16 @@ return new class extends Migration
             $table->text('easy_cash_image');
             $table->text('easy_cash_advantages');
 
+            $table->text('portal_heading');
+            $table->text('portal_card_one_text');
+            $table->text('portal_card_two_text');
+            $table->text('portal_card_three_text');
+            $table->text('portal_card_four_text');
+            $table->text('portal_card_one_image');
+            $table->text('portal_card_two_image');
+            $table->text('portal_card_three_image');
+            $table->text('portal_card_four_image');
+
             $table->timestamps();
         });
     }

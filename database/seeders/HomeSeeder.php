@@ -78,6 +78,16 @@ class HomeSeeder extends Seeder
                 'easy_cash_text_two' => 'Making payments and managing an account has never been easier for our customers. You always have the option of working directly with our branch representatives. And now with our mobile app, you can manage your account from your mobile phone.',
                 'easy_cash_image' => 'img/home/fast-cash.png',
                 'easy_cash_advantages' => 'Same day cash***, Fast approval, Most types of credit accepted, Continue driving your vehicle, Competitive rates',
+
+                'portal_heading' => 'Fast Cars Money Customer Portal',
+                'portal_card_one_text' => 'Easy to Use',
+                'portal_card_two_text' => 'Manage Accounts',
+                'portal_card_three_text' => 'Check Balances',
+                'portal_card_four_text' => 'Make a Payment 24/7',
+                'portal_card_one_image' => 'img/home/easy-to-use.svg',
+                'portal_card_two_image' => 'img/home/manage-accounts.svg',
+                'portal_card_three_image' => 'img/home/check-balances.svg',
+                'portal_card_four_image' => 'img/home/make-payment.svg',
             ]
         );
     }
