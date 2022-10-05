@@ -435,14 +435,16 @@ footer {
 		display: block;
 		.watch-video-border {
 			transform: rotate(0deg);
-		    transition: transform 0.7s linear;
-		    animation: rotate 10s infinite linear;
+		  transition: transform 0.7s linear;
+		  animation: rotate 10s infinite linear;
 		}
 		.watch-video {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			width: 80%;
 		}
 		.play-btn {
 			position: absolute;
@@ -1607,6 +1609,38 @@ footer {
 // PRIVACY POLICY DETAIL
 .privacy-policy-detail {
 	padding: 100px 0;
+}
+
+// WATCH VIDEO MODAL
+#watchVideoModal {
+	.modal-content {
+		background: transparent;
+		border:none;
+	}
+	.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+  }
+	.modal-body {
+	  position:relative;
+	  padding:0px;
+	  border-radius: 10px;
+	  overflow: hidden;
+	  iframe {
+	  	height: 500px;
+	  	width: 100%;
+	  }
+	}
+	.modal-header {
+		height: 0;
+		padding: 0;
+		border:none;
+	}
+	.btn-close {
+	  position:absolute;
+	  right:-20px;
+	  top:0;
+	}
 }
 
 // APPLICATION FORM PAGE

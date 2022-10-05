@@ -60,6 +60,18 @@ return new class extends Migration
             $table->string('funding_card_four_heading');
             $table->text('funding_card_four_text');
 
+            $table->text('video_heading');
+            $table->text('video_text_one');
+            $table->text('video_text_two');
+            $table->string('video_image');
+            $table->text('video_link');
+
+            $table->text('easy_cash_heading');
+            $table->text('easy_cash_text');
+            $table->text('easy_cash_heading_two');
+            $table->text('easy_cash_text_two');
+            $table->text('easy_cash_image');
+            $table->text('easy_cash_advantages');
 
             $table->timestamps();
         });

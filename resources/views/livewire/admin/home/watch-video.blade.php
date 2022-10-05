@@ -1,26 +1,26 @@
-<div class="admin-fastcar-products">
+<div class="admin-watch-video">
      <div class="row">
          <div class="col-md-8">
             <form wire:submit.prevent="submit">
                <div class="form-group">
-                  <label for="heading">Heading</label>
-                  <input type="text" class="form-control" wire:model.defer="heading" placeholder="Heading">
+                  <label for="heading">Section Heading</label>
+                  <input type="text" class="form-control" wire:model.defer="heading">
                   @error('heading') <span class="input_error">{{ $message }}</span> @enderror
                </div>
                <div class="form-group">
-                  <label for="subheading">Subheading (Use <code>&lt;br&gt;</code> to put line breaks)</label>
-                  <textarea class="form-control" wire:model.defer="subheading" placeholder="Subheading" cols="30" rows="3"></textarea>
-                  @error('subheading') <span class="input_error">{{ $message }}</span> @enderror
+                  <label for="firstParagraph">First Paragraph</label>
+                  <textarea class="form-control" wire:model.defer="firstParagraph" cols="30" rows="3"></textarea>
+                  @error('firstParagraph') <span class="input_error">{{ $message }}</span> @enderror
                </div>
                <div class="form-group">
-                  <label for="points">Points (Separate each point by comma <code>&apos;,&apos;</code>)</label>
-                  <textarea class="form-control" wire:model.defer="points" placeholder="Points" cols="30" rows="3"></textarea>
-                  @error('points') <span class="input_error">{{ $message }}</span> @enderror
+                  <label for="secondParagraph">Second Paragraph</label>
+                  <textarea class="form-control" wire:model.defer="secondParagraph" cols="30" rows="3"></textarea>
+                  @error('secondParagraph') <span class="input_error">{{ $message }}</span> @enderror
                </div>
                <div class="form-group">
-                  <label for="bottomText">Bottom Text</label>
-                  <textarea class="form-control" wire:model.defer="bottomText" placeholder="Text" cols="30" rows="3"></textarea>
-                  @error('bottomText') <span class="input_error">{{ $message }}</span> @enderror
+                  <label for="VideoLink">Video URL</label>
+                  <input type="text" class="form-control" wire:model.defer="VideoLink">
+                  @error('VideoLink') <span class="input_error">{{ $message }}</span> @enderror
                </div>
                <button type="submit" class="btn d-block">
                   Save
@@ -37,16 +37,16 @@
          </div>
          <div class="col-md-4">
             <form wire:submit.prevent="submitImage">
-               <h5>Section Image:</h5>
+               <h5>Background Image:</h5>
 
                <small>Current Image:</small>
                <img src="{{ asset($imagePreview) }}" alt="" class="w-100 rounded shadow">
                <hr>
-               <input type="file" wire:model="image">
-               <small class="d-block">Max: 2MB</small>
-               @error('image') <span class="input_error d-block">{{ $message }}</span> @enderror
-               @if ($image)
-                  <img src="{{ $image->temporaryUrl() }}" style="width: 150px; max-width: 100%;" class="rounded img-thumbnail mt-2">
+               <input type="file" wire:model="videoThumbnail">
+               <small class="d-block">Max: 2MB (Preferred: Square Image)</small>
+               @error('videoThumbnail') <span class="input_error d-block">{{ $message }}</span> @enderror
+               @if ($videoThumbnail)
+                  <img src="{{ $videoThumbnail->temporaryUrl() }}" style="width: 150px; max-width: 100%;" class="rounded img-thumbnail mt-2">
                @endif
                
 

@@ -63,6 +63,21 @@ class HomeSeeder extends Seeder
                 'funding_card_four_image' => 'img/home/convenient-terms.svg',
                 'funding_card_four_heading' => 'Convenient Terms',
                 'funding_card_four_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.',
+
+                // VIDEO SECTION
+                'video_heading' => 'Don\'t Pay Too Much for your Auto Title Loan',
+                'video_text_one' => 'Use your car to get cash and keep driving it when you apply for a Title Loan.',
+                'video_text_two' => 'Whether you prefer short-term loans or long-term loans, you have options! Here at Fast Cars, we care about our customer\'s financial relief with payments that are manageable. Fast Cars gives you the option to repay your loan early, without any prepayment penalties!',
+                'video_image' => 'img/home/watch-video.png',
+                'video_link' => 'https://www.youtube.com/embed/NFWSFbqL0A0',
+
+                // EASY CASH SECTION
+                'easy_cash_heading' => 'With FastCarsMoney, Getting Cash is Easy',
+                'easy_cash_text' => 'Use your car to get cash and keep driving it when you apply for a Title Loan. <br> Whether you prefer short-term loans or long-term loans, you have options! Here at LoanMart, we care about our customer\'s financial relief with payments that are manageable. LoanMart gives you the option to repay your loan early, without any prepayment penalties!',
+                'easy_cash_heading_two' => 'Online and in-person program offers you even more flexibility',
+                'easy_cash_text_two' => 'Making payments and managing an account has never been easier for our customers. You always have the option of working directly with our branch representatives. And now with our mobile app, you can manage your account from your mobile phone.',
+                'easy_cash_image' => 'img/home/fast-cash.png',
+                'easy_cash_advantages' => 'Same day cash***, Fast approval, Most types of credit accepted, Continue driving your vehicle, Competitive rates',
             ]
         );
     }

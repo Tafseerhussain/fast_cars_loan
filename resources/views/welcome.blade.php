@@ -7,8 +7,8 @@
         <x-common.easy-steps/>
         <x-fast-car-products/>
         <x-why-get-funding/>
-        <x-watch-video/>
-        <x-easy-cash-advantage/>
+        <x-watch-loan-video/>
+        <x-easy-cash-advantages/>
         {{-- <x-blog-posts/> --}}
         <x-fast-cars-portal/>
         <x-user-testimonial/>
@@ -16,17 +16,40 @@
         <x-latest-blogs/>
     </div>
 
-    {{-- @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif
-            @endauth
+    <div class="modal fade" id="watchVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-    @endif --}}
+    </div>
+
+@endsection
+
+@section('custom-js')
+    <script>
+        $(document).ready(function() {
+            var videoSrc;
+            $('.video-btn').click(function() {
+                videoSrc = $('.video-btn').data( "src" );
+            });
+            
+            $('#watchVideoModal').on('shown.bs.modal', function (e) {
+                $("#video").attr('src',videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+            })
+
+            $('#watchVideoModal').on('hide.bs.modal', function (e) {
+                $("#video").attr('src',videoSrc);
+            })
+        });
+    </script>
 @endsection

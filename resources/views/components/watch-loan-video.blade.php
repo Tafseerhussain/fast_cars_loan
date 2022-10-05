@@ -4,13 +4,13 @@
             <div class="col-md-6">
                 <div class="watch-left">
                     <h1 class="section-title">
-                        Don't Pay Too Much for your Auto Title Loan
+                        {{ $video->video_heading }}
                     </h1>
                     <p>
-                        Use your car to get cash and keep driving it when you apply for a Title Loan.
+                        {{ $video->video_text_one }}
                     </p>
                     <p>
-                        Whether you prefer short-term loans or long-term loans, you have options! Here at Fast Cars, we care about our customer's financial relief with payments that are manageable. Fast Cars gives you the option to repay your loan early, without any prepayment penalties!
+                        {{ $video->video_text_two }}
                     </p>
                     <a href="#" class="btn">
                         Apply for Loan
@@ -20,12 +20,13 @@
             <div class="col-md-6">
                 <div class="watch-right position-relative">
                     <img src="{{ asset('img/home/watch-video-border.png') }}" alt="watch video text" class="watch-video-border w-100">
-                    <img src="{{ asset('img/home/watch-video.png') }}" alt="watch video" class="watch-video">
-                    <a href="#!">
-                        <img src="{{ asset('img/home/watch-video-btn.png') }}" alt="play button" class="play-btn">
+                    <img src="{{ asset($video->video_image) }}" alt="watch video" class="watch-video">
+                    <a href="#!" class="play-btn video-btn" data-bs-toggle="modal" data-bs-target="#watchVideoModal" data-src="{{ $video->video_link }}">
+                        <img src="{{ asset('img/home/watch-video-btn.png') }}" alt="play button">
                     </a>
                 </div>
             </div>
         </div>
     </div>
+
 </div>

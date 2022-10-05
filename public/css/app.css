@@ -11698,6 +11698,8 @@ footer .copyright {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 80%;
 }
 .watch-video .watch-right .play-btn {
   position: absolute;
@@ -12796,6 +12798,35 @@ footer .copyright {
 
 .privacy-policy-detail {
   padding: 100px 0;
+}
+
+#watchVideoModal .modal-content {
+  background: transparent;
+  border: none;
+}
+#watchVideoModal .modal-dialog {
+  max-width: 800px;
+  margin: 30px auto;
+}
+#watchVideoModal .modal-body {
+  position: relative;
+  padding: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#watchVideoModal .modal-body iframe {
+  height: 500px;
+  width: 100%;
+}
+#watchVideoModal .modal-header {
+  height: 0;
+  padding: 0;
+  border: none;
+}
+#watchVideoModal .btn-close {
+  position: absolute;
+  right: -20px;
+  top: 0;
 }
 
 .application-form-page .application-form-header {
