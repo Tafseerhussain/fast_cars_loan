@@ -29,6 +29,8 @@ class Steps extends Component
     public $stepTwoImagePreview;
     public $stepThreeImagePreview;
 
+    public $isHidden;
+
     protected $rules = [
         'stepsHeading' => 'required',
 
@@ -100,6 +102,14 @@ class Steps extends Component
         session()->flash('successMessage', 'Saved!');
     }
 
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $steps = Home::where('id', 1)->first();
+        $steps->steps_hidden = $value;
+        $steps->save();
+    }
+
     public function render()
     {
         $steps = Home::where('id', 1)->first([
@@ -107,6 +117,7 @@ class Steps extends Component
             'step_one_heading', 'step_one_text', 'step_one_image',
             'step_two_heading', 'step_two_text', 'step_two_image',
             'step_three_heading', 'step_three_text', 'step_three_image',
+            'steps_hidden'
         ]);
 
         $this->stepsHeading = $steps->steps_heading;
@@ -122,6 +133,9 @@ class Steps extends Component
         $this->stepThreeHeading = $steps->step_three_heading;
         $this->stepThreeText = $steps->step_three_text;
         $this->stepThreeImagePreview = $steps->step_three_image;
+
+        $this->isHidden = $steps->steps_hidden;
+
         return view('livewire.admin.home.steps', compact('steps'));
     }
 }

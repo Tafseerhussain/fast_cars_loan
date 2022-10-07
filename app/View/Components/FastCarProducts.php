@@ -17,7 +17,8 @@ class FastCarProducts extends Component
                 'product_subheading', 
                 'product_points', 
                 'product_text', 
-                'product_image'
+                'product_image',
+                'product_hidden'
             ]
         );
     }

@@ -24,7 +24,7 @@ class HomeHero extends Component
      */
     public function render()
     {
-        $hero = Home::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'form_head', 'hero_background']);
+        $hero = Home::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'form_head', 'hero_background', 'hero_hidden']);
         return view('components.home-hero', compact('hero'));
     }
 }

@@ -1,3 +1,4 @@
+@if ($message->steps_hidden == 0)
 <div class="easy-steps" id="easy-steps">
     <div class="container">
         <div class="row">
@@ -58,3 +59,4 @@
         </div>
     </div>
 </div>
+@endif

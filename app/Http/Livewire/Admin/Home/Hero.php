@@ -17,6 +17,7 @@ class Hero extends Component
     public $heroBackground;
     public $heroPreview;
 
+    public $isHidden;
 
     public function submit()
     {
@@ -49,14 +50,23 @@ class Hero extends Component
         session()->flash('successMessageImage', 'Updated!');
     }
 
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $hero = Home::where('id', 1)->first();
+        $hero->hero_hidden = $value;
+        $hero->save();
+    }
+
     public function render()
     {
-        $hero = Home::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'form_head', 'hero_background']);
+        $hero = Home::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'form_head', 'hero_background', 'hero_hidden']);
         $this->heroHeading = $hero->hero_head;
         $this->heroText = $hero->hero_text;
         $this->heroButton = $hero->hero_btn;
         $this->formHeading = $hero->form_head;
         $this->heroPreview = $hero->hero_background;
+        $this->isHidden = $hero->hero_hidden;
         return view('livewire.admin.home.hero', compact('hero'));
     }
 }

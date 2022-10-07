@@ -11341,3 +11341,14 @@ body.sidebar-toggled footer.sticky-footer {
 .admin-why-get-funded .cards_form img {
   max-width: 100%;
 }
+.customizationPage .hideViewBtn {
+  position: absolute;
+  right: 60px;
+  z-index: 1;
+  top: -9px;
+}
+.customizationPage .hideViewBtn:hover {
+  color: #fff !important;
+}
+
+

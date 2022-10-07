@@ -11958,6 +11958,8 @@ footer .copyright {
   width: 20px;
 }
 .newsletter .email-box input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border-color: #ffffff;
@@ -12030,6 +12032,9 @@ footer .copyright {
 .latest-blogs .blogs-row .blog-box .blog-meta .blog-by .date {
   font-size: 12px;
   color: #838383;
+}
+.latest-blogs .blogs-row .blog-box .blog-meta .blog-by .blog-by-img img {
+  border-radius: 50%;
 }
 .latest-blogs .blogs-row .blog-box:hover {
   border-color: #52C234;

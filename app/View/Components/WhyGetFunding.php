@@ -28,6 +28,7 @@ class WhyGetFunding extends Component
                 'funding_card_four_image',
                 'funding_card_four_heading',
                 'funding_card_four_text',
+                'funding_hidden'
             ]
         );
     }

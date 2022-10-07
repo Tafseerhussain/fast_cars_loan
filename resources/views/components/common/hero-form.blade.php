@@ -26,10 +26,10 @@
                 <div class="form-group row">
                     <label for="first_name">Mobile Number</label>
                     <div class="col-5">
-                        <input type="text" class="form-control" name="first_name" placeholder="Mick">
+                        <input type="text" class="form-control" name="first_name" placeholder="code">
                     </div>
                     <div class="col-7">
-                        <input type="text" class="form-control" name="last_name" placeholder="John">
+                        <input type="text" class="form-control" name="last_name" placeholder="number">
                     </div>
                 </div>
             </div>

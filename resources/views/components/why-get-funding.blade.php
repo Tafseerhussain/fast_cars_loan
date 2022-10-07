@@ -1,3 +1,4 @@
+@if ($funded->funding_hidden == 0)
 <div class="why-get-funded" style="background-image: url({{ $funded->funding_background }});">
    <div class="container">
        <div class="row">
@@ -66,3 +67,4 @@
        </div>
    </div>
 </div>
+@endif

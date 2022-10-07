@@ -1,3 +1,4 @@
+@if($hero->hero_hidden == 0)
 <div>
     @if ($hero->hero_background == '' || $hero->hero_background == null)
         <div class="home-hero">
@@ -42,3 +43,4 @@
         </div>
     </div>
 </div>
+@endif

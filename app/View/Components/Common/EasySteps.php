@@ -21,6 +21,7 @@ class EasySteps extends Component
             'step_one_heading', 'step_one_text', 'step_one_image',
             'step_two_heading', 'step_two_text', 'step_two_image',
             'step_three_heading', 'step_three_text', 'step_three_image',
+            'steps_hidden'
         ]);
     }
 

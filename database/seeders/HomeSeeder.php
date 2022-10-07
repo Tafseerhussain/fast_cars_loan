@@ -23,6 +23,7 @@ class HomeSeeder extends Seeder
                 'hero_btn' => 'Apply for Loan',
                 'form_head' => 'Have your cash in hand with a few clicks!',
                 'hero_background' => 'img/home/hero-bg.jpg',
+                'hero_hidden' => 0,
 
                 // STEPS SECTION
                 'steps_heading' => '3 Easy Steps to Apply for Fast Title Loans Online or Near You!',
@@ -35,6 +36,7 @@ class HomeSeeder extends Seeder
                 'step_three_heading' => 'Get Your Money',
                 'step_three_text' => 'The loan process is extremely fast and hassle-free. Apply over the phone or online in 30 minutes or less',
                 'step_three_image' => 'icons/get-money.svg',
+                'steps_hidden' => 0,
 
                 // FASTCARS PRODUCTS SECTION
                 'product_heading' => 'FastCarsMoney products',
@@ -42,6 +44,7 @@ class HomeSeeder extends Seeder
                 'product_points' => 'Vehicle Title Loans,Pawns on vehicle title,Motorcycle title loans and pawns,Personal loans',
                 'product_text' => 'At FastCarMoney we know that a crisis from the past does not determine the rest of your life. For us it is essential that our service guarantees your satisfaction and ensures the success of your future, which is why we take care of every aspect of our vehicle title loans. Take advantage of our policy of accepting most types of credit scores, allowing us to help you get back on track with your finances.',
                 'product_image' => 'img/home/product.jpg',
+                'product_hidden' => 0,
 
                 // WHY GET FUNDED SECTION
                 'funding_heading' => 'Why Get Funded With the Help of FastCarsMoney Title Loans?',
@@ -63,6 +66,7 @@ class HomeSeeder extends Seeder
                 'funding_card_four_image' => 'img/home/convenient-terms.svg',
                 'funding_card_four_heading' => 'Convenient Terms',
                 'funding_card_four_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.',
+                'funding_hidden' => 0,
 
                 // VIDEO SECTION
                 'video_heading' => 'Don\'t Pay Too Much for your Auto Title Loan',
@@ -70,6 +74,7 @@ class HomeSeeder extends Seeder
                 'video_text_two' => 'Whether you prefer short-term loans or long-term loans, you have options! Here at Fast Cars, we care about our customer\'s financial relief with payments that are manageable. Fast Cars gives you the option to repay your loan early, without any prepayment penalties!',
                 'video_image' => 'img/home/watch-video.png',
                 'video_link' => 'https://www.youtube.com/embed/NFWSFbqL0A0',
+                'video_hidden' => 0,
 
                 // EASY CASH SECTION
                 'easy_cash_heading' => 'With FastCarsMoney, Getting Cash is Easy',
@@ -78,6 +83,7 @@ class HomeSeeder extends Seeder
                 'easy_cash_text_two' => 'Making payments and managing an account has never been easier for our customers. You always have the option of working directly with our branch representatives. And now with our mobile app, you can manage your account from your mobile phone.',
                 'easy_cash_image' => 'img/home/fast-cash.png',
                 'easy_cash_advantages' => 'Same day cash***, Fast approval, Most types of credit accepted, Continue driving your vehicle, Competitive rates',
+                'easy_cash_hidden' => 0,
 
                 'portal_heading' => 'Fast Cars Money Customer Portal',
                 'portal_card_one_text' => 'Easy to Use',
@@ -88,6 +94,7 @@ class HomeSeeder extends Seeder
                 'portal_card_two_image' => 'img/home/manage-accounts.svg',
                 'portal_card_three_image' => 'img/home/check-balances.svg',
                 'portal_card_four_image' => 'img/home/make-payment.svg',
+                'portal_hidden' => 0,
             ]
         );
     }

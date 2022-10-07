@@ -1,3 +1,4 @@
+@if ($product->product_hidden == 0)
 <div class="fastcars-products">
     <div class="container">
         <div class="row">
@@ -29,3 +30,4 @@
         </div>
     </div>
 </div>
+@endif

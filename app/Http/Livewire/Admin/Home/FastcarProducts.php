@@ -17,6 +17,8 @@ class FastcarProducts extends Component
     public $imagePreview;
     public $image;
 
+    public $isHidden;
+
     public function mount()
     {
         $product = Home::where('id', 1)->first(
@@ -25,7 +27,8 @@ class FastcarProducts extends Component
                 'product_subheading', 
                 'product_points', 
                 'product_text', 
-                'product_image'
+                'product_image',
+                'product_hidden'
             ]
         );
         $this->heading = $product->product_heading;
@@ -33,6 +36,7 @@ class FastcarProducts extends Component
         $this->points = $product->product_points;
         $this->bottomText = $product->product_text;
         $this->imagePreview = $product->product_image;
+        $this->isHidden = $product->product_hidden;
     }
 
     public function submit()
@@ -41,7 +45,7 @@ class FastcarProducts extends Component
             'heading' => 'required',
             'subheading' => 'required',
             'points' => 'required',
-            'bottomText' => 'required',
+            'bottomText' => 'required'
         ]);
         $hero = Home::where('id', 1)->first();
         $hero->product_heading = $this->heading;
@@ -64,6 +68,14 @@ class FastcarProducts extends Component
         $hero->product_image = $imgUrl;
         $hero->save();
         session()->flash('successMessageImage', 'Updated!');
+    }
+
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $hero = Home::where('id', 1)->first();
+        $hero->product_hidden = $value;
+        $hero->save();
     }
 
     public function render()

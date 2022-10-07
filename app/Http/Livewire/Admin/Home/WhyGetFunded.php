@@ -36,6 +36,8 @@ class WhyGetFunded extends Component
     public $cardThreePreview;
     public $cardFourPreview;
 
+    public $isHidden;
+
     public function mount()
     {
         $funded = Home::where('id', 1)->first(
@@ -55,6 +57,7 @@ class WhyGetFunded extends Component
                 'funding_card_four_image',
                 'funding_card_four_heading',
                 'funding_card_four_text',
+                'funding_hidden'
             ]
         );
 
@@ -77,6 +80,8 @@ class WhyGetFunded extends Component
         $this->cardFourHeading = $funded->funding_card_four_heading;
         $this->cardFourText = $funded->funding_card_four_text;
         $this->cardFourPreview = $funded->funding_card_four_image;
+
+        $this->isHidden = $funded->funding_hidden;
     }
 
     public function submit()
@@ -190,6 +195,14 @@ class WhyGetFunded extends Component
 
         $funded->save();
         session()->flash('successMessageCards', 'Saved!');
+    }
+
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $funded = Home::where('id', 1)->first();
+        $funded->funding_hidden = $value;
+        $funded->save();
     }
 
     public function render()

@@ -8,102 +8,32 @@
             </div>
         </div>
         <div class="row blogs-row">
-            <div class="col-lg-3 col-md-6">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{{ asset('img/home/blog-img.png') }}" alt="blog image">
-                    </div>
-                    <div class="blog-meta">
-                        <a href="#" class="blog-title">
-                            30 INEXPENSIVE ACTIVITIES THAT YOU CAN DO WHILE BUILDING YOUR SAVINGS ACCOUNT
-                        </a>
-                        <p>
-                            Everyone loves entertainment, but from meeting friends for dinner to a night at the theater, entertainment costs can add up quickly...
-                        </p>
-                        <a href="#!" class="blog-by d-flex justify-content-start">
-                            <div class="blog-by-img">
-                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="author">
-                            </div>
-                            <div class="blog-by-text">
-                                <span class="name">Carmon Brady</span>
-                                <span class="date">Feb 02, 2022</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{{ asset('img/home/blog-img.png') }}" alt="blog image">
-                    </div>
-                    <div class="blog-meta">
-                        <a href="#" class="blog-title">
-                            30 INEXPENSIVE ACTIVITIES THAT YOU CAN DO WHILE BUILDING YOUR SAVINGS ACCOUNT
-                        </a>
-                        <p>
-                            Everyone loves entertainment, but from meeting friends for dinner to a night at the theater, entertainment costs can add up quickly...
-                        </p>
-                        <a href="#!" class="blog-by d-flex justify-content-start">
-                            <div class="blog-by-img">
-                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="author">
-                            </div>
-                            <div class="blog-by-text">
-                                <span class="name">Carmon Brady</span>
-                                <span class="date">Feb 02, 2022</span>
-                            </div>
-                        </a>
+            @foreach ($blogs as $blog)
+                <div class="col-lg-3 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="{{ asset($blog->image) }}" alt="blog image">
+                        </div>
+                        <div class="blog-meta">
+                            <a href="#" class="blog-title">
+                                {{ $blog->title }}
+                            </a>
+                            <p>
+                                {{ $blog->short_description }}
+                            </p>
+                            <a href="#!" class="blog-by d-flex justify-content-start">
+                                <div class="blog-by-img">
+                                    <img src="https://ui-avatars.com/api/?name=Admin&color=7F9CF5&background=EBF4FF" alt="author">
+                                </div>
+                                <div class="blog-by-text">
+                                    <span class="name">Admin</span>
+                                    <span class="date">{{ $blog->created_at->format('M d, Y') }}</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{{ asset('img/home/blog-img.png') }}" alt="blog image">
-                    </div>
-                    <div class="blog-meta">
-                        <a href="#" class="blog-title">
-                            30 INEXPENSIVE ACTIVITIES THAT YOU CAN DO WHILE BUILDING YOUR SAVINGS ACCOUNT
-                        </a>
-                        <p>
-                            Everyone loves entertainment, but from meeting friends for dinner to a night at the theater, entertainment costs can add up quickly...
-                        </p>
-                        <a href="#!" class="blog-by d-flex justify-content-start">
-                            <div class="blog-by-img">
-                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="author">
-                            </div>
-                            <div class="blog-by-text">
-                                <span class="name">Carmon Brady</span>
-                                <span class="date">Feb 02, 2022</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{{ asset('img/home/blog-img.png') }}" alt="blog image">
-                    </div>
-                    <div class="blog-meta">
-                        <a href="#" class="blog-title">
-                            30 INEXPENSIVE ACTIVITIES THAT YOU CAN DO WHILE BUILDING YOUR SAVINGS ACCOUNT
-                        </a>
-                        <p>
-                            Everyone loves entertainment, but from meeting friends for dinner to a night at the theater, entertainment costs can add up quickly...
-                        </p>
-                        <a href="#!" class="blog-by d-flex justify-content-start">
-                            <div class="blog-by-img">
-                                <img src="{{ asset('img/home/testimonial-client.png') }}" alt="author">
-                            </div>
-                            <div class="blog-by-text">
-                                <span class="name">Carmon Brady</span>
-                                <span class="date">Feb 02, 2022</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
