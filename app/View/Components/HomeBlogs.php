@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use App\Models\Blog;
 
-class latestBlogs extends Component
+class HomeBlogs extends Component
 {
     public $blogs;
 
@@ -16,6 +16,6 @@ class latestBlogs extends Component
 
     public function render()
     {
-        return view('components.latest-blogs');
+        return view('components.home-blogs');
     }
 }

@@ -13,7 +13,7 @@
         <x-customer-portal/>
         <x-user-testimonial/>
         <x-newsletter/>
-        <x-latest-blogs/>
+        <x-home-blogs/>
     </div>
 
     <div class="modal fade" id="watchVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
