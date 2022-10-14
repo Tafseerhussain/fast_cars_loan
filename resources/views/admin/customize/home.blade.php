@@ -9,17 +9,58 @@
 
         <div class="row">
         	<div class="col-md-12">
+
                 {{-- HERO --}}
-        		@livewire('admin.home.hero')    
+                <div class="card shadow mb-4 border-left-success position-relative">
+                  <a href="#collapseHomeHero" class="d-block card-header py-3 collapsed" data-toggle="collapse"
+                      role="button" aria-expanded="true" aria-controls="collapseHomeHero">
+                      <h6 class="m-0 font-weight-bold text-primary">Hero Section <code>(First Section)</code></h6>
+                  </a>
+                  <div class="collapse" id="collapseHomeHero">
+                      <div class="card-body">
+        		          @livewire('admin.home.hero')  
+                        </div>
+                    </div>
+                </div>  
 
                 {{-- STEPS --}}
-                @livewire('admin.home.steps')
+                <div class="card shadow mb-4 border-left-success">
+                    <a href="#collapseHomeSteps" class="d-block card-header py-3 collapsed" data-toggle="collapse"
+                        role="button" aria-expanded="true" aria-controls="collapseHomeSteps">
+                        <h6 class="m-0 font-weight-bold text-primary">Steps Section <code>(Second Section)</code></h6>
+                    </a>
+                    <div class="collapse" id="collapseHomeSteps">
+                        <div class="card-body">
+                            @livewire('admin.home.steps')
+                        </div>
+                    </div>
+                </div>
 
                 {{-- FASTCARS PRODUCTS --}}
-                @livewire('admin.home.fastcar-products')
+                <div class="card shadow mb-4 border-left-success">
+                    <a href="#collapseProducts" class="d-block card-header py-3 collapsed" data-toggle="collapse"
+                      role="button" aria-expanded="true" aria-controls="collapseProducts">
+                      <h6 class="m-0 font-weight-bold text-primary">FastCar Products Section <code>(Third Section)</code></h6>
+                    </a>
+                    <div class="collapse" id="collapseProducts">
+                        <div class="card-body">
+                            @livewire('admin.home.fastcar-products')
+                        </div>
+                    </div>
+                </div>
 
                 {{-- WHY GET FUNDED --}}
-                @livewire('admin.home.why-get-funded')
+                <div class="card shadow mb-4 border-left-success">
+                    <a href="#collapseFunded" class="d-block card-header py-3 collapsed" data-toggle="collapse"
+                        role="button" aria-expanded="true" aria-controls="collapseFunded">
+                        <h6 class="m-0 font-weight-bold text-primary">Why Get Funded Section <code>(Fourth Section)</code></h6>
+                    </a>
+                    <div class="collapse" id="collapseFunded">
+                        <div class="card-body">
+                            @livewire('admin.home.why-get-funded')
+                        </div>
+                    </div>
+                </div>
 
                 {{-- WATCH VIDEO SECTION --}}
                 <div class="card shadow mb-4 border-left-success">
@@ -60,8 +101,7 @@
                     </div>
                 </div>
 
-        	</div>
-            
+        	</div> 
         </div>
 	</div>
 
@@ -72,8 +112,5 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
-        $('#confirm-delete').on('show.bs.modal', function(e) {
-            $('#deleteButton').attr('href', '/admin/blogs/delete/'+$(e.relatedTarget).data('id'));
-        });
     </script>   
 @endsection

@@ -1,87 +1,76 @@
-<div class="card shadow mb-4 border-left-success admin-home-hero position-relative">
-   @if ($isHidden == 1)
-      <a href="#!" class="ml-2 mt-3 btn hideViewBtn btn-danger" data-toggle="tooltip" data-placement="top" title="Unhide Section" wire:click="hideUnhideSection(0)">
-         <i class="fa fa-eye-slash" aria-hidden="true"></i>
-      </a>
-   @else
-      <a href="#!" class="ml-2 mt-3 btn hideViewBtn" data-toggle="tooltip" data-placement="top" title="Hide Section" wire:click="hideUnhideSection(1)">
-         <i class="fa fa-eye" aria-hidden="true"></i>
-      </a>
-   @endif
-  <a href="#collapseHomeHero" class="d-block card-header py-3 collapsed" data-toggle="collapse"
-      role="button" aria-expanded="true" aria-controls="collapseHomeHero">
-      <h6 class="m-0 font-weight-bold text-primary">Hero Section <code>(First Section)</code></h6>
-  </a>
-  <div class="collapse" id="collapseHomeHero">
-      <div class="card-body">
-           <div class="row">
-               <div class="col-md-8">
-                  <form wire:submit.prevent="submit">
-                     <div class="form-group">
-                        <label for="heroHeading">Hero Heading</label>
-                        <input type="text" class="form-control" wire:model.defer="heroHeading" placeholder="Hero Heading" value="{{ $hero->hero_head }}">
-                        @error('heroHeading') <span class="input_error">{{ $message }}</span> @enderror
-                     </div>
-                     <div class="form-group">
-                        <label for="heroText">Hero Text</label>
-                        <textarea class="form-control" wire:model.defer="heroText" placeholder="Hero Text" value="{{ $hero->hero_text }}" cols="30" rows="3"></textarea>
-                        @error('heroText') <span class="input_error">{{ $message }}</span> @enderror
-                     </div>
-                     <div class="form-group">
-                        <label for="heroButton">Hero Button</label>
-                        <input type="text" class="form-control" wire:model.defer="heroButton" placeholder="Hero Button" value="{{ $hero->hero_btn }}">
-                        @error('heroButton') <span class="input_error">{{ $message }}</span> @enderror
-                     </div>
-                     <div class="form-group">
-                        <label for="formHeading">Form Heading</label>
-                        <input type="text" class="form-control" wire:model.defer="formHeading" placeholder="Form Heading" value="{{ $hero->form_head }}">
-                        @error('formHeading') <span class="input_error">{{ $message }}</span> @enderror
-                     </div>
-                     <button type="submit" class="btn d-block">
-                        Save
-                     </button>
-                     <div class="spinner-border" role="status" wire:loading>
-                       <span class="sr-only">Loading...</span>
-                     </div>
-                     @if (session()->has('successMessage'))
-                         <span class="alert alert-success font-weight-bold d-block mt-3">
-                             {{ session('successMessage') }}
-                         </span>
-                     @endif
-                  </form>
-               </div>
-               <div class="col-md-4">
-                  <form wire:submit.prevent="submitImage">
-                     <h5>Background Image:</h5>
-
-                     <small>Current Image:</small>
-                     <img src="{{ asset($heroPreview) }}" alt="" class="w-100 rounded shadow">
-                     <hr>
-                     <input type="file" wire:model="heroBackground">
-                     <small class="d-block">Max: 2MB</small>
-                     @error('heroBackground') <span class="input_error d-block">{{ $message }}</span> @enderror
-                     @if ($heroBackground)
-                        <img src="{{ $heroBackground->temporaryUrl() }}" style="width: 150px; max-width: 100%;" class="rounded img-thumbnail mt-2">
-                     @endif
-                     
-
-                     <button type="submit" class="btn d-block mt-3">
-                        Update
-                     </button>
-                     <div class="spinner-border" role="status" wire:loading>
-                       <span class="sr-only">Loading...</span>
-                     </div>
-                     @if (session()->has('successMessageImage'))
-                         <span class="alert alert-success font-weight-bold d-block mt-3">
-                             {{ session('successMessageImage') }}
-                         </span>
-                     @endif
-                  </form>
-               </div>
-               <div class="col-12 text-end">
-                  
-               </div>
-           </div>
+<div class="admin-home-hero">
+   <div class="row">
+      <div class="col-12 text-right">
+         @if ($isHidden == 1)
+         <a href="#!" class="btn hideViewBtn btn-danger mb-2" data-toggle="tooltip" data-placement="top" title="Unhide Section" wire:click="hideUnhideSection(0)">
+            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+         </a>
+         @else
+         <a href="#!" class="btn hideViewBtn mb-2" data-toggle="tooltip" data-placement="top" title="Hide Section" wire:click="hideUnhideSection(1)">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+         </a>
+         @endif
       </div>
-  </div>
+      <div class="col-md-8">
+         <form wire:submit.prevent="submit">
+            <div class="form-group">
+               <label for="heroHeading">Hero Heading</label>
+               <input type="text" class="form-control" wire:model.defer="heroHeading" placeholder="Hero Heading" value="{{ $hero->hero_head }}">
+               @error('heroHeading') <span class="input_error">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+               <label for="heroText">Hero Text</label>
+               <textarea class="form-control" wire:model.defer="heroText" placeholder="Hero Text" value="{{ $hero->hero_text }}" cols="30" rows="3"></textarea>
+               @error('heroText') <span class="input_error">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+               <label for="heroButton">Hero Button</label>
+               <input type="text" class="form-control" wire:model.defer="heroButton" placeholder="Hero Button" value="{{ $hero->hero_btn }}">
+               @error('heroButton') <span class="input_error">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+               <label for="formHeading">Form Heading</label>
+               <input type="text" class="form-control" wire:model.defer="formHeading" placeholder="Form Heading" value="{{ $hero->form_head }}">
+               @error('formHeading') <span class="input_error">{{ $message }}</span> @enderror
+            </div>
+            <button type="submit" class="btn d-block">
+            Save
+            </button>
+            <div class="spinner-border" role="status" wire:loading>
+               <span class="sr-only">Loading...</span>
+            </div>
+            @if (session()->has('successMessage'))
+            <span class="alert alert-success font-weight-bold d-block mt-3">
+               {{ session('successMessage') }}
+            </span>
+            @endif
+         </form>
+      </div>
+      <div class="col-md-4">
+         <form wire:submit.prevent="submitImage">
+            <h5>Background Image:</h5>
+            <small>Current Image:</small>
+            <img src="{{ asset($heroPreview) }}" alt="" class="w-100 rounded shadow">
+            <hr>
+            <input type="file" wire:model="heroBackground">
+            <small class="d-block">Max: 2MB</small>
+            @error('heroBackground') <span class="input_error d-block">{{ $message }}</span> @enderror
+            @if ($heroBackground)
+            <img src="{{ $heroBackground->temporaryUrl() }}" style="width: 150px; max-width: 100%;" class="rounded img-thumbnail mt-2">
+            @endif
+            
+            <button type="submit" class="btn d-block mt-3">
+            Update
+            </button>
+            <div class="spinner-border" role="status" wire:loading>
+               <span class="sr-only">Loading...</span>
+            </div>
+            @if (session()->has('successMessageImage'))
+            <span class="alert alert-success font-weight-bold d-block mt-3">
+               {{ session('successMessageImage') }}
+            </span>
+            @endif
+         </form>
+      </div>
+   </div>
 </div>
