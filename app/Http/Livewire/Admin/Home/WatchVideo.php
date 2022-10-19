@@ -17,6 +17,8 @@ class WatchVideo extends Component
     public $imagePreview;
     public $videoThumbnail;
 
+    public $isHidden;
+
     public function mount()
     {
         $video = Home::where('id', 1)->first(
@@ -25,7 +27,8 @@ class WatchVideo extends Component
                 'video_text_one',
                 'video_text_two',
                 'video_image',
-                'video_link'
+                'video_link',
+                'video_hidden'
             ]
         );
 
@@ -34,6 +37,8 @@ class WatchVideo extends Component
         $this->secondParagraph = $video->video_text_two;
         $this->VideoLink = $video->video_link;
         $this->imagePreview = $video->video_image;
+
+        $this->isHidden = $video->video_hidden;
     }
 
     public function submit()
@@ -65,6 +70,14 @@ class WatchVideo extends Component
         $video->video_image = $imgUrl;
         $video->save();
         session()->flash('successMessageImage', 'Updated!');
+    }
+
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $video = Home::where('id', 1)->first();
+        $video->video_hidden = $value;
+        $video->save();
     }
 
     public function render()

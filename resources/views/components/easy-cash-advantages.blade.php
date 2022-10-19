@@ -1,3 +1,4 @@
+@if ($easy->easy_cash_hidden == 0)
 <div class="easy-cash-advantage">
     <div class="container">
         <div class="row easy-cash g-md-5">
@@ -47,3 +48,4 @@
         </div>
     </div>
 </div>
+@endif

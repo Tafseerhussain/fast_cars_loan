@@ -19,6 +19,7 @@ class EasyCashAdvantages extends Component
                 'easy_cash_text_two',
                 'easy_cash_image',
                 'easy_cash_advantages',
+                'easy_cash_hidden'
             ]
         );
     }

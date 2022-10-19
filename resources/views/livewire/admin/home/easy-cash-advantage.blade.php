@@ -1,4 +1,17 @@
 <div class="admin-easy-cash">
+   <div class="row">
+      <div class="col-12 text-right">
+         @if ($isHidden == 1)
+            <a href="#!" class="ml-2 mt-3 btn hideViewBtn btn-danger" data-toggle="tooltip" data-placement="top" title="Unhide Section" wire:click="hideUnhideSection(0)">
+               <i class="fa fa-eye-slash" aria-hidden="true"></i>
+            </a>
+          @else
+            <a href="#!" class="ml-2 mt-3 btn hideViewBtn" data-toggle="tooltip" data-placement="top" title="Hide Section" wire:click="hideUnhideSection(1)">
+               <i class="fa fa-eye" aria-hidden="true"></i>
+            </a>
+          @endif
+      </div>
+   </div>
      <div class="row">
          <div class="col-md-8">
             <form wire:submit.prevent="submit">

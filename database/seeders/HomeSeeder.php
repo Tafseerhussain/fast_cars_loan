@@ -85,6 +85,7 @@ class HomeSeeder extends Seeder
                 'easy_cash_advantages' => 'Same day cash***, Fast approval, Most types of credit accepted, Continue driving your vehicle, Competitive rates',
                 'easy_cash_hidden' => 0,
 
+                // CUSTOMER PORTAL SECTION
                 'portal_heading' => 'Fast Cars Money Customer Portal',
                 'portal_card_one_text' => 'Easy to Use',
                 'portal_card_two_text' => 'Manage Accounts',

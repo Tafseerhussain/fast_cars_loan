@@ -17,7 +17,8 @@ class WatchLoanVideo extends Component
                 'video_text_one',
                 'video_text_two',
                 'video_image',
-                'video_link'
+                'video_link',
+                'video_hidden'
             ]
         );
     }

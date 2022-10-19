@@ -18,6 +18,8 @@ class EasyCashAdvantage extends Component
     public $imagePreview;
     public $sectionImage;
 
+    public $isHidden;
+
     public function mount()
     {
         $easy = Home::where('id', 1)->first(
@@ -27,7 +29,8 @@ class EasyCashAdvantage extends Component
                 'easy_cash_heading_two',
                 'easy_cash_text_two',
                 'easy_cash_image',
-                'easy_cash_advantages'
+                'easy_cash_advantages',
+                'easy_cash_hidden'
             ]
         );
 
@@ -37,6 +40,8 @@ class EasyCashAdvantage extends Component
         $this->secondSectionText = $easy->easy_cash_text_two;
         $this->imagePreview = $easy->easy_cash_image;
         $this->advantages = $easy->easy_cash_advantages;
+
+        $this->isHidden = $easy->easy_cash_hidden;
     }
 
     public function submit()
@@ -70,6 +75,14 @@ class EasyCashAdvantage extends Component
         $easy->easy_cash_image = $imgUrl;
         $easy->save();
         session()->flash('successMessageImage', 'Updated!');
+    }
+
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $easy = Home::where('id', 1)->first();
+        $easy->easy_cash_hidden = $value;
+        $easy->save();
     }
 
     public function render()

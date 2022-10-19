@@ -22,6 +22,7 @@ class CustomerPortal extends Component
                 'portal_card_two_image',
                 'portal_card_three_image',
                 'portal_card_four_image',
+                'portal_hidden'
             ]
         );
     }

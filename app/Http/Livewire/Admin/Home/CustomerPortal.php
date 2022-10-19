@@ -27,6 +27,8 @@ class CustomerPortal extends Component
     public $cardThreePreview;
     public $cardFourPreview;
 
+    public $isHidden;
+
     public function mount()
     {
         $portal = Home::where('id', 1)->first(
@@ -127,6 +129,14 @@ class CustomerPortal extends Component
 
         $portal->save();
         session()->flash('successMessage', 'Updated!');
+    }
+
+    public function hideUnhideSection($value)
+    {
+        $this->isHidden = $value;
+        $portal = Home::where('id', 1)->first();
+        $portal->portal_hidden = $value;
+        $portal->save();
     }
 
     public function render()

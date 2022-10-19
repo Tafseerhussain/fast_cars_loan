@@ -1,3 +1,4 @@
+@if ($portal->portal_hidden == 0)
 <div class="fast-cars-portal">
     <img src="{{ asset('img/home/left-triangle.png') }}" alt="triangle" class="left-triangle">
     <img src="{{ asset('img/home/dots.png') }}" alt="dots" class="dots">
@@ -42,3 +43,4 @@
         </div> --}}
     </div>
 </div>
+@endif

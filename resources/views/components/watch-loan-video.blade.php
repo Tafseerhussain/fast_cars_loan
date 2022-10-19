@@ -1,3 +1,4 @@
+@if ($video->video_hidden == 0)
 <div class="watch-video">
     <div class="container">
         <div class="row">
@@ -28,5 +29,5 @@
             </div>
         </div>
     </div>
-
 </div>
+@endif
