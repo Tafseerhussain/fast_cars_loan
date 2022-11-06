@@ -29,6 +29,11 @@ form {
 		color: red;
 	}
 }
+.base_form {
+	.input_error {
+		font-size: 11px;
+	}
+}
 .dropdown-menu {
 	border-radius: $theme-border-radius;
 	border: 0;

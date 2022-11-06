@@ -36,7 +36,8 @@
                 </div>
                 <div class="col-md-5 offset-md-2">
                     <div class="hero-right">
-                        <x-common.hero-form :message="$hero->form_head"/>
+                        @livewire('apply-form.base-form', ['message' => $hero->form_head])
+                        {{-- <x-common.hero-form :message="$hero->form_head"/> --}}
                     </div>
                 </div>
             </div>

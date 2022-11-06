@@ -108,6 +108,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/application/approve', [App\Http\Controllers\AdminController::class, 'approveLoanApplication'])->name('admin.application.approve');
     Route::post('/admin/application/reject', [App\Http\Controllers\AdminController::class, 'rejectLoanApplication'])->name('admin.application.reject');
 
+    Route::get('/admin/base_form', [App\Http\Controllers\AdminController::class, 'baseForm'])->name('admin.baseform');
+
 });
 
 Route::group(['middleware' => ['auth']], function () {

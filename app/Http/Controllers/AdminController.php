@@ -125,6 +125,12 @@ class AdminController extends Controller
         return view('admin.emails.loan-rejected', compact('rejected'));
     }
 
+    // BASE FORM
+    public function baseForm()
+    {
+        return view('admin.forms.base-form');
+    }
+
     // APPROVING THE LOAN
     public function approveLoanApplication(Request $request)
     {

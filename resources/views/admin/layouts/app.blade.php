@@ -125,6 +125,14 @@
                 </div>
             </li>
 
+            <li class="nav-item {{ Request::route()->getName() == 'admin.baseform' ? 'active' : '' }}">
+                <a class="nav-link" 
+                    href="{{ route('admin.baseform') }}">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Base Form</span>
+                </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -442,6 +450,7 @@
 
     @livewireScripts
     @yield('custom-js')
+    @push('custom-scripts')
 
 </body>
 
