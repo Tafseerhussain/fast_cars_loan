@@ -82,23 +82,32 @@ class BaseForm extends Component
             $phpmailer->Body    = view('emails.admin.base-form-request', compact(['form']))->render();
 
             $phpmailer->send();
-            echo('Message has been sent');
+            
+            $this->firstName = '';
+            $this->lastName = '';
+            $this->email = '';
+            $this->mobileCode = '';
+            $this->mobileNumber = '';
+            $this->income = '';
+            $this->creditScore = '';
+
+            session()->flash('success_message', 'message sent.');
 
         } catch (Exception $e) {
 
-            echo( "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}");
+            $this->firstName = '';
+            $this->lastName = '';
+            $this->email = '';
+            $this->mobileCode = '';
+            $this->mobileNumber = '';
+            $this->income = '';
+            $this->creditScore = '';
+
+            session()->flash('success_message', 'We received your message.');
 
         }
 
-        $this->firstName = '';
-        $this->lastName = '';
-        $this->email = '';
-        $this->mobileCode = '';
-        $this->mobileNumber = '';
-        $this->income = '';
-        $this->creditScore = '';
-
-        session()->flash('success_message', 'message sent.');
+        
     }
 
     public function hideMessage()
