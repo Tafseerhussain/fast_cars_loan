@@ -372,7 +372,7 @@
                         	Thank you for completing your quote with <strong>FastCars</strong>. You have been offered an estimated rate of 9.24%. To continue with your application and take advantage of your personal rate, simply click the button below. It takes just minutes to complete your application and it won't affect your credit score.
                         </p>
                         <div class="text-center">
-	                        <a href="#" target="_blank" class="fastcars-btn">
+	                        <a href="https://fastcarsfastmoney.com/login" target="_blank" class="fastcars-btn">
 	                        	Sign into your account
 	                        </a>
                         </div>

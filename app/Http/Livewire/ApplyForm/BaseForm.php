@@ -82,11 +82,11 @@ class BaseForm extends Component
             $phpmailer->Body    = view('emails.admin.base-form-request', compact(['form']))->render();
 
             $phpmailer->send();
-            dd('Message has been sent');
+            echo('Message has been sent');
 
         } catch (Exception $e) {
 
-            dd( "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}");
+            echo( "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}");
 
         }
 
