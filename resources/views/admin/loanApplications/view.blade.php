@@ -264,6 +264,9 @@
                         <h6 class="m-0 font-weight-bold text-white">Personal References</h6>
                     </div>
                     <div class="card-body">
+                        @if (count($application->personalReference) <= 0)
+                            No References!
+                        @else
                         <h6 class="h6 font-weight-bold text-dark mt-3">Reference 1</h6>
                         <div class="border rounded p-3">
                             <div class="mb-3">
@@ -363,6 +366,7 @@
                                 </span>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
 
