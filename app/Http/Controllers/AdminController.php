@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Testimonial;
 use App\Models\Email;
+use App\Models\BaseFormData;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -130,7 +131,11 @@ class AdminController extends Controller
     {
         return view('admin.forms.base-form');
     }
-
+    public function baseFormRequests()
+    {
+        $forms = BaseFormData::latest()->get();
+        return view('admin.forms.base-form-requests', compact('forms'));
+    }
     // APPROVING THE LOAN
     public function approveLoanApplication(Request $request)
     {

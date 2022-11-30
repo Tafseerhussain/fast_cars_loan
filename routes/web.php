@@ -109,6 +109,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/application/reject', [App\Http\Controllers\AdminController::class, 'rejectLoanApplication'])->name('admin.application.reject');
 
     Route::get('/admin/base_form', [App\Http\Controllers\AdminController::class, 'baseForm'])->name('admin.baseform');
+    Route::get('/admin/base_form_requests', [App\Http\Controllers\AdminController::class, 'baseFormRequests'])->name('admin.baseform.requests');
 
 });
 

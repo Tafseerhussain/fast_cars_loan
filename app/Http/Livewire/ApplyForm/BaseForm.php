@@ -3,6 +3,11 @@
 namespace App\Http\Livewire\ApplyForm;
 
 use Livewire\Component;
+use App\Models\BaseFormData;
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class BaseForm extends Component
 {
@@ -44,8 +49,62 @@ class BaseForm extends Component
     public function submit()
     {
         $this->validate();
+
+        $form = new BaseFormData;
+        $form->first_name = $this->firstName;
+        $form->last_name = $this->lastName;
+        $form->email = $this->email;
+        $form->mob_code = $this->mobileCode;
+        $form->mob_number = $this->mobileNumber;
+        $form->income = $this->income;
+        $form->credit_score = $this->creditScore;
+        $form->save();
+
+        try {
+
+            $phpmailer = new PHPMailer(true);
+
+            $phpmailer->isSMTP();
+            $phpmailer->Host = 'business87.web-hosting.com';
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Username = 'admin@fastcarsfastmoney.com';
+            $phpmailer->Password = 'J1thGimZkGvX';
+            $phpmailer->SMTPSecure = 'tls';
+            $phpmailer->Port = env('MAIL_PORT');
+
+            //Recipients
+            $phpmailer->setFrom('admin@fastcarsfastmoney.com');
+            $phpmailer->addAddress($this->email);
+
+            //Content
+            $phpmailer->isHTML(true);                                  //Set email format to HTML
+            $phpmailer->Subject = "Loan Request";
+            $phpmailer->Body    = view('emails.admin.base-form-request', compact(['form']))->render();
+
+            $phpmailer->send();
+            echo 'Message has been sent';
+
+        } catch (Exception $e) {
+
+            echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+
+        }
+
+        $this->firstName = '';
+        $this->lastName = '';
+        $this->email = '';
+        $this->mobileCode = '';
+        $this->mobileNumber = '';
+        $this->income = '';
+        $this->creditScore = '';
+
+        session()->flash('success_message', 'message sent.');
     }
 
+    public function hideMessage()
+    {
+        session()->forget('success_message');
+    }
     public function render()
     {
         return view('livewire.apply-form.base-form');

@@ -125,13 +125,42 @@
                 </div>
             </li>
 
-            <li class="nav-item {{ Request::route()->getName() == 'admin.baseform' ? 'active' : '' }}">
+            <li class="nav-item 
+            {{ 
+                (Request::route()->getName() == 'admin.baseform' || 
+                 Request::route()->getName() == 'admin.baseform.requests') 
+                 ? 'active' : '' 
+             }}">
+                <a class="nav-link 
+                {{ 
+                    (Request::route()->getName() == 'admin.baseform' || 
+                     Request::route()->getName() == 'admin.baseform.requests') 
+                     ? 'active' : 'collapsed' 
+                 }}" href="#" data-toggle="collapse" data-target="#collapseBaseForm"
+                    aria-expanded="true" aria-controls="collapseBaseForm">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Base Form</span>
+                </a>
+                <div id="collapseBaseForm" class="collapse 
+                {{ 
+                    (Request::route()->getName() == 'admin.baseform' || 
+                     Request::route()->getName() == 'admin.baseform.requests') 
+                     ? 'show' : '' 
+                 }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ Request::route()->getName() == 'admin.baseform' ? 'active' : '' }}" href="{{ route('admin.baseform') }}">Settings</a>
+                        <a class="collapse-item {{ Request::route()->getName() == 'admin.baseform.requests' ? 'active' : '' }}" href="{{ route('admin.baseform.requests') }}">Requests</a>
+                    </div>
+                </div>
+            </li>
+
+            {{-- <li class="nav-item {{ Request::route()->getName() == 'admin.baseform' ? 'active' : '' }}">
                 <a class="nav-link" 
                     href="{{ route('admin.baseform') }}">
                     <i class="fas fa-file-alt"></i>
                     <span>Base Form</span>
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
