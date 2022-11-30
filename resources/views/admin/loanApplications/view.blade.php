@@ -264,7 +264,7 @@
                         <h6 class="m-0 font-weight-bold text-white">Personal References</h6>
                     </div>
                     <div class="card-body">
-                        @if (count($application->personalReference) <= 0)
+                        @if ($application->personalReference->isEmpty())
                             No References!
                         @else
                         <h6 class="h6 font-weight-bold text-dark mt-3">Reference 1</h6>
