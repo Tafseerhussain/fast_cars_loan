@@ -68,7 +68,7 @@ class BaseForm extends Component
             $phpmailer->Host = 'business87.web-hosting.com';
             $phpmailer->SMTPAuth = true;
             $phpmailer->Username = 'admin@fastcarsfastmoney.com';
-            $phpmailer->Password = 'J1thGimZkGvX';
+            $phpmailer->Password = 'FomkOdZqdQIh';
             $phpmailer->SMTPSecure = 'tls';
             $phpmailer->Port = env('MAIL_PORT');
 
