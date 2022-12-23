@@ -1,15 +1,19 @@
-<div class="about-hero">
+@if($about->hero_hidden == 0)
+<div class="about-hero" style="background: url({{ $about->hero_background }}) no-repeat;">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
                 <h1>
-                    About Us
+                    {{ $about->hero_head }}
                 </h1>
                 <p>
-                    FastCarsMoney Loans has been passionate about creating a superior level respect and understanding for our customers.
+                    {{ $about->hero_text }}
                 </p>
-                <a href="{{ route('application-form') }}" class="btn">Apple for Loan</a>
+                <a href="{{ route('application-form') }}" class="btn">
+                    {{ $about->hero_btn }}
+                </a>
             </div>
         </div>
     </div>
 </div>
+@endif

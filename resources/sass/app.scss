@@ -809,8 +809,8 @@ footer {
 // ABOUT HERO
 .about-hero {
 	background: url('/img/about/about-hero-bg.jpg') no-repeat;
-	background-size: cover;
-	background-position: center;
+	background-size: cover !important;
+	background-position: center !important;
 	padding: 150px 0;
 	h1 {
 		font-size: 60px;

@@ -75,6 +75,7 @@ Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
     Route::get('/admin/customize/home', [App\Http\Controllers\AdminController::class, 'homepageCustomization'])->name('admin.home.customize');
+    Route::get('/admin/customize/about', [App\Http\Controllers\AdminController::class, 'aboutpageCustomization'])->name('admin.about.customize');
 
     Route::get('/apply-for-loan', function () {
         return view('apply-form');

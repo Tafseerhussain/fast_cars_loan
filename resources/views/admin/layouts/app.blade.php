@@ -70,13 +70,12 @@
                     <span>Disbursed Loans</span>
                 </a>
             </li> --}}
-
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <img src="{{ asset('img/admin/icons/reports.svg') }}" alt="reports">
                     <span>Reports</span>
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -87,12 +86,48 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item {{ Request::route()->getName() == 'admin.home.customize' ? 'active' : '' }}">
-                <a class="nav-link" 
-                    href="{{ route('admin.home.customize') }}">
-                    <i class="fas fa-fw fa-home"></i>
-                    <span>Home</span>
+
+            <li class="nav-item 
+            {{ 
+                (
+                    Request::route()->getName() == 'admin.home.customize' ||
+                    Request::route()->getName() == 'admin.about.customize'
+                ) 
+                 ? 'active' : '' 
+             }}">
+                <a class="nav-link 
+                {{ 
+                    (
+                        Request::route()->getName() == 'admin.home.customize' ||
+                        Request::route()->getName() == 'admin.about.customize'
+                    ) 
+                     ? 'active' : 'collapsed' 
+                 }}" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>Pages</span>
                 </a>
+                <div id="collapsePages" class="collapse 
+                {{ 
+                    (
+                        Request::route()->getName() == 'admin.home.customize' ||
+                        Request::route()->getName() == 'admin.about.customize'
+                    ) 
+                     ? 'show' : '' 
+                 }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item 
+                        {{ Request::route()->getName() == 'admin.home.customize' ? 'active' : '' }}" 
+                        href="{{ route('admin.home.customize') }}">
+                            Home
+                        </a>
+                        <a class="collapse-item 
+                        {{ Request::route()->getName() == 'admin.about.customize' ? 'active' : '' }}" 
+                        href="{{ route('admin.about.customize') }}">
+                            About
+                        </a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
