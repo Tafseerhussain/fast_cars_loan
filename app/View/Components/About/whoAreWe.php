@@ -8,19 +8,20 @@ use App\Models\AboutPage;
 class whoAreWe extends Component
 {
     public $who;
-    
+
     public function __construct()
     {
         $this->who = AboutPage::where('id', 1)->first(
-                [
-                    'who_head',
-                    'who_text', 
-                    'who_img1', 
-                    'who_img2', 
-                    'who_img3',
-                    'who_img4', 
-                    'who_hidden']
-                );
+            [
+                'who_head',
+                'who_text', 
+                'who_img1', 
+                'who_img2', 
+                'who_img3',
+                'who_img4', 
+                'who_hidden'
+            ]
+        );
     }
 
     /**
