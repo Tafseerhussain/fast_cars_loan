@@ -7,24 +7,11 @@ use App\Models\AboutPage;
 
 class whatWeOffer extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $offer;
+
     public function __construct()
     {
-        //
-    }
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
-    public function render()
-    {
-        $offer = AboutPage::where('id', 1)->first(
+        $this->offer = AboutPage::where('id', 1)->first(
             [
                 'offer_head',
                 'offer_point_head_1', 
@@ -38,6 +25,16 @@ class whatWeOffer extends Component
                 'offer_hidden'
             ]
         );
-        return view('components.about.what-we-offer', compact('offer'));
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
+     */
+    public function render()
+    {
+        
+        return view('components.about.what-we-offer');
     }
 }
