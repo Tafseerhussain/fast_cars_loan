@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Models\FormFillout\VehicleInformation;
 use App\Models\Home;
+use App\Models\AboutPage;
 use App\Models\Faq;
 use App\Models\Testimonial;
 use App\Mail\Admin\LoanApproval;
@@ -28,7 +29,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/about', function () {
-    return view('about');
+    $whoWeAre = AboutPage::where('id', 1)->first(['who_head', 'who_text', 'who_img1', 'who_img2', 'who_img3','who_img4', 'who_hidden']);
+    return view('about', compact('whoWeAre'));
 })->name('about-page');
 
 Route::get('/how-title-loan-works', function () {

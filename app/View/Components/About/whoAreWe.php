@@ -7,16 +7,14 @@ use App\Models\AboutPage;
 
 class whoAreWe extends Component
 {
-    public $who = 'test';
-    public function __construct()
+    public $who;
+    public function __construct($message)
     {
-        //
+        $this->who = $message;
     }
 
     public function render()
     {
-        dd('test');
-        $whoWeAre = AboutPage::where('id', 1)->first(['who_head', 'who_text', 'who_img1', 'who_img2', 'who_img3','who_img4', 'who_hidden']);
-        return view('components.about.who-are-we', compact('whoWeAre'));
+        return view('components.about.who-are-we');
     }
 }
