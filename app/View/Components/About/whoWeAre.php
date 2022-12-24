@@ -7,24 +7,11 @@ use App\Models\AboutPage;
 
 class whoWeAre extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $who;
+
     public function __construct()
     {
-        //
-    }
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
-    public function render()
-    {
-        $who = AboutPage::where('id', 1)->first(
+        $this->who = AboutPage::where('id', 1)->first(
                 [
                     'who_head',
                     'who_text', 
@@ -34,6 +21,16 @@ class whoWeAre extends Component
                     'who_img4', 
                     'who_hidden']
                 );
-        return view('components.about.who-we-are', compact('who'));
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
+     */
+    public function render()
+    {
+        
+        return view('components.about.who-we-are');
     }
 }
