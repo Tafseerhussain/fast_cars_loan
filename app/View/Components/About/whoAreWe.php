@@ -5,10 +5,10 @@ namespace App\View\Components\About;
 use Illuminate\View\Component;
 use App\Models\AboutPage;
 
-class whoWeAre extends Component
+class whoAreWe extends Component
 {
     public $who;
-
+    
     public function __construct()
     {
         $this->who = AboutPage::where('id', 1)->first(
@@ -30,7 +30,6 @@ class whoWeAre extends Component
      */
     public function render()
     {
-        
-        return view('components.about.who-we-are');
+        return view('components.about.who-are-we');
     }
 }
