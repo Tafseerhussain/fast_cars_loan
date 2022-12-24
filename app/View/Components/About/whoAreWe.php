@@ -7,10 +7,10 @@ use App\Models\AboutPage;
 
 class whoAreWe extends Component
 {
-    public $who;
+    public $message;
     public function __construct($message)
     {
-        $this->who = $message;
+        $this->message = $message;
     }
 
     public function render()
