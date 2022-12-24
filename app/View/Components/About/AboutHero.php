@@ -5,7 +5,7 @@ namespace App\View\Components\About;
 use Illuminate\View\Component;
 use App\Models\AboutPage;
 
-class hero extends Component
+class AboutHero extends Component
 {
     /**
      * Create a new component instance.
@@ -25,6 +25,6 @@ class hero extends Component
     public function render()
     {
         $about = AboutPage::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'hero_background', 'hero_hidden']);
-        return view('components.about.hero', compact('about'));
+        return view('components.about.about-hero', compact('about'));
     }
 }
