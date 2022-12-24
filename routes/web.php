@@ -29,7 +29,16 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/about', function () {
-    $whoWeAre = AboutPage::where('id', 1)->first(['who_head', 'who_text', 'who_img1', 'who_img2', 'who_img3','who_img4', 'who_hidden']);
+    $whoWeAre = AboutPage::where('id', 1)->first(['who_head', 'who_text', 'who_img1', 'who_img2', 'who_img3','who_img4', 'who_hidden', 'offer_head',
+        'offer_point_head_1', 
+        'offer_point_head_2', 
+        'offer_point_head_3', 
+        'offer_point_head_4',
+        'offer_point_text_1', 
+        'offer_point_text_2', 
+        'offer_point_text_3', 
+        'offer_point_text_4', 
+        'offer_hidden']);
     return view('about', compact('whoWeAre'));
 })->name('about-page');
 
