@@ -1,4 +1,4 @@
-<div class="admin-about-hero">
+<div class="admin-how-title-loan-works-hero">
     <div class="row">
         <div class="col-12 text-right">
             @if ($isHidden == 1)
@@ -14,19 +14,24 @@
         <div class="col-md-8">
             <form wire:submit.prevent="submit">
                 <div class="form-group">
-                    <label for="heroHeading">Section Heading</label>
-                    <input type="text" class="form-control" wire:model.defer="heroHeading" placeholder="Hero Heading">
-                    @error('heroHeading') <span class="input_error">{{ $message }}</span> @enderror
+                    <label for="sectionHeading">Section Heading</label>
+                    <input type="text" class="form-control" wire:model.defer="sectionHeading" placeholder="Hero Heading">
+                    @error('sectionHeading') <span class="input_error">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <label for="heroText">Section Text</label>
-                    <textarea class="form-control" wire:model.defer="heroText" placeholder="Hero Text" cols="30" rows="3"></textarea>
-                    @error('heroText') <span class="input_error">{{ $message }}</span> @enderror
+                    <label for="sectionText">Section Text</label>
+                    <textarea class="form-control" wire:model.defer="sectionText" placeholder="Hero Text" cols="30" rows="3"></textarea>
+                    @error('sectionText') <span class="input_error">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <label for="heroButton">Section Button</label>
-                    <input type="text" class="form-control" wire:model.defer="heroButton" placeholder="Hero Button">
-                    @error('heroButton') <span class="input_error">{{ $message }}</span> @enderror
+                    <label for="videoLink">Video Link / URL</label>
+                    <input type="text" class="form-control" wire:model.defer="videoLink" placeholder="Hero Button">
+                    @error('videoLink') <span class="input_error">{{ $message }}</span> @enderror
+                </div>
+                <div class="form-group">
+                    <label for="sectionButton">Section Button</label>
+                    <input type="text" class="form-control" wire:model.defer="sectionButton" placeholder="Hero Button">
+                    @error('sectionButton') <span class="input_error">{{ $message }}</span> @enderror
                 </div>
                 <button type="submit" class="btn d-block">
                     Save
@@ -45,25 +50,25 @@
             <form wire:submit.prevent="submitImage">
                 <h5>Background Image:</h5>
                 <small>Current Image:</small>
-                <img src="{{ asset($heroPreview) }}" alt="" class="w-100 rounded shadow">
+                <img src="{{ asset($backgroundPreview) }}" alt="" class="w-100 rounded shadow">
                 <hr>
-                <input type="file" wire:model="heroBackground">
+                <input type="file" wire:model="sectionBackground">
                 <small class="d-block">Max: 2MB</small>
-                @error('heroBackground') <span class="input_error d-block">{{ $message }}</span> @enderror
-                @if ($heroBackground)
-                <img src="{{ $heroBackground->temporaryUrl() }}" style="width: 150px; max-width: 100%;" class="rounded img-thumbnail mt-2">
+                @error('sectionBackground') <span class="input_error d-block">{{ $message }}</span> @enderror
+                @if ($sectionBackground)
+                    <img src="{{ $sectionBackground->temporaryUrl() }}" style="width: 150px; max-width: 100%;" class="rounded img-thumbnail mt-2">
                 @endif
                 
                 <button type="submit" class="btn d-block mt-3">
-                Update
+                    Update
                 </button>
                 <div class="spinner-border" role="status" wire:loading>
                     <span class="sr-only">Loading...</span>
                 </div>
                 @if (session()->has('successMessageImage'))
-                <span class="alert alert-success font-weight-bold d-block mt-3">
-                    {{ session('successMessageImage') }}
-                </span>
+                    <span class="alert alert-success font-weight-bold d-block mt-3">
+                        {{ session('successMessageImage') }}
+                    </span>
                 @endif
             </form>
         </div>

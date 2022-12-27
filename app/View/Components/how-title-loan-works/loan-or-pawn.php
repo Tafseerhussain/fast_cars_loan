@@ -6,21 +6,13 @@ use Illuminate\View\Component;
 
 class loan-or-pawn extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+    public $message;
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
+    public function __construct($message)
+    {
+        $this->message = $message;
+    }
+    
     public function render()
     {
         return view('components.how-title-loan-works.loan-or-pawn');

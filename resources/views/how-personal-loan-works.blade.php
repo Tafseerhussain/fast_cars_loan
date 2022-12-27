@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="personal-loan-page">
-		<x-how-personal-loan-works.hero/>
+		<x-how-personal-loan-works.hero :message="$loan"/>
 		<x-common.easy-steps/>
 		<x-how-personal-loan-works.personal-loan-apply/>
 		<x-how-personal-loan-works.loan-online/>

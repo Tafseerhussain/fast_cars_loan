@@ -91,7 +91,8 @@
             {{ 
                 (
                     Request::route()->getName() == 'admin.home.customize' ||
-                    Request::route()->getName() == 'admin.about.customize'
+                    Request::route()->getName() == 'admin.about.customize' ||
+                    Request::route()->getName() == 'admin.how-title-loan-works.customize'
                 ) 
                  ? 'active' : '' 
              }}">
@@ -99,19 +100,21 @@
                 {{ 
                     (
                         Request::route()->getName() == 'admin.home.customize' ||
-                        Request::route()->getName() == 'admin.about.customize'
+                        Request::route()->getName() == 'admin.about.customize' ||
+                        Request::route()->getName() == 'admin.how-title-loan-works.customize'
                     ) 
                      ? 'active' : 'collapsed' 
                  }}" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-file"></i>
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse 
                 {{ 
                     (
                         Request::route()->getName() == 'admin.home.customize' ||
-                        Request::route()->getName() == 'admin.about.customize'
+                        Request::route()->getName() == 'admin.about.customize' ||
+                        Request::route()->getName() == 'admin.how-title-loan-works.customize'
                     ) 
                      ? 'show' : '' 
                  }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -125,6 +128,11 @@
                         {{ Request::route()->getName() == 'admin.about.customize' ? 'active' : '' }}" 
                         href="{{ route('admin.about.customize') }}">
                             About
+                        </a>
+                        <a class="collapse-item 
+                        {{ Request::route()->getName() == 'admin.how-title-loan-works.customize' ? 'active' : '' }}" 
+                        href="{{ route('admin.how-title-loan-works.customize') }}">
+                            How Title Loan Works
                         </a>
                     </div>
                 </div>
@@ -173,7 +181,7 @@
                      ? 'active' : 'collapsed' 
                  }}" href="#" data-toggle="collapse" data-target="#collapseBaseForm"
                     aria-expanded="true" aria-controls="collapseBaseForm">
-                    <i class="fas fa-file-alt"></i>
+                    <i class="fas fa-fw fa-file"></i>
                     <span>Base Form</span>
                 </a>
                 <div id="collapseBaseForm" class="collapse 

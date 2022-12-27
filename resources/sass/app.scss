@@ -961,8 +961,8 @@ footer {
 .how-loan-works {
 	padding: 50px 0;
 	background: linear-gradient(45deg, rgba($white-color, 0.95), rgba($white-color, 0.7), rgba($white-color, 0.5)), url("/img/how-loan-works/hero.jpg") no-repeat;
-	background-size: cover;
-	background-position: center;
+	background-size: cover !important;
+	background-position: center !important;
 }
 
 // LOAN LEFT (VIDEO)

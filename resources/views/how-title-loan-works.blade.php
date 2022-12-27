@@ -3,11 +3,17 @@
 @section('content')
 
 	<div class="title-loan-work-page">
-		<x-how-title-loan-works.hero/>
+		@if ($loan->hero_hidden == 0)
+			<x-how-title-loan-works.hero :message="$loan"/>
+		@endif
 		<x-common.easy-steps/>
-		<x-how-title-loan-works.loan-or-pawn/>
+		@if ($loan->what_hidden == 0)
+			<x-how-title-loan-works.loan-or-pawn :message="$loan"/>
+		@endif
 		<x-how-title-loan-works.loan-apply/>
-		<x-how-title-loan-works.loan-requirements/>
+		@if ($loan->state_hidden == 0)
+			<x-how-title-loan-works.loan-requirements :message="$states"/>
+		@endif
 	</div>
 	
 @endsection

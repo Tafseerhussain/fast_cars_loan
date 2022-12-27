@@ -7,6 +7,9 @@ use App\Models\Home;
 use App\Models\AboutPage;
 use App\Models\Faq;
 use App\Models\Testimonial;
+use App\Models\HowTitleLoanWork;
+use App\Models\HowPersonalLoanWork;
+use App\Models\TitleLoanState;
 use App\Mail\Admin\LoanApproval;
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -29,25 +32,33 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/about', function () {
-    $whoWeAre = AboutPage::where('id', 1)->first(['who_head', 'who_text', 'who_img1', 'who_img2', 'who_img3','who_img4', 'who_hidden', 'offer_head',
-        'offer_point_head_1', 
-        'offer_point_head_2', 
-        'offer_point_head_3', 
-        'offer_point_head_4',
-        'offer_point_text_1', 
-        'offer_point_text_2', 
-        'offer_point_text_3', 
-        'offer_point_text_4', 
-        'offer_hidden']);
-    return view('about', compact('whoWeAre'));
+    $whoWeAre = AboutPage::where('id', 1)->first(['who_head', 'who_text', 'who_img1', 'who_img2', 'who_img3','who_img4', 'who_hidden']);
+    $offer = AboutPage::where('id', 1)->first(
+        [
+            'offer_head',
+            'offer_point_head_1', 
+            'offer_point_head_2', 
+            'offer_point_head_3', 
+            'offer_point_head_4',
+            'offer_point_text_1', 
+            'offer_point_text_2', 
+            'offer_point_text_3', 
+            'offer_point_text_4', 
+            'offer_hidden'
+        ]
+    );
+    return view('about', compact(['whoWeAre', 'offer']));
 })->name('about-page');
 
 Route::get('/how-title-loan-works', function () {
-    return view('how-title-loan-works');
+    $loan = HowTitleLoanWork::find(1);
+    $states = TitleLoanState::all();
+    return view('how-title-loan-works', compact(['loan', 'states']));
 })->name('how-title-loan-works');
 
 Route::get('/how-personal-loan-works', function () {
-    return view('how-personal-loan-works');
+    $loan = HowTitleLoanWork::find(1);
+    return view('how-personal-loan-works', compact(['loan']));
 })->name('how-personal-loan-works');
 
 Route::get('/title-loan', function () {
@@ -87,6 +98,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
     Route::get('/admin/customize/home', [App\Http\Controllers\AdminController::class, 'homepageCustomization'])->name('admin.home.customize');
     Route::get('/admin/customize/about', [App\Http\Controllers\AdminController::class, 'aboutpageCustomization'])->name('admin.about.customize');
+    Route::get('/admin/customize/how-title-loan-works', [App\Http\Controllers\AdminController::class, 'howTitleLoanWorksCustomization'])->name('admin.how-title-loan-works.customize');
 
     Route::get('/apply-for-loan', function () {
         return view('apply-form');
