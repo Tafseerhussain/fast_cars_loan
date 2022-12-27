@@ -5,9 +5,9 @@
 	<div class="personal-loan-page">
 		<x-how-personal-loan-works.hero :message="$loan"/>
 		<x-common.easy-steps/>
-		<x-how-personal-loan-works.personal-loan-apply/>
-		<x-how-personal-loan-works.loan-online/>
-		<x-how-personal-loan-works.personal-loan-approved/>
+		<x-how-personal-loan-works.personal-loan-apply :message="$loan"/>
+		<x-how-personal-loan-works.loan-online :message="$loan"/>
+		<x-how-personal-loan-works.personal-loan-approved :message="$loan"/>
 	</div>
 
 @endsection

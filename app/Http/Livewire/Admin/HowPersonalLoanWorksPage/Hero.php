@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Admin\HowTitleLoanWorksPage;
+namespace App\Http\Livewire\Admin\HowPersonalLoanWorksPage;
 
 use Livewire\Component;
 
-use App\Models\HowTitleLoanWork;
+use App\Models\HowPersonalLoanWork;
 use Livewire\WithFileUploads;
 
 class Hero extends Component
@@ -28,7 +28,7 @@ class Hero extends Component
             'sectionButton' => 'required',
             'videoLink' => 'required',
         ]);
-        $loan = HowTitleLoanWork::where('id', 1)->first();
+        $loan = HowPersonalLoanWork::where('id', 1)->first();
         $loan->hero_head = $this->sectionHeading;
         $loan->hero_text = $this->sectionText;
         $loan->hero_btn = $this->sectionButton;
@@ -42,9 +42,9 @@ class Hero extends Component
         $this->validate([
             'sectionBackground' => 'required|image',
         ]);
-        $loan = HowTitleLoanWork::where('id', 1)->first();
+        $loan = HowPersonalLoanWork::where('id', 1)->first();
         $extension = $this->sectionBackground->getClientOriginalExtension();
-        $img = $this->sectionBackground->storeAs('loan', 'how-title-loan-works-bg.'.$extension , 'public');
+        $img = $this->sectionBackground->storeAs('loan', 'how-personal-loan-works-bg.'.$extension , 'public');
         $imgUrl = 'storage/'.$img;
         $loan->hero_background = $imgUrl;
         $loan->save();
@@ -55,20 +55,20 @@ class Hero extends Component
     public function hideUnhideSection($value)
     {
         $this->isHidden = $value;
-        $loan = HowTitleLoanWork::where('id', 1)->first();
+        $loan = HowPersonalLoanWork::where('id', 1)->first();
         $loan->hero_hidden = $value;
         $loan->save();
     }
 
     public function render()
     {
-        $loan = HowTitleLoanWork::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'hero_background', 'hero_hidden', 'video_url']);
+        $loan = HowPersonalLoanWork::where('id', 1)->first(['hero_head','hero_text', 'hero_btn', 'hero_background', 'hero_hidden', 'video_url']);
         $this->sectionHeading = $loan->hero_head;
         $this->sectionText = $loan->hero_text;
         $this->sectionButton = $loan->hero_btn;
         $this->backgroundPreview = $loan->hero_background;
         $this->isHidden = $loan->hero_hidden;
         $this->videoLink = $loan->video_url;
-        return view('livewire.admin.how-title-loan-works-page.hero');
+        return view('livewire.admin.how-personal-loan-works-page.hero');
     }
 }

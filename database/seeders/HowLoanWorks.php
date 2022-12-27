@@ -33,6 +33,41 @@ class HowLoanWorks extends Seeder
             ]
         );
 
+        $personalLoanPage = HowPersonalLoanWork::updateOrCreate(
+            ['id' => 1],
+            [
+                'hero_head' => 'Watch this short video to learn How Title Loans Work',
+                'video_url' => 'https://iframe.videodelivery.net/e38cc282b1a22ea34652995035f210b2?preload=true&loop=false&autoplay=false&controls=true',
+                'hero_text' => 'Getting car title loans or motorcycle title loans with TitleMax® is easy! The entire process can be completed in as little as 30 minutes.',
+                'hero_btn' => 'Apply for loan',
+                'hero_background' => 'img/how-loan-works/hero.jpg',
+                'hero_hidden' => 0,
+
+                'how_head' => 'I Need a Personal Loan, How Do I Apply?',
+                'how_text' => 'When you find yourself facing an unexpected expense, FastCarMoney offers an easy application process for personal loans when you visit your local FastCarMoney! You can complete a personal loan application with a friendly TitleMax representative who will help you through the entire process. Once your application is complete, you’ll find out quickly how much you could be approved for! <br> Apply first, then after validation of the necessary ID and banking information, your loan will be issued to you either via check, or you can have it deposited in your Universe Silver® Deposit Account. You’ll also be issued a debit card for you to access your funds.',
+                'how_img' => 'img/how-loan-works/personal-loan.jpg',
+                'how_hidden' => 0,
+
+                'apply_head' => 'Can I Apply for a Personal Loan Online?',
+                'apply_text' => 'Yes! Depending on your home state you can easily apply for a personal loan online with FastCarMoney by filling out our online application. Once your application is complete you will find out quickly how much you could be approved for from the comfort of your own home! Apply first, then after approval and validation of all required information, your loan will be disbursed.',
+                'apply_btn' => 'Apply now',
+                'apply_hidden' => 0,
+
+                'need_head' => 'What do I Need to be Approved for a Personal Loan with FastCarsMoney?',
+                'instore_head' => 'For an in-store personal loan, customers must provide us with certain documents, including:',
+                'instore_point1' => 'A driver’s license or some other valid form of government-issued identification, such as a matriculates consular card or passport',
+                'instore_point2' => 'An active bank account statement from within the past 60 days (If recurring deposits aren’t displayed on your active bank statement, you’ll need to show a paystub from within the past 60 days or some other proof of income)',
+                'instore_point3' => 'In AZ, a valid AZ motor vehicle registration in your name',
+                'instore_point4' => 'In NV, you must also provide proof of gross income (in addition to your bank statement)',
+                'items_head' => 'These are the items you need when applying for an online personal loan:',
+                'items_point1' => 'A driver’s license or some other valid form of government-issued identification, such as a matriculates consular card or passport',
+                'items_point2' => 'An active bank account statement from within the past 60 days (If recurring deposits aren’t displayed on your active bank statement, you’ll need to show a paystub from within the past 60 days or some other proof of income)',
+                'items_point3' => 'In AZ, a valid AZ motor vehicle registration in your name',
+                'items_point4' => 'In NV, you must also provide proof of gross income (in addition to your bank statement)',
+                'need_hidden' => 0,
+            ]
+        );
+
         $states = TitleLoanState::updateOrCreate(
             ['id' => 1],
             [

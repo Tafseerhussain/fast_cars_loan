@@ -57,7 +57,7 @@ Route::get('/how-title-loan-works', function () {
 })->name('how-title-loan-works');
 
 Route::get('/how-personal-loan-works', function () {
-    $loan = HowTitleLoanWork::find(1);
+    $loan = HowPersonalLoanWork::find(1);
     return view('how-personal-loan-works', compact(['loan']));
 })->name('how-personal-loan-works');
 
@@ -99,6 +99,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/customize/home', [App\Http\Controllers\AdminController::class, 'homepageCustomization'])->name('admin.home.customize');
     Route::get('/admin/customize/about', [App\Http\Controllers\AdminController::class, 'aboutpageCustomization'])->name('admin.about.customize');
     Route::get('/admin/customize/how-title-loan-works', [App\Http\Controllers\AdminController::class, 'howTitleLoanWorksCustomization'])->name('admin.how-title-loan-works.customize');
+    Route::get('/admin/customize/how-personal-loan-works', [App\Http\Controllers\AdminController::class, 'howPersonalLoanWorksCustomization'])->name('admin.how-personal-loan-works.customize');
 
     Route::get('/apply-for-loan', function () {
         return view('apply-form');
