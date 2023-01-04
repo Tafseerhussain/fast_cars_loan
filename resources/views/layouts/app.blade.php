@@ -58,11 +58,11 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="{{ route('car-title-loan') }}">Car Title Loans</a></li>
-                                    <li><a class="dropdown-item" href="#">Car Title Pawns</a></li>
+                                    {{-- <li><a class="dropdown-item" href="#">Car Title Pawns</a></li>
                                     <li><a class="dropdown-item" href="#">Motorcycle Title Loans</a></li>
                                     <li><a class="dropdown-item" href="#">Motorcycle Title Pawns</a></li>
-                                    <li><a class="dropdown-item" href="#">RV Title Loans</a></li>
-                                    <li><a class="dropdown-item" href="#">Personal Loans</a></li>
+                                    <li><a class="dropdown-item" href="#">RV Title Loans</a></li> --}}
+                                    <li><a class="dropdown-item" href="{{ route('personal-loan') }}">Personal Loans</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">

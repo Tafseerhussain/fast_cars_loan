@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\Loan\CarLoan;
+use App\Models\PersonalLoan;
 
 class CarLoanSeeder extends Seeder
 {
@@ -40,6 +41,36 @@ class CarLoanSeeder extends Seeder
                 'benefit_head' => 'Title Loan Benefits with FastCarsMoney',
                 'benefit_text' => 'Getting a car title loan with FastCarsMoney has plenty of benefits:',
                 'benefit_points' => 'Get quick approval for a title loan online, Most credit types accepted, Quick and easy approval process, Friendly customer service, You get to keep driving your car, Convenient payments options, Cash in as little as 30 minutes, All makes and models accepted, No bank account required for a title loan',
+                'benefit_hidden' => 0,
+            ]
+        );
+
+        $personaLoan = PersonalLoan::updateOrCreate(
+            ['id' => 1],
+            [
+                'hero_head' => 'PERSONAL LOANS BY FastCarsMoney',
+                'hero_text' => 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Et eos maiores, nihil atque impedit numquam consequatur voluptates accusamus corporis rem dolorem animi, neque, corrupti suscipit minima ducimus reprehenderit dignissimos, sapiente! Lorem ipsum dolor sit amet consectetur adipisicing, elit. Et eos maiores, nihil atque impedit numquam consequatur voluptates accusamus corporis rem dolorem animi, neque, corrupti suscipit minima ducimus reprehenderit dignissimos, sapiente!',
+                'hero_img' => 'img/title-loan/title-loan-img.jpg',
+                'hero_box_text' => 'We’re committed to providing the best customer experience possible. If you have any questions we want to hear from you!',
+                'hero_box_img' => 'img/title-loan/call.svg',
+                'hero_box_head' => 'Give us a call',
+                'hero_box_desc' => '844-TITLE-LOAN (854-878-5256)',
+                'hero_hidden' => 0,
+
+                'how_head' => 'How Do I Get a Personal Loan With FastCarsMoney?',
+                'how_img1' => 'img/title-loan/easy-process.svg',
+                'how_point1' => 'Easy Process',
+                'how_img2' => 'img/title-loan/no-credit.svg',
+                'how_point2' => 'No credit check',
+                'how_img3' => 'img/title-loan/no-insurance.svg',
+                'how_point3' => 'No insurance required',
+                'how_text' => 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Et eos maiores, nihil atque impedit numquam consequatur voluptates accusamus corporis rem dolorem animi, neque, corrupti suscipit minima ducimus reprehenderit dignissimos, sapiente!',
+                'how_btn' => 'Apply for loan',
+                'how_hidden' => 0,
+
+                'benefit_head' => 'Personal Loan Benefits with FastCarsMoney',
+                'benefit_text' => 'Getting a car personal loan with FastCarsMoney has plenty of benefits:',
+                'benefit_points' => 'Get quick approval for a personal loan online, Most credit types accepted, Quick and easy approval process, Friendly customer service, You get to keep driving your car, Convenient payments options, Cash in as little as 30 minutes, All makes and models accepted, No bank account required for a personal loan',
                 'benefit_hidden' => 0,
             ]
         );

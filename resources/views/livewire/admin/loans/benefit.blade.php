@@ -14,7 +14,7 @@
       <div class="col-12">
          <form wire:submit.prevent="submit">
             <div class="form-group">
-               <label for="sectionHeading">Section Heading</label>
+               <label for="sectionHeading">Section Heading {{ $currentUrl }}</label>
                <input type="text" class="form-control" wire:model.defer="sectionHeading" placeholder="Section Heading">
                @error('sectionHeading') <span class="input_error">{{ $message }}</span> @enderror
             </div>
