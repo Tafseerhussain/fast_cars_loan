@@ -57,7 +57,7 @@
                                     Loans
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('title-loan') }}">Car Title Loans</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('car-title-loan') }}">Car Title Loans</a></li>
                                     <li><a class="dropdown-item" href="#">Car Title Pawns</a></li>
                                     <li><a class="dropdown-item" href="#">Motorcycle Title Loans</a></li>
                                     <li><a class="dropdown-item" href="#">Motorcycle Title Pawns</a></li>

@@ -19,7 +19,7 @@
                     @error('stateName') <span class="input_error">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <label for="stateDescription">State Description</label>
+                    <label for="stateDescription">State Description (Use <code>&lt;br&gt;</code> to put line breaks)</label>
                     <textarea class="form-control" wire:model.defer="stateDescription" placeholder="State Description" cols="30" rows="5"></textarea>
                     @error('stateDescription') <span class="input_error">{{ $message }}</span> @enderror
                 </div>

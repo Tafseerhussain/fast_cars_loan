@@ -1177,6 +1177,7 @@ footer {
 				margin-right: 10px;
 				border-radius: 50%;
 				box-shadow: $theme-shadow;
+				height: 37px;
 			}
 		}
 	}
@@ -1200,6 +1201,9 @@ footer {
 				top: 50%;
 				transform: translateY(-50%);
 				margin-left: 10px;
+			}
+			img {
+				height: 62px;
 			}
 		}
 		p {

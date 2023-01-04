@@ -5,18 +5,18 @@
                 <div class="customer-call-box row">
                     <div class="col-md-7">
                         <p>
-                            We’re committed to providing the best customer experience possible. If you have any questions we want to hear from you!
+                            {{ $message->hero_box_text }}
                         </p>
                     </div>
                     <div class="col-md-4 offset-md-1">
                         <div class="give-us-call d-flex">
                             <div>
-                                <img src="{{ asset('img/title-loan/call.svg') }}" alt="call icon">
+                                <img src="{{ asset($message->hero_box_img) }}" alt="call icon">
                             </div>
                             <div>
-                                <h4>Give us a call</h4>
+                                <h4>{{ $message->hero_box_head }}</h4>
                                 <p>
-                                    844-TITLE-LOAN (854-878-5256)
+                                    {{ $message->hero_box_desc }}
                                 </p>
                             </div>
                         </div>

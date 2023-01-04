@@ -19,7 +19,7 @@
                     @error('sectionHeading') <span class="input_error">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <label for="sectionText">Section Text</label>
+                    <label for="sectionText">Section Text (Use <code>&lt;br&gt;</code> to put line breaks)</label>
                     <textarea class="form-control" wire:model.defer="sectionText" placeholder="Hero Text" cols="30" rows="5"></textarea>
                     @error('sectionText') <span class="input_error">{{ $message }}</span> @enderror
                 </div>

@@ -12412,6 +12412,7 @@ footer .copyright {
   margin-right: 10px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 37px;
 }
 
 .title-loan-page .call-box {
@@ -12430,6 +12431,9 @@ footer .copyright {
   top: 50%;
   transform: translateY(-50%);
   margin-left: 10px;
+}
+.how-to-take-title-loan .points .point-box img {
+  height: 62px;
 }
 .how-to-take-title-loan .points p {
   margin: 30px 0;

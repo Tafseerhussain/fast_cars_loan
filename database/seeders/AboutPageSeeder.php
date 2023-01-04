@@ -12,11 +12,6 @@ use App\Models\AboutPage;
 
 class AboutPageSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $aboutPage = AboutPage::updateOrCreate(
