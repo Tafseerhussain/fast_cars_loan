@@ -6,7 +6,7 @@
                     {{ $message->hero_head }}
                 </h1>
                 <p class="text-white">
-                    {{ $message->hero_text }}
+                    {!! $message->hero_text !!}
                 </p>
             </div>
             <div class="col-md-6">

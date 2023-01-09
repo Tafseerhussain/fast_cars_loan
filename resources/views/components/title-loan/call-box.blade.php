@@ -5,7 +5,7 @@
                 <div class="customer-call-box row">
                     <div class="col-md-7">
                         <p>
-                            {{ $message->hero_box_text }}
+                            {!! $message->hero_box_text !!}
                         </p>
                     </div>
                     <div class="col-md-4 offset-md-1">
@@ -16,7 +16,7 @@
                             <div>
                                 <h4>{{ $message->hero_box_head }}</h4>
                                 <p>
-                                    {{ $message->hero_box_desc }}
+                                    {!! $message->hero_box_desc !!}
                                 </p>
                             </div>
                         </div>

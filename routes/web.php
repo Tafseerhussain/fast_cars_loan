@@ -12,6 +12,7 @@ use App\Models\HowPersonalLoanWork;
 use App\Models\TitleLoanState;
 use App\Models\Loan\CarLoan;
 use App\Models\PersonalLoan;
+use App\Models\Advantage;
 use App\Mail\Admin\LoanApproval;
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -73,7 +74,8 @@ Route::get('/personal-loan', function () {
 })->name('personal-loan');
 
 Route::get('/advantages', function () {
-    return view('advantages');
+    $advantage = Advantage::find(1);
+    return view('advantages', compact(['advantage']));
 })->name('advantages');
 
 Route::get('/blogs', function () {
@@ -109,6 +111,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/customize/how-personal-loan-works', [App\Http\Controllers\AdminController::class, 'howPersonalLoanWorksCustomization'])->name('admin.how-personal-loan-works.customize');
     Route::get('/admin/customize/car-title-loan', [App\Http\Controllers\AdminController::class, 'carTitleLoanCustomization'])->name('admin.car-title-loan.customize');
     Route::get('/admin/customize/personal-loan', [App\Http\Controllers\AdminController::class, 'personalLoanCustomization'])->name('admin.personal-loan.customize');
+    Route::get('/admin/customize/advantage', [App\Http\Controllers\AdminController::class, 'advantagePageCustomization'])->name('admin.advantage.customize');
 
     Route::get('/apply-for-loan', function () {
         return view('apply-form');

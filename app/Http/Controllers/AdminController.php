@@ -49,6 +49,10 @@ class AdminController extends Controller
     {
         return view('admin.customize.loans.personal-loan');
     }
+    public function advantagePageCustomization()
+    {
+        return view('admin.customize.advantage');
+    }
 
     // LOAN APPLICATIONS
     public function viewLoanApplications()

@@ -95,7 +95,8 @@
                     Request::route()->getName() == 'admin.how-title-loan-works.customize' ||
                     Request::route()->getName() == 'admin.how-personal-loan-works.customize' ||
                     Request::route()->getName() == 'admin.car-title-loan.customize' ||
-                    Request::route()->getName() == 'admin.personal-loan.customize'
+                    Request::route()->getName() == 'admin.personal-loan.customize' ||
+                    Request::route()->getName() == 'admin.advantage.customize'
                 ) 
                  ? 'active' : '' 
              }}">
@@ -107,7 +108,8 @@
                         Request::route()->getName() == 'admin.how-title-loan-works.customize' ||
                         Request::route()->getName() == 'admin.how-personal-loan-works.customize' ||
                         Request::route()->getName() == 'admin.car-title-loan.customize' ||
-                        Request::route()->getName() == 'admin.personal-loan.customize'
+                        Request::route()->getName() == 'admin.personal-loan.customize' ||
+                        Request::route()->getName() == 'admin.advantage.customize'
                     ) 
                      ? 'active' : 'collapsed' 
                  }}" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -123,7 +125,8 @@
                         Request::route()->getName() == 'admin.how-title-loan-works.customize' ||
                         Request::route()->getName() == 'admin.how-personal-loan-works.customize'||
                         Request::route()->getName() == 'admin.car-title-loan.customize' ||
-                        Request::route()->getName() == 'admin.personal-loan.customize'
+                        Request::route()->getName() == 'admin.personal-loan.customize' ||
+                        Request::route()->getName() == 'admin.advantage.customize'
                     ) 
                      ? 'show' : '' 
                  }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -157,6 +160,11 @@
                         {{ Request::route()->getName() == 'admin.personal-loan.customize' ? 'active' : '' }}" 
                         href="{{ route('admin.personal-loan.customize') }}">
                             Personal Loan
+                        </a>
+                        <a class="collapse-item 
+                        {{ Request::route()->getName() == 'admin.advantage.customize' ? 'active' : '' }}" 
+                        href="{{ route('admin.advantage.customize') }}">
+                            Advantages
                         </a>
                     </div>
                 </div>

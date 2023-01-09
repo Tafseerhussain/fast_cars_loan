@@ -49,7 +49,7 @@
                 </div>
                 <div class="text-center">
                     <p>
-                        {{ $message->how_text }}
+                        {!! $message->how_text !!}
                     </p>
                     <a href="{{ route('application-form') }}" class="btn">
                         {{ $message->how_btn }}

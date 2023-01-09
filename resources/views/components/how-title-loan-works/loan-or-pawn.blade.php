@@ -7,7 +7,7 @@
                     {{ $message->what_head }}
                 </h1>
                 <p>
-                    {{ $message->what_text }}
+                    {!! $message->what_text !!}
                 </p>
             </div>
             <div class="col-md-5">

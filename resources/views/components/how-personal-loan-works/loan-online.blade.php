@@ -5,7 +5,7 @@
                 {{ $message->apply_head }}
             </h1>
             <p class="text-white">
-                {{ $message->apply_text }}
+                {!! $message->apply_text !!}
             </p>
             <a href="{{ route('apply-form') }}" class="btn">{{ $message->apply_btn }}</a>
         </div>

@@ -12513,6 +12513,9 @@ footer .copyright {
   color: #000000;
   padding: 20px 0;
 }
+.advantage-boxes .advantage-box img {
+  height: 107px;
+}
 .advantage-boxes .advantage-box.green {
   background: rgba(6, 168, 139, 0.1);
 }

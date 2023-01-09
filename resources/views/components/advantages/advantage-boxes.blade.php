@@ -3,66 +3,66 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="advantage-box green">
-                    <img src="{{ asset('img/advantage/1.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img1) }}" alt="">
                     <h4>
-                        Any Car—Up to $750
+                        {{ $message->advantage_head1 }}
                     </h4>
                     <p>
-                        At FastCarsMoney Title Loans, if you have a car, we have a car title loan for you! We can provide loans on almost ANY car, regardless of the year, mileage, or condition. If you have a paid off car and you can legally drive it to our store, we can loan you up to $750 as a minimum and up to $25,000 as a maximum. As always, the total amount and conditions we can loan varies by state so visit or call your local store for an estimate for your car.
+                        {{ $message->advantage_text1 }}
                     </p>
                 </div>
                 <div class="advantage-box blue">
-                    <img src="{{ asset('img/advantage/2.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img2) }}" alt="">
                     <h4>
-                        Many Ways to Pay
+                        {{ $message->advantage_head2 }}
                     </h4>
                     <p>
-                        Some lenders only accept cash at the office. We accept cash, money orders, cashier’s checks and in many states, debit cards! Paying with a debit card saves you a trip into the store to make your payment. We can take your information over the phone or set up automatic monthly payments. Some stores may require a processing fee for debit card transactions.
+                        {{ $message->advantage_text2 }}
                     </p>
                 </div>
                 <div class="advantage-box orange">
-                    <img src="{{ asset('img/advantage/3.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img3) }}" alt="">
                     <h4>
-                        No Insurance Required
+                        {{ $message->advantage_head3 }}
                     </h4>
                     <p>
-                        While some lenders require insurance or require that you purchase their road side assistance protection in order to get a car title loan, we don’t! No insurance required—Period. Our goal is to get you the funds you need, not sell you insurance.
+                        {{ $message->advantage_text3 }}
                     </p>
                 </div>
                 <div class="advantage-box red">
-                    <img src="{{ asset('img/advantage/4.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img4) }}" alt="">
                     <h4>
-                        We Will Work with You
+                        {{ $message->advantage_head4 }}
                     </h4>
                     <p>
-                        Life happens. Things happen. We understand that. If you find yourself short one month, call us, we will do everything we can to work with you and your circumstances.
+                        {{ $message->advantage_text4 }}
                     </p>
                 </div>
                 <div class="advantage-box green">
-                    <img src="{{ asset('img/advantage/5.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img5) }}" alt="">
                     <h4>
-                        You Keep Your Car
+                        {{ $message->advantage_head5 }}
                     </h4>
                     <p>
-                        When you get a title loan with American Title Loans your car remains your car; you keep it, you drive it! We hold onto the car title while the loan is outstanding. Once the car title loan is paid back, the car title is yours.
+                        {{ $message->advantage_text5 }}
                     </p>
                 </div>
                 <div class="advantage-box blue">
-                    <img src="{{ asset('img/advantage/6.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img6) }}" alt="">
                     <h4>
-                        $100 for Referring a Friend
+                        {{ $message->advantage_head6 }}
                     </h4>
                     <p>
-                        We appreciate your business and show our appreciation when you spread the word. Regardless if you are a customer or not, send in a friend (who hasn’t had a loan with us before), and if your friend gets a $500 or greater car title loan from us, we’ll give you $100 cash as our way to say thanks!
+                        {{ $message->advantage_text6 }}
                     </p>
                 </div>
                 <div class="advantage-box orange">
-                    <img src="{{ asset('img/advantage/7.svg') }}" alt="">
+                    <img src="{{ asset($message->advantage_img7) }}" alt="">
                     <h4>
-                        Foreign ID’s OK
+                        {{ $message->advantage_head7 }}
                     </h4>
                     <p>
-                        We require a valid government issued ID, we just don’t care what government issues the ID. Your current Foreign ID is fine with us.
+                        {{ $message->advantage_text7 }}
                     </p>
                 </div>
             </div>

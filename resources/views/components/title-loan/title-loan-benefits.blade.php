@@ -6,7 +6,7 @@
                     {{ $message->benefit_head }}
                 </h1>
                 <p>
-                    {{ $message->benefit_text }}
+                    {!! $message->benefit_text !!}
                 </p>
             </div>
         </div>
