@@ -51,7 +51,7 @@ class Hero extends Component
     {
         $this->isHidden = $value;
         $hero = Advantage::where('id', 1)->first();
-        $hero->get_hidden = $value;
+        $hero->hero_hidden = $value;
         $hero->save();
     }
 
